@@ -1,4 +1,4 @@
-FE
+# FE
 
 > 진행 완료된 사항은 ~~취소선~~으로 표시 합니다
 
@@ -43,3 +43,25 @@ FE
   * 로그인 페이지
   
   * 대쉬 보드
+
+
+
+# 환경
+
+Node.js 18.7.0
+
+npm 8.15.0
+
+
+
+## 설치가이드
+
+npm install package.json --force를 실행하여 node 모듈들을 설치
+
+만약 err가 떠서 설치가 중단된다면 package.json파일내에서 dependencies 에서
+
+문제가 발생하는 부분을 제거후 그 패키지를
+
+npm i 패키지명 --force로 설치한후 
+
+npm start를 하여 실행
