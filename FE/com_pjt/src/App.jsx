@@ -8,14 +8,13 @@ import { Container } from '@material-ui/core';
 import styles from "./App.css";
 import ReactDOM from "react-dom";
 
-import Seats from "./components/Seats";
-import DialPage from "./components/DialPage";
-import MovieSelect from "./components/MovieSelect";
+import Seats from "./components/Page/Seats";
+import DialPage from "./components/Page/DialPage";
+import MovieSelect from "./components/Page/MovieSelect";
+import { createStore } from 'redux';
+
 
 let movie_detail = []
-
-
-
 
   
   // document.onkeydown = arrow_keys;
@@ -31,16 +30,6 @@ let movie_detail = []
   //   }
   // }
 
-let movie
-let times = []
-let movie_time = []
-let movie_time_tickets = []
-let seats_info = []
-  
-
-
-
-
   
   // let time = []
 
@@ -48,11 +37,11 @@ let seats_info = []
   //   "16:10", "17:22", "18:11"
   // ]
 
-for (const iterator of movie_time) {
-  movie_time.push(
-    <button>{iterator}</button>
-  )
-}
+// for (const iterator of movie_time) {
+//   movie_time.push(
+//     <button>{iterator}</button>
+//   )
+// }
 
 let seats = []
 const sr = ["A","B","C","D",]
@@ -80,21 +69,6 @@ for (const iterator of sc) {
 
 const App = () => {
   
-  const enterKey = function(e){
-    if (window.Event.KeyCode == 13){
-      console.log("으아앙")
-      // return (
-      //   <h1>엔터키다!</h1>
-      // )
-    }
-  }
-
-  function handleEvent(e){
-    e.preventDefault();
-    console.log("응애!")
-    // document.location.href = "./";
-  }
-
   return (
     <div className='App'>
       {/* <Seats /> */}
