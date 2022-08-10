@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MovieSelect from './components/Page/MovieSelect';
 import MovieDetail from './components/Page/MovieDetail';
+import Seats from './components/Page/Seats';
 
 const axios = require('axios').default;
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -54,9 +55,11 @@ root.render(
     <React.StrictMode>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<App />}></Route>
+          <Route exact path='/' element={<Seats />}></Route>
+          {/* <Route exact path='/' element={<App />}></Route> */}
           <Route path='/movies' element={<MovieSelect />}></Route>
           <Route path='/movies/:movieCode' element={<MovieDetail />}></Route>
+          {/* <Route path='/movies/:movieCode/seats' element={<Seats />}></Route> */}
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
