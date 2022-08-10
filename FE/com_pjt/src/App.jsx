@@ -113,9 +113,11 @@ const App = () => {
         </Routes>
       </BrowserRouter> */}
 
-      <Link to='/movies'><Button type='submit'>
+      <Link to='/movies'>
+        <Button type='submit'>
           <img src="https://play-lh.googleusercontent.com/pmWpm2WTx2-9dTGeAfU0LMyofNgPNZlbzbFhYxFm0c9BOaJl83jxoVQLxJcxThGiHxE" alt="" />
-        </Button></Link>
+        </Button>
+      </Link>
     </div>
   )
 }
