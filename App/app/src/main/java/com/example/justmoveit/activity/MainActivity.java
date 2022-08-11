@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.justmoveit.R;
 import com.example.justmoveit.fragment.BlankFragment;
+import com.kakao.auth.Session;
 
 import java.security.MessageDigest;
 import java.util.Map;
@@ -27,13 +28,25 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private ViewPagerFragment viewPagerFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        /*SharedPreferences.Editor editor1 = LoadingActivity.movieSP.edit();
+        SharedPreferences.Editor editor2 = LoadingActivity.userSP.edit();
+        editor1.remove("movie_list");
+        editor1.apply();
+
+        editor2.remove("user_name");
+        editor2.remove("user_email");
+        editor2.remove("user_img_url");
+        editor2.remove("user_age_range");
+        editor2.remove("user_gender");
+        editor2.remove("user_info");
+        editor2.remove("user_tickets");
+        editor2.apply();*/
 
         // 툴바 등록
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -62,8 +75,7 @@ public class MainActivity extends AppCompatActivity {
         Intent it = new Intent();
         // 프로필 클릭시 로그인 페이지 or 티켓 예매 내역 페이지
         if (item.getItemId() == R.id.profile) {
-            String session = userSP.getString("user_info", "");
-            if (session != null && !session.equals("")) {
+            if (Session.getCurrentSession().isOpened()) {
 //                Toast.makeText(this, "CurrentSession is opend ", Toast.LENGTH_SHORT).show();
                 it.setClassName("com.example.justmoveit", "com.example.justmoveit.activity.MyTicketListActivity");
             } else {

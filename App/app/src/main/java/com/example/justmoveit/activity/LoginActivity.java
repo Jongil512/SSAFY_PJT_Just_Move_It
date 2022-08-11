@@ -37,8 +37,7 @@ import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
-    private Context context;
-    private static final int PERMISSIONS_REQUEST_CODE = 1;
+    private static final int PERMISSIONS_REQUEST_CODE = 22;
 
     private final ISessionCallback mSessionCallback = new ISessionCallback() {
         @Override
@@ -66,6 +65,22 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, MyTicketListActivity.class);
                     UserAccount account = result.getKakaoAccount();
 
+                    if (chkPermission()) {
+                        // 휴대폰 정보는 TelephonyManager 를 이용
+                        TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+
+                        Toast.makeText(LoginActivity.this,"dfsdsvsdv", Toast.LENGTH_SHORT).show();
+                        // READ_PHONE_NUMBERS 또는 READ_PHONE_STATE 권한을 허가 받았는지 확인
+                        if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
+                                && ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                            return;
+                        }
+                        Toast.makeText(LoginActivity.this,"전화번호 : [ getLine1Number ] >>> " + tm.getLine1Number(), Toast.LENGTH_SHORT).show();
+
+                        editor.putString("phone_number", (tm.getLine1Number().equals("")?"01012345678":tm.getLine1Number()));
+                        editor.apply();
+                    }
+
                     User user = new User(account.getProfile().getProfileImageUrl(),
                             account.getProfile().getNickname(), account.getEmail(),
                             Objects.requireNonNull(account.getGender()).getValue(),
@@ -92,25 +107,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        context = this;
-
         editor = userSP.edit();
         Session.getCurrentSession().addCallback(mSessionCallback);
         Session.getCurrentSession().checkAndImplicitOpen();// 자동 로그인
-
-        if (!chkPermission()) {
-            // 휴대폰 정보는 TelephonyManager 를 이용
-            TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-
-            // READ_PHONE_NUMBERS 또는 READ_PHONE_STATE 권한을 허가 받았는지 확인
-            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(context, tm.getLine1Number() + "위험 권한 승인함 ", Toast.LENGTH_SHORT).show();
-                editor.putString("phone_number", tm.getLine1Number());
-                editor.apply();
-                Log.d(String.valueOf(LoginActivity.this), "전화번호 : [ getLine1Number ] >>> " + tm.getLine1Number());
-            }
-        }
 
     }
 
@@ -118,14 +117,14 @@ public class LoginActivity extends AppCompatActivity {
         // 위험 권한을 모두 승인했는지 여부
         boolean mPermissionsGranted = false;
         String[] mRequiredPermissions = new String[1];
-        // 사용자의 안드로이드 버전에 따라 권한을 다르게 요청합니다
+        // 승인 받기 위한 권한 목록
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // 11 이상인 경우
             mRequiredPermissions[0] = Manifest.permission.READ_PHONE_NUMBERS;
-        } else {
-            // 10 이하인 경우
+
+        }else{
             mRequiredPermissions[0] = Manifest.permission.READ_PRECISE_PHONE_STATE;
         }
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // 필수 권한을 가지고 있는지 확인한다.
@@ -142,6 +141,7 @@ public class LoginActivity extends AppCompatActivity {
 
         return mPermissionsGranted;
     }
+
 
     public boolean hasPermissions(String[] permissions) {
         // 필수 권한을 가지고 있는지 확인한다.
