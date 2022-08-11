@@ -6,7 +6,13 @@
     <!-- 인터넷 사용 권한 설정-->
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- 휴대폰 번호 권한 설정-->
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS "
+        android:maxSdkVersion="29" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <!-- android:requestLegacyExternalStorage="true" -->
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
