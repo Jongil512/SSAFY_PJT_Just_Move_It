@@ -44,7 +44,7 @@ public class Ticket implements Serializable {
         return ticketId;
     }
 
-    public void setId(Long ticketId) {
+    public void setTicketId(Long ticketId) {
         this.ticketId = ticketId;
     }
 

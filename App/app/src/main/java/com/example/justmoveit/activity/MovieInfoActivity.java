@@ -76,6 +76,7 @@ public class MovieInfoActivity extends AppCompatActivity {
 
         // 서버에서 movie 최신 정보 가져옴
         loadMovieDetails();
+
         // 뒤로가기 버튼 등록
         setImageBack();
 
@@ -84,10 +85,10 @@ public class MovieInfoActivity extends AppCompatActivity {
         List<String> timeList= new ArrayList<>();
         TimesAdapter timesAdapter = new TimesAdapter();
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
                 movie = gson.fromJson(movieSP.getString(movieId, ""), Movie.class);
 
                 layoutSliderIndicators = findViewById(R.id.layoutSliderIndicators);
@@ -109,8 +110,8 @@ public class MovieInfoActivity extends AppCompatActivity {
                 timesAdapter.setTimes(timeList, movie);
                 recyclerView.setAdapter(timesAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(MovieInfoActivity.this, RecyclerView.HORIZONTAL,false));
-            }
-        }, 500);
+//            }
+//        }, 100);
 
     }
 

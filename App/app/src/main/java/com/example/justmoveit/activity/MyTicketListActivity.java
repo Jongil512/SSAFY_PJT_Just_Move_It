@@ -109,14 +109,14 @@ public class MyTicketListActivity extends AppCompatActivity {
                 public void onResponse(Call<Ticket[]> call, Response<Ticket[]> response) {
                     Ticket[] ticketListFromServer = response.body();
 
-                    // 서버에 예매 이력이 없으면 종료
+                    // 서버에 예매 내역이 없으면 종료
                     if(ticketListFromServer==null || ticketListFromServer.length==0){
                         Log.e("getUserTicketsFromServer", "ticket list from server doesn't exist");
                         return;
                     }
                     Log.d("ConnectionThread - getUserTicketList", "onResponse()");
 
-                    // 서버에 이력이 있으면 추가함
+                    // 서버에 예매 내역이 있으면 추가함
                     ArrayList<ReservedTicket> finalTicketListFromPS = new ArrayList<>();
                     for (Ticket ticket : ticketListFromServer) {
                         finalTicketListFromPS.add(new ReservedTicket(ticket));
