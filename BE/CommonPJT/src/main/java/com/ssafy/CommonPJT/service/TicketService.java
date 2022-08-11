@@ -24,7 +24,7 @@ public class TicketService {
 
     // 티켓 추가
     @Transactional
-    public TicketResDto save(TicketSaveDto requestDto) {
+    public TicketResDto save(TicketSaveDto requestDto) throws IllegalArgumentException {
         Long moviePlayingInfoId = requestDto.getMoviePlayingInfoId();
         MoviePlayingInfo info = moviePlayingInfoRepository.findById(moviePlayingInfoId)
                 .orElseThrow(() -> new NoSuchElementException("존재하지 않는 값입니다."));
