@@ -7,13 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 //import android.widget.RatingBar;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.justmoveit.R;
+import com.example.justmoveit.activity.MainActivity;
 import com.example.justmoveit.activity.MovieInfoActivity;
+import com.example.justmoveit.activity.SeatActivity;
 import com.example.justmoveit.model.Movie;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
@@ -58,6 +61,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
                 context.startActivity(intent);
             }
         });
+        holder.reserveBtn.setOnClickListener(view -> {
+            Intent it = new Intent();
+            it.setClassName("com.example.justmoveit", "com.example.justmoveit.activity.SeatActivity");
+            context.startActivity(it);
+        });
     }
 
     @Override
@@ -68,6 +76,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     static class MovieViewHolder extends RecyclerView.ViewHolder {
         private final RoundedImageView imagePoster, innerShadow;
         private final TextView textName, starSymbol, ratingBarNum;
+        private final Button reserveBtn;
 
         // 레이아웃과 연결
         public MovieViewHolder(@NonNull View view) {
@@ -77,6 +86,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             textName = view.findViewById(R.id.textName);
             starSymbol = view.findViewById(R.id.star_symbol);
             ratingBarNum = view.findViewById(R.id.ratingBarNum);
+            reserveBtn = view.findViewById(R.id.reserve_button);
         }
 
         // 값 적용

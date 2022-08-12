@@ -27,6 +27,7 @@ import com.example.justmoveit.model.ReservedTicket;
 import com.example.justmoveit.model.Ticket;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.kakao.auth.Session;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -126,8 +127,6 @@ public class TicketingActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Todo: 로그인 되어있지 않으면 리다이렉트, 전화번호 없으면 입력하게 만들기
-
                // classification 저장
                 String classification = ReservedTicket.convertClassificationToString(clsf);
 
@@ -153,6 +152,18 @@ public class TicketingActivity extends AppCompatActivity {
                 }
                 Ticket ticket = new Ticket(0L, moviePlayingInfo.getId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
                         moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), "01052584112", classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
+
+
+                // Todo: 로그인 되어있지 않으면 리다이렉트, 전화번호 없으면 입력하게 만들기
+                if(!Session.getCurrentSession().isOpened()) {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+
+                String pn = userSP.getString("phone_number", "");
+                if(pn == null || pn.equals("")){
+                    // Todo: 전화번호 입력 액티비티???
+                }
 
 
                 // Todo: 로직 paymentActivity로 넘기기

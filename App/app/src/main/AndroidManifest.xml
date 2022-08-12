@@ -68,6 +68,10 @@
             android:name=".activity.PaymentActivity"
             android:exported="true"
             android:theme="@style/FullScreen" />
+        <activity
+            android:name=".activity.SeatActivity"
+            android:exported="true"
+            android:theme="@style/FullScreen" />
     </application>
 
 </manifest>
