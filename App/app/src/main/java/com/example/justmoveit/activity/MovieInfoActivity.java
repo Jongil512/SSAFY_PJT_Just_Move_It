@@ -31,6 +31,7 @@ import com.example.justmoveit.api.MovieApi;
 import com.example.justmoveit.model.Movie;
 import com.example.justmoveit.model.MoviePlayingInfo;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.squareup.picasso.Picasso;
 
@@ -43,6 +44,7 @@ import retrofit2.Response;
 
 public class MovieInfoActivity extends AppCompatActivity {
     private Movie movie;
+    private String rankBy;
     private LinearLayout layoutSliderIndicators;
     private ViewPager2 sliderViewPager;
     private Handler sliderHandler = new Handler();
@@ -52,6 +54,7 @@ public class MovieInfoActivity extends AppCompatActivity {
     private void loadMovieDetails(){
         Intent intent = getIntent();
         movieId = intent.getStringExtra("movie_id");
+        rankBy = intent.getStringExtra("rankBy");
 
         // 서버 통신 스레드 - movie id로 통신 -> 새로운 playinginfo 있으면 SP 저장
         ConnectionThread thread = new ConnectionThread(movieId);
@@ -89,27 +92,36 @@ public class MovieInfoActivity extends AppCompatActivity {
 //        handler.postDelayed(new Runnable() {
 //            @Override
 //            public void run() {
-                movie = gson.fromJson(movieSP.getString(movieId, ""), Movie.class);
 
-                layoutSliderIndicators = findViewById(R.id.layoutSliderIndicators);
-                RoundedImageView imgMoviePoster = findViewById(R.id.imageMoviePoster);
+        ArrayList<Movie> movies = gson.fromJson(movieSP.getString(rankBy, ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
 
-                // 영화 포스터 등록
-                Picasso.get().load(movie.getImg()).into(imgMoviePoster);
-                //영화 디테일 정보 등록
-                setDetail();
-                // 뷰 페이저 (서브 이미지) 등록
-                setupSliderViewPager();
-                // 뷰 페이저 하단 인디케이터 등록
-                setupSliderIndicators(5);
+        for(Movie m: movies){
+            String id = m.getMoviePlayingInfoByIndex(0).getMovieId()+"";
+            if(id.equals(movieId)){
+                movie = m;
+                break;
+            }
+        }
 
-                for(MoviePlayingInfo info: movie.getMoviePlayingInfoList()){
-                    timeList.add(info.getStartTime());
-                }
+        layoutSliderIndicators = findViewById(R.id.layoutSliderIndicators);
+        RoundedImageView imgMoviePoster = findViewById(R.id.imageMoviePoster);
 
-                timesAdapter.setTimes(timeList, movie);
-                recyclerView.setAdapter(timesAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(MovieInfoActivity.this, RecyclerView.HORIZONTAL,false));
+        // 영화 포스터 등록
+        Picasso.get().load(movie.getImg()).into(imgMoviePoster);
+        //영화 디테일 정보 등록
+        setDetail();
+        // 뷰 페이저 (서브 이미지) 등록
+        setupSliderViewPager();
+        // 뷰 페이저 하단 인디케이터 등록
+        setupSliderIndicators(5);
+
+        for(MoviePlayingInfo info: movie.getMoviePlayingInfoList()){
+            timeList.add(info.getStartTime());
+        }
+
+        timesAdapter.setTimes(timeList, movie);
+        recyclerView.setAdapter(timesAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(MovieInfoActivity.this, RecyclerView.HORIZONTAL,false));
 //            }
 //        }, 100);
 

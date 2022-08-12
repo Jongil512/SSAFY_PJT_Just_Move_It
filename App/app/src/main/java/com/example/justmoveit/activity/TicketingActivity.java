@@ -150,9 +150,6 @@ public class TicketingActivity extends AppCompatActivity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                Ticket ticket = new Ticket(0L, moviePlayingInfo.getId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
-                        moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), "01052584112", classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
-
 
                 // Todo: 로그인 되어있지 않으면 리다이렉트, 전화번호 없으면 입력하게 만들기
                 if(!Session.getCurrentSession().isOpened()) {
@@ -163,8 +160,11 @@ public class TicketingActivity extends AppCompatActivity {
                 String pn = userSP.getString("phone_number", "");
                 if(pn == null || pn.equals("")){
                     // Todo: 전화번호 입력 액티비티???
+
                 }
 
+                Ticket ticket = new Ticket(0L, moviePlayingInfo.getId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
+                        moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
 
                 // Todo: 로직 paymentActivity로 넘기기
                 // 서버에 넣음
@@ -291,7 +291,6 @@ public class TicketingActivity extends AppCompatActivity {
         }
 
         private void getReserveTicket() {
-            // 서버 통신을 위해 movieinfoid가 필요함, SP에 저장하기 위해서 movieid도 필요 근데 이건 플레잉 인포에 이미 있음
             UserTicketApi ticketService = UserTicketApi.retrofit.create(UserTicketApi.class);
             ticketService.reserveTicket(ticket).enqueue(new Callback<Ticket>() {
                 @Override
