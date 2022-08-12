@@ -48,6 +48,7 @@ public class MovieDetailDto {
 
     private String totalCustomer;
 
+    private List<MoviePlayingInfoResDto> moviePlayingInfoList = new ArrayList<>();
 
 
     public MovieDetailDto(Movie movie) {
@@ -70,5 +71,6 @@ public class MovieDetailDto {
         this.director = movie.getDirector();
         this.actor = movie.getActor();
         this.totalCustomer = movie.getTotalCustomer();
+        this.moviePlayingInfoList = movie.getMoviePlayingInfo().stream().map(MoviePlayingInfoResDto::new).collect(Collectors.toList());
     }
 }
