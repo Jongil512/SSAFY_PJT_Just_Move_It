@@ -7,7 +7,7 @@ let model, webcam, ctx, mlabelContainer, maxPredictions;
 let id = "A01";
 var direction = "";
 
-document.getElementById(id).focus();
+// document.getElementById(id).focus();
 
 function focus(direction) {
   let num = Number(id.charAt(2));
@@ -60,7 +60,7 @@ function focus(direction) {
         : (id = id.replace(String(num), String(num + 1)));
       break;
   }
-  document.getElementById(id).focus();
+  // document.getElementById(id).focus();
 }
 
 function sleep(sec) {
@@ -91,7 +91,7 @@ async function Pose() {
     // and class labels
     mlabelContainer.appendChild(document.createElement("div"));
   }
-  document.getElementById(id).focus();
+  // document.getElementById(id).focus();
 }
 
 async function loop() {
@@ -113,7 +113,7 @@ async function predict() {
 
     if (prediction[i].probability.toFixed(2) > 0.5) {
       direction = prediction[i].className;
-      document.getElementById("0").innerHTML = "Direction : " + direction;
+      // document.getElementById("0").innerHTML = "Direction : " + direction;
       focus(direction);
       await sleep(0.7);
     }
