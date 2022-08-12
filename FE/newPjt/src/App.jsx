@@ -8,13 +8,14 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-        <Pose></Pose>
         <Link to="./movies">
           <Button>평범한 ui로 이동하기</Button>
         </Link>
         <Link to="./low/movies">
           <Button>작은 ui로 이동하기</Button>
         </Link>
+
+        <Pose></Pose>
       </div>
     </div>
   );
