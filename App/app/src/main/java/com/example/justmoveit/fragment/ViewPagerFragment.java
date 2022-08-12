@@ -87,7 +87,7 @@ public class ViewPagerFragment extends Fragment {
             return;
         }
 
-        moviesViewPager.setAdapter(new MoviesAdapter(movies));
+        moviesViewPager.setAdapter(new MoviesAdapter(movies, rankBy));
     }
 
 }

@@ -1,25 +1,29 @@
 package com.example.justmoveit.activity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.justmoveit.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeatActivity extends AppCompatActivity implements View.OnClickListener {
-    ViewGroup layout;
+public class SeatFragment extends Fragment implements View.OnClickListener {
+    private TicketingActivity activity;
+    private ViewGroup rootView, layout;
 
     String seats = "_UUUUUUAAAAARRRR_/"
             + "_________________/"
@@ -48,16 +52,26 @@ public class SeatActivity extends AppCompatActivity implements View.OnClickListe
     String selectedIds = "";
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        activity = (TicketingActivity) getActivity();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seat);
 
-
-        layout = findViewById(R.id.layoutSeat);
+        rootView = (ViewGroup) inflater.inflate(R.layout.fragment_seat, container, false);
+        layout = rootView.findViewById(R.id.layoutSeat);
 
         seats = "/" + seats;
 
-        LinearLayout layoutSeat = new LinearLayout(this);
+        LinearLayout layoutSeat = new LinearLayout(activity);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         layoutSeat.setOrientation(LinearLayout.VERTICAL);
         layoutSeat.setLayoutParams(params);
@@ -70,12 +84,12 @@ public class SeatActivity extends AppCompatActivity implements View.OnClickListe
 
         for (int index = 0; index < seats.length(); index++) {
             if (seats.charAt(index) == '/') {
-                layout = new LinearLayout(this);
+                layout = new LinearLayout(activity);
                 layout.setOrientation(LinearLayout.HORIZONTAL);
                 layoutSeat.addView(layout);
             } else if (seats.charAt(index) == 'U') {
                 count++;
-                TextView view = new TextView(this);
+                TextView view = new TextView(activity);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(seatSize, seatSize);
                 layoutParams.setMargins(seatGaping, seatGaping, seatGaping, seatGaping);
                 view.setLayoutParams(layoutParams);
@@ -92,7 +106,7 @@ public class SeatActivity extends AppCompatActivity implements View.OnClickListe
                 view.setOnClickListener(this);
             } else if (seats.charAt(index) == 'A') {
                 count++;
-                TextView view = new TextView(this);
+                TextView view = new TextView(activity);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(seatSize, seatSize);
                 layoutParams.setMargins(seatGaping, seatGaping, seatGaping, seatGaping);
                 view.setLayoutParams(layoutParams);
@@ -109,7 +123,7 @@ public class SeatActivity extends AppCompatActivity implements View.OnClickListe
                 view.setOnClickListener(this);
             } else if (seats.charAt(index) == 'R') {
                 count++;
-                TextView view = new TextView(this);
+                TextView view = new TextView(activity);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(seatSize, seatSize);
                 layoutParams.setMargins(seatGaping, seatGaping, seatGaping, seatGaping);
                 view.setLayoutParams(layoutParams);
@@ -125,7 +139,7 @@ public class SeatActivity extends AppCompatActivity implements View.OnClickListe
                 seatViewList.add(view);
                 view.setOnClickListener(this);
             } else if (seats.charAt(index) == '_') {
-                TextView view = new TextView(this);
+                TextView view = new TextView(activity);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(seatSize, seatSize);
                 layoutParams.setMargins(seatGaping, seatGaping, seatGaping, seatGaping);
                 view.setLayoutParams(layoutParams);
@@ -134,6 +148,7 @@ public class SeatActivity extends AppCompatActivity implements View.OnClickListe
                 layout.addView(view);
             }
         }
+        return rootView;
     }
 
     @Override
@@ -147,9 +162,9 @@ public class SeatActivity extends AppCompatActivity implements View.OnClickListe
                 view.setBackgroundResource(R.drawable.selected_seat);
             }
         } else if ((int) view.getTag() == STATUS_BOOKED) {
-            Toast.makeText(this, "Seat " + view.getId() + " is Booked", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Seat " + view.getId() + " is Booked", Toast.LENGTH_SHORT).show();
         } else if ((int) view.getTag() == STATUS_RESERVED) {
-            Toast.makeText(this, "Seat " + view.getId() + " is Reserved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(activity, "Seat " + view.getId() + " is Reserved", Toast.LENGTH_SHORT).show();
         }
     }
 }

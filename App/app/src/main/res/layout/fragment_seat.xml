@@ -12,7 +12,8 @@
             android:id="@+id/layoutSeat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
