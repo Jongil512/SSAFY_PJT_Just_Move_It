@@ -14,7 +14,6 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -23,38 +22,57 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="0dp"
-            android:minHeight="80dp"
+            android:minHeight="60dp"
             android:theme="@style/Theme.JustMoveIt">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
-                <ImageView
-                    android:layout_width="120dp"
-                    android:layout_height="67dp"
-                    android:layout_marginVertical="15dp"
-                    android:contentDescription="@string/app_name"
-                    android:src="@drawable/logo_reverse_60" />
+<!--                <ImageView-->
+<!--                    android:layout_width="120dp"-->
+<!--                    android:layout_height="67dp"-->
+<!--                    android:layout_marginVertical="15dp"-->
+<!--                    android:contentDescription="@string/app_name"-->
+<!--                    android:src="@drawable/logo_reverse_60" />-->
 
-            </RelativeLayout>
+<!--            </RelativeLayout>-->
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
-        android:id="@+id/VP_container"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="100dp"
-        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        android:paddingVertical="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/VP_fragment"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:text="상영 중 영화"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <FrameLayout
+            android:id="@+id/VP_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="com.example.justmoveit.fragment.ViewPagerFragment"/>
+            app:layout_constraintTop_toBottomOf="@+id/app_bar">
 
-    </FrameLayout>
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/VP_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.example.justmoveit.fragment.ViewPagerFragment"/>
 
+        </FrameLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

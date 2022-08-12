@@ -2,10 +2,11 @@ package com.example.justmoveit.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RatingBar;
+//import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -65,24 +66,25 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     }
 
     static class MovieViewHolder extends RecyclerView.ViewHolder {
-        private final RoundedImageView imagePoster;
-        private final TextView textName, ratingBarNum;
-        private final RatingBar ratingBar;
+        private final RoundedImageView imagePoster, innerShadow;
+        private final TextView textName, starSymbol, ratingBarNum;
 
         // 레이아웃과 연결
         public MovieViewHolder(@NonNull View view) {
             super(view);
-            imagePoster = view.findViewById(R.id.imagePoster);
+            imagePoster = view.findViewById(R.id.image_poster);
+            innerShadow = view.findViewById(R.id.inner_shadow);
             textName = view.findViewById(R.id.textName);
-            ratingBar = view.findViewById(R.id.ratingBar);
+            starSymbol = view.findViewById(R.id.star_symbol);
             ratingBarNum = view.findViewById(R.id.ratingBarNum);
         }
 
         // 값 적용
         void setMovie(Movie movie) {
             Picasso.get().load(movie.getImg()).into(imagePoster);
+            Picasso.get().load(R.drawable.inner_shadow).into(innerShadow);
             textName.setText(movie.getTitle());
-            ratingBar.setRating(Float.parseFloat(movie.getRating()) / 2);
+            starSymbol.setText(Html.fromHtml("&#9733;"));
             ratingBarNum.setText((movie.getRating()));
         }
     }

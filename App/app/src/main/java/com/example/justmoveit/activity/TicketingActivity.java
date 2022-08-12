@@ -126,7 +126,9 @@ public class TicketingActivity extends AppCompatActivity {
                     return;
                 }
 
-                // classification 저장
+                // Todo: 로그인 되어있지 않으면 리다이렉트, 전화번호 없으면 입력하게 만들기
+
+               // classification 저장
                 String classification = ReservedTicket.convertClassificationToString(clsf);
 
                 // seat 저장
