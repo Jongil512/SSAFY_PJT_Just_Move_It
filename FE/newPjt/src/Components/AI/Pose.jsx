@@ -16,6 +16,7 @@ function Pose() {
 
   function focus(direction) {
     let num = Number(id.charAt(2));
+    console.log("방향" + direction);
     switch (direction) {
       case "stop":
         break;
@@ -23,7 +24,6 @@ function Pose() {
         document.getElementById(id).click();
         break;
       case "up":
-        console.log("up");
         switch (id.charAt(0)) {
           case "A":
             id = id.replace("A", "B");
@@ -66,7 +66,7 @@ function Pose() {
           : (id = id.replace(String(num), String(num + 1)));
         break;
     }
-    document.getElementById(id).focus();
+    // document.getElementById(id).focus();
   }
 
   function sleep(sec) {
@@ -119,7 +119,7 @@ function Pose() {
         direction = prediction[i].className;
         document.getElementById("0").innerHTML = "Direction : " + direction;
         focus(direction);
-        await sleep(0.7);
+        // await sleep(0.7);
       }
     }
     drawPose(pose);

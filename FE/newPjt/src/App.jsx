@@ -4,6 +4,8 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import Pose from "./Components/AI/Pose";
 
+import Face from "./Components/AI/Face";
+
 function App() {
   return (
     <div className="App">
@@ -15,7 +17,7 @@ function App() {
           <Button>작은 ui로 이동하기</Button>
         </Link>
 
-        <Pose></Pose>
+        <Face></Face>
       </div>
     </div>
   );
