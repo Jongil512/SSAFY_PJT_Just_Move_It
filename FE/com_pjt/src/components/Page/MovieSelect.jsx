@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Carousel } from '3d-react-carousal';
 import { Link, useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -30,15 +30,19 @@ let movie_title
 
 function MovieSelect(props) {
   
-  const movieTitle = useRef(null)
-  let slides = [];
-  let text_data = []
-  let movieCode
-  const dispatch = useDispatch()
+  // let { urlData } = movieCode
+  // const dispatch = useDispatch()
+  // urlData = 0
   
-  const moviesState = useSelector( (state) => state );
   // console.log(moviesState.movies)
   
+  const movieTitle = useRef(null)
+  // const movieCode = useRef(null)
+  let movieCode = '81888'
+  let slides = [];
+  let text_data = []
+  // let [movieCodeData, changeMovieCode] = useState('0')
+  const moviesState = useSelector( (state) => state );
   
   for (const iterator of moviesState.movies) {
     
@@ -46,27 +50,41 @@ function MovieSelect(props) {
     text_data.push( iterator['title'] )
   }
   
+
   const callback = function(index){
     movieTitle.current.innerText = text_data[index]
     movieCode = moviesState.movies[index]['movieCode']
-    console.log(typeof movieCode)
+    console.log(1,movieCode)
+    // console.log(movieCode)
+    // movieCode.current.innerText = movieCode
+    // console.log(movieCodeData)
+    // changeMovieCode(movieCode)
+    // movieCodeData = movieCode
+    // ()=>{changeMovieCode({movieCodeData})
+    // changeMovieCode({movieCode})
+    // console.log(2,movieCodeData)
   }
   
-  console.log(text_data)
+  // console.log(movie_code)
+
+  // console.log(text_data)
+  
+  // var bMovieCode = movieCode.bind();
 
   return (
     <div className='MovieSelect'>
 
       <Carousel slides={slides} arrows={false} autoplay={false} interval={1000} onSlideChange={ callback }/>
   
-        <div>
-  
-          <h1 ref={ movieTitle }></h1>
-          {/* <h1 ref={ movieCode }></h1> */}
-  
-            {/* <button>영화 선택</button> */}
-          <Link to= {`./${movieCode}`} ><Button color="secondary">영화 선택</Button></Link>
-  
+      <div>
+        <h1 ref={ movieTitle }></h1>
+
+          {/* <button>영화 선택</button> */}
+        <Link to={'./'+ movieCode}>
+          <Button color="secondary">
+            영화 선택
+          </Button>
+        </Link>
       </div>
     </div>
   )

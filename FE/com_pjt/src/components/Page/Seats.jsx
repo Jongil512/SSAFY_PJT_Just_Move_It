@@ -14,11 +14,64 @@ const seatsCatogory = [
       1,2,3,4,5,6,7,8,9,10,
       11,12,13,14,15,16,17,18,19,20,
     ],
-    occupied: [3,4,5,6,8,10,15,16,17,18,26,]
+    // occupied: [3,4,5,6,8,10,15,16,17,18,26,]
+    occupied: []
   }
 ];
 
+const occu = ['B01', 'B02', 'B03', 'B04', 'D03', 'D04', 'D05']
+
+// for (const iterator of occu) {
+//   let result = 0
+//   switch (iterator[0]) {
+//     case 'A':
+//       break;
+  
+//     case 'B':
+//       result += 5
+//       break;
+      
+//     case 'C':
+//       result += 5
+//       break;
+      
+//     case 'D':
+//       result += 5
+//       break;
+
+//     default:
+//       break;
+//   }
+//   console.log(result)
+// }
+
+
 function Seats() {
+  for (const iterator of occu) {
+    let result = 0
+    switch (iterator[0]) {
+      case 'A':
+        break;
+    
+      case 'B':
+        result = 5
+        break;
+        
+      case 'C':
+        result = 10
+        break;
+        
+      case 'D':
+        result = 15
+        break;
+  
+      default:
+        break;
+    }
+    result += Number(iterator.slice(1))
+    seatsCatogory[0]['occupied'].push(result)
+    // console.log(result)
+  }
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [selectedCatogory, setSelectedCatogory] = useState(null);
 
@@ -93,6 +146,7 @@ function Seats() {
             </div>
             );
         })}
+
     {/* <div className="total">
         <span> Seats Count: {selectedSeats.length}</span>{" "}
         <span>
@@ -100,6 +154,7 @@ function Seats() {
         {selectedCatogory ? selectedSeats.length * selectedCatogory.price : 0}
         </span>
     </div> */}
+
     </div>
   </div>
   )
