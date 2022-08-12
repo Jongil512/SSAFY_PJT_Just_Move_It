@@ -79,12 +79,9 @@ public class LoadingActivity extends Activity {
 
                     // SP에 저장
                     Gson gson = new Gson();
-                    int i=0;
                     for(Movie movie: movies) {
-                        if(i == 10)   break;
                         editor.putString(movie.getMoviePlayingInfoByIndex(0).getMovieId()+"", gson.toJson(movie));
                         Log.i("movieSP", movie.getMoviePlayingInfoByIndex(0).getMovieId()+"" + " 삽입");
-                        ++i;
                     }
                     editor.apply();
                     Log.i("movieSP", "모든 영화 삽입 완료");

@@ -65,6 +65,15 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, MyTicketListActivity.class);
                     UserAccount account = result.getKakaoAccount();
 
+                    User user = new User(account.getProfile().getProfileImageUrl(),
+                            account.getProfile().getNickname(), account.getEmail(),
+                            Objects.requireNonNull(account.getGender()).getValue(),
+                            account.getAgeRange().getValue());
+
+                    Gson gson = new Gson();
+                    editor.putString("user_info", gson.toJson(user));
+                    editor.apply();
+
                     if (chkPermission()) {
                         // 휴대폰 정보는 TelephonyManager 를 이용
                         TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
@@ -80,15 +89,6 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("phone_number", (tm.getLine1Number().equals("")?"01012345678":tm.getLine1Number()));
                         editor.apply();
                     }
-
-                    User user = new User(account.getProfile().getProfileImageUrl(),
-                            account.getProfile().getNickname(), account.getEmail(),
-                            Objects.requireNonNull(account.getGender()).getValue(),
-                            account.getAgeRange().getValue());
-
-                    Gson gson = new Gson();
-                    editor.putString("user_info", gson.toJson(user));
-                    editor.apply();
 
                     startActivity(intent);
                     finish();
