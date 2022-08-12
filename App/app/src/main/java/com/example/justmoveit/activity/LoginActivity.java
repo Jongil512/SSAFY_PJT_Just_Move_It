@@ -1,5 +1,6 @@
 package com.example.justmoveit.activity;
 
+import static com.example.justmoveit.activity.LoadingActivity.movieSP;
 import static com.example.justmoveit.activity.LoadingActivity.userSP;
 
 import android.Manifest;
@@ -19,6 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.justmoveit.R;
+import com.example.justmoveit.api.MovieApi;
+import com.example.justmoveit.model.Movie;
+import com.example.justmoveit.model.Recommend;
 import com.example.justmoveit.model.User;
 import com.google.gson.Gson;
 import com.kakao.auth.ApiResponseCallback;
@@ -33,7 +37,12 @@ import com.kakao.usermgmt.response.MeV2Response;
 import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.exception.KakaoException;
 
+import java.util.Arrays;
 import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
@@ -62,8 +71,34 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(MeV2Response result) {
                     // 로그인 성공
-                    Intent intent = new Intent(LoginActivity.this, MyTicketListActivity.class);
                     UserAccount account = result.getKakaoAccount();
+
+                    MovieApi service = MovieApi.retrofit.create(MovieApi.class);
+                    Recommend recommend = new Recommend(account.getAgeRange().getValue().split("~")[0], account.getGender().getValue());
+
+                    service.getMovieOrderedList(recommend).enqueue(new Callback<Movie[]>() {
+                        @Override
+                        public void onResponse(Call<Movie[]> call, Response<Movie[]> response) {
+                            Movie[] movies = response.body();
+                            if(!response.isSuccessful()) {
+                                Log.e("LoginActivity - getMovieOrderedList", "onResponse(): " + response.code());
+                                return;
+                            }
+                            if(movies == null){
+                                Log.e("LoginActivity - getMovieOrderedList", "onResponse(): there are no movies");
+                                return;
+                            }
+                            SharedPreferences.Editor editor2 = movieSP.edit();
+                            Gson gson = new Gson();
+                            editor2.putString("my_ranking", gson.toJson(Arrays.asList(movies)));
+                            editor2.apply();
+                        }
+
+                        @Override
+                        public void onFailure(Call<Movie[]> call, Throwable t) {
+                            Log.e("LoginActivity - getMovieOrderedList", "onFailure(): " + t.getMessage());
+                        }
+                    });
 
                     User user = new User(account.getProfile().getProfileImageUrl(),
                             account.getProfile().getNickname(), account.getEmail(),
@@ -71,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                             account.getAgeRange().getValue());
 
                     Gson gson = new Gson();
+                    editor = userSP.edit();
                     editor.putString("user_info", gson.toJson(user));
                     editor.apply();
 
@@ -90,9 +126,9 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
                     }
 
-                    startActivity(intent);
                     finish();
                 }
+
             });
         }
 
@@ -120,11 +156,9 @@ public class LoginActivity extends AppCompatActivity {
         // 승인 받기 위한 권한 목록
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             mRequiredPermissions[0] = Manifest.permission.READ_PHONE_NUMBERS;
-
         }else{
             mRequiredPermissions[0] = Manifest.permission.READ_PRECISE_PHONE_STATE;
         }
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // 필수 권한을 가지고 있는지 확인한다.
