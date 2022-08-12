@@ -11,7 +11,8 @@ function Pose() {
   var direction = " ";
 
   voice();
-  document.getElementById(id).focus();
+  motion();
+  //document.getElementById(id).focus();
 
   function focus(direction) {
     let num = Number(id.charAt(2));
