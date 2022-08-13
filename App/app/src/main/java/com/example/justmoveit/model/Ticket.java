@@ -9,7 +9,6 @@ import java.util.TimeZone;
 
 // 서버 통신 dto
 public class Ticket implements Serializable {
-    @SerializedName("id")
     private Long ticketId;
     private Long moviePlayingInfoId;
     private Long movieId;

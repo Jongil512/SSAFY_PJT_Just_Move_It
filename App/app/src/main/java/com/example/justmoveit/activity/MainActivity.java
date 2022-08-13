@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         // 로그인되어 있으면 마이 랭킹 켜고 일반 랭킹 끄기
-        if(Session.getCurrentSession().isOpened()){
+        if(Session.getCurrentSession().isOpened() && movieSP.getString("my_ranking","") != null){
             myRanking.setVisibility(View.VISIBLE);
             myRanking.performClick();
         } else if (movieSP.getString("general_ranking","") != null && !movieSP.getString("general_ranking","").equals("")) {
