@@ -1,16 +1,16 @@
 import React from "react";
 import * as tmPose from "@teachablemachine/pose";
-import * as speechCommands from "@tensorflow-models/speech-commands";
+// import * as speechCommands from "@tensorflow-models/speech-commands";
 
 function Pose() {
   const mURL = "https://teachablemachine.withgoogle.com/models/9zONllPHx/";
-  const vURL = "https://teachablemachine.withgoogle.com/models/wkbINqRdV/";
+  // const vURL = "https://teachablemachine.withgoogle.com/models/wkbINqRdV/";
 
   let model, webcam, ctx, mlabelContainer, maxPredictions;
   var id = "A01";
   var direction = " ";
 
-  voice();
+  // voice();
   motion();
   //document.getElementById(id).focus();
 
