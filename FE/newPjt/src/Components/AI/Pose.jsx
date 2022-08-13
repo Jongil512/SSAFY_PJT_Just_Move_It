@@ -3,7 +3,7 @@ import * as tmPose from "@teachablemachine/pose";
 // import * as speechCommands from "@tensorflow-models/speech-commands";
 
 function Pose() {
-  const mURL = "https://teachablemachine.withgoogle.com/models/9zONllPHx/";
+  const mURL = "https://teachablemachine.withgoogle.com/models/8pmvwt-v8/";
   // const vURL = "https://teachablemachine.withgoogle.com/models/wkbINqRdV/";
 
   let model, webcam, ctx, mlabelContainer, maxPredictions;
@@ -206,7 +206,6 @@ function Pose() {
         <canvas id="canvas"></canvas>
       </div>
       <div id="m-label-container"></div>
-      <div id="v-label-container"></div>
       <div id="0"></div>
     </div>
   );
