@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!--
+th:with 为变量定义
+@{} 如果要是用变量，就要是用 ||, 例如 @{|${var}|}
+-->
+<div th:fragment="application-header" th:remove="tag" th:with="jqueryVersion=3.3.1, bootstrapVersion=4.1.3, JS_COMMON='/js/common'">
+    <meta charset="UTF-8">
+
+    <!--This JQuery javascript put on the first line-->
+    <script type='text/javascript' th:src= "@{|/webjars/jquery/${jqueryVersion}/jquery.js|}"></script>
+    <script type='text/javascript' th:src= "@{|/webjars/bootstrap/${bootstrapVersion}/js/bootstrap.js|}"></script>
+    <link rel="stylesheet"         th:href="@{|/webjars/bootstrap/${bootstrapVersion}/css/bootstrap.css|}" />
+
+    <script type='text/javascript' th:src= "@{|${JS_COMMON}/bootbox.min.js|}"></script>
+    <script type='text/javascript' th:src= "@{|${JS_COMMON}/bootstrap-datepicker.js|}"></script>
+    <script type='text/javascript' th:src= "@{|${JS_COMMON}/bootstrap-select.js|}"></script>
+    <script type='text/javascript' th:src= "@{|${JS_COMMON}/bootstrap-toggle.js|}"></script>
+    <script type='text/javascript' th:src= "@{|${JS_COMMON}/jquery.simple.websocket.min.js|}"></script>
+    <link rel="stylesheet"         th:href="@{|${JS_COMMON}/bootstrap-toggle.min.css|}" type="text/css" />
+
+    <script type='text/javascript' th:src="@{/js/grobal.js}"></script>
+    <title>Bootstrap</title>
+    <!--
+    subpage is calling parameter, if ${subpage} is null, then not display
+    利用 div + th:if + th:remove 可以完美引入整块
+    -->
+    <div th:if="${not #strings.isEmpty(subpage)}" th:remove="tag">
+    <link rel="stylesheet" type="text/css" th:href="@{|/css/${subpage}.css|}" />
+    <script type='text/javascript' th:src="@{|/js/${subpage}.js|}"></script>
+    </div>
+</div>
+</head>
+<body>
+
+<div id="thisIsTestBootStrapSelector" th:remove="tag">
+<p>Hello, this is in test bootstrap selector, 这里没有声明 fragment 但依然能引入其他得div</p>
+</div>
+
+
+</body>
+</html>
