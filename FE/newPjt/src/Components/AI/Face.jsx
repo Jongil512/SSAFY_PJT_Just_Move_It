@@ -53,24 +53,39 @@ function Face() {
 
         faceapi.matchDimensions(canvasRef.current, displaySize);
 
+        // const detections = await faceapi
+        //   .detectAllFaces(
+        //     videoRef.current,
+        //     new faceapi.TinyFaceDetectorOptions()
+        //   )
+        //   .withFaceLandmarks()
+        //   .withFaceExpressions()
+        //   .withAgeAndGender()
+        //   .withFaceDescriptors();
+
         const detections = await faceapi
-          .detectAllFaces(
+          .detectSingleFace(
             videoRef.current,
             new faceapi.TinyFaceDetectorOptions()
           )
           .withFaceLandmarks()
           .withFaceExpressions()
           .withAgeAndGender()
-          .withFaceDescriptors();
+          .withFaceDescriptor();
 
         const resizedDetections = faceapi.resizeResults(
           detections,
           displaySize
         );
-        const age = resizedDetections[0].age;
+        const age = resizedDetections.age;
         console.log(age + "나이");
-        const gender = resizedDetections[0].gender;
+        const gender = resizedDetections.gender;
         console.log(gender + "성별");
+
+        // const age1 = resizedDetections[1].age;
+        // console.log(age + "나이 2");
+        // const gender1 = resizedDetections[1].gender;
+        // console.log(gender + "성별 2");
 
         // react로 어떻게 바꾸지 ㅠ
         // resizedDetections.forEach((detection) => {
