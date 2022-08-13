@@ -2,10 +2,10 @@
 import "./App.css";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import Pose from "./Components/AI/Pose";
-import Voice from "./Components/AI/Voice";
+//import Pose from "./Components/AI/Pose";
+//import Voice from "./Components/AI/Voice";
 
-// import Face from "./Components/AI/Face";
+import Face from "./Components/AI/Face";
 
 function App() {
   return (
