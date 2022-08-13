@@ -1,8 +1,18 @@
-// import React from "react";
+import React from "react";
+import { initSocketConnection ,disconnectSocket} from "../socketio"
 
-// function Socket() {
-//   return (
+function Socket() {
 
-//   );
-// }
-// export default Socket;
+    useEffect(() => {
+  initSocketConnection();
+  
+  return () => {
+    disconnectSocket();
+  }
+    }, []);
+    
+  return (
+
+  );
+}
+export default Socket;
