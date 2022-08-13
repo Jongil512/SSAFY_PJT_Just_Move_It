@@ -9,7 +9,7 @@ function MovieSelectLow() {
       <Link to="./1">
         <Button>영화 선택</Button>
       </Link>
-      <Voice />
+      <Voice></Voice>
     </div>
   );
 }
