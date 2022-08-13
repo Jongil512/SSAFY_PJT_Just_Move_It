@@ -45,6 +45,13 @@ public class MovieController {
         return new ResponseEntity<>(movieService.findOne(id), HttpStatus.OK);
     }
 
+    @ApiOperation(value = "영화 정보(영화코드)", notes = "영화 코드에 따른 영화정보를 출력한다.")
+    @GetMapping("/{movieCode}")
+    public ResponseEntity<MovieDetailDto> getMovieByMovieCode(@PathVariable String movieCode) {
+        log.info("영화코드에 따른 영화정보를 출력합니다.");
+        return new ResponseEntity<>(movieService.findByMovieCode(movieCode), HttpStatus.OK);
+    }
+
     @ApiOperation(value = "영화 정보 삭제", notes = "영화 정보를 삭제합니다.")
     @DeleteMapping("/{movieId}")
     public void deleteMovieById(@PathVariable Long movieId) {
