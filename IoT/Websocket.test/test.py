@@ -1,6 +1,4 @@
 from socket import *
-from select import select
-import sys
 import time
 from websocket import create_connection
 
@@ -9,14 +7,19 @@ def sendmessage(msg):
     try:
         ws = create_connection("ws://localhost:8081/api/socket")
 
-        while 1:
+        # while 1:
+        #     time.sleep(1)
+        #     print("Sending")
+        #     ws.send("/print")
+        #     # ws.close()
+        #     ret = ws.recv()
+        #     print(ret)
+        #     if ret == "done": break
+
+        for _ in range(0, 10):
             time.sleep(1)
-            print("Sending")
-            ws.send("print")
-            # ws.close()
-            ret = ws.recv()
-            print(ret)
-            if ret == "done": break
+            ws.send("/print")
+            print(ws.recv())
 
         ws.close()
     except Exception as e:
