@@ -3,7 +3,7 @@ import * as tmPose from "@teachablemachine/pose";
 // import * as speechCommands from "@tensorflow-models/speech-commands";
 
 function Pose() {
-  const mURL = "https://teachablemachine.withgoogle.com/models/9zONllPHx/";
+  const mURL = "https://teachablemachine.withgoogle.com/models/8pmvwt-v8/";
   // const vURL = "https://teachablemachine.withgoogle.com/models/wkbINqRdV/";
 
   let model, webcam, ctx, mlabelContainer, maxPredictions;
@@ -21,7 +21,7 @@ function Pose() {
       case "stop":
         break;
       case "click":
-        document.getElementById(id).click();
+        // document.getElementById(id).click();
         break;
       case "up":
         switch (id.charAt(0)) {
@@ -69,9 +69,9 @@ function Pose() {
     // document.getElementById(id).focus();
   }
 
-  // function sleep(sec) {
-  //   return new Promise((resolve) => setTimeout(resolve, sec * 1000));
-  // }
+  function sleep(sec) {
+    return new Promise((resolve) => setTimeout(resolve, sec * 1000));
+  }
 
   async function motion() {
     const modelURL = mURL + "model.json";
@@ -84,10 +84,8 @@ function Pose() {
     const flip = true;
 
     webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
-
     await webcam.setup(); // request access to the webcam
     await webcam.play();
-
     window.requestAnimationFrame(loop);
 
     const canvas = document.getElementById("canvas");
@@ -142,6 +140,7 @@ function Pose() {
   return (
     <div className="Pose">
       <div id={id}>ddd</div>
+      <div id="root"></div>
       <div>
         <canvas id="canvas"></canvas>
       </div>
