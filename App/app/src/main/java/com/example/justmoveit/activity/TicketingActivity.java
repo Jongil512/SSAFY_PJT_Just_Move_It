@@ -19,7 +19,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.justmoveit.R;
-import com.example.justmoveit.api.MovieApi;
 import com.example.justmoveit.api.UserTicketApi;
 import com.example.justmoveit.model.Movie;
 import com.example.justmoveit.model.MoviePlayingInfo;
@@ -35,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.TimeZone;
 
@@ -67,7 +65,7 @@ public class TicketingActivity extends AppCompatActivity {
         // 영화 상영 정보
         MoviePlayingInfo[] infos = movie.getMoviePlayingInfoList();
         for(MoviePlayingInfo info: infos){
-            String str = info.getId() + "";
+            String str = info.getMoviePlayingInfoId() + "";
             if(moviePlayingInfoId.equals(str)){
                 moviePlayingInfo = info;
                 break;
@@ -163,7 +161,7 @@ public class TicketingActivity extends AppCompatActivity {
 
                 }
 
-                Ticket ticket = new Ticket(0L, moviePlayingInfo.getId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
+                Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
                         moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
 
                 // Todo: 로직 paymentActivity로 넘기기
