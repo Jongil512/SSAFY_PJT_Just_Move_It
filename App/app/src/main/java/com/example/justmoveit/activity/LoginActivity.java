@@ -34,6 +34,8 @@ import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
+import com.kakao.usermgmt.response.model.AgeRange;
+import com.kakao.usermgmt.response.model.Gender;
 import com.kakao.usermgmt.response.model.UserAccount;
 import com.kakao.util.exception.KakaoException;
 
@@ -74,36 +76,40 @@ public class LoginActivity extends AppCompatActivity {
                     UserAccount account = result.getKakaoAccount();
 
                     MovieApi service = MovieApi.retrofit.create(MovieApi.class);
-                    Recommend recommend = new Recommend(account.getAgeRange().getValue().split("~")[0], account.getGender().getValue());
+                    AgeRange age = account.getAgeRange();
+                    Gender gender = account.getGender();
 
-                    service.getMovieOrderedList(recommend).enqueue(new Callback<Movie[]>() {
-                        @Override
-                        public void onResponse(Call<Movie[]> call, Response<Movie[]> response) {
-                            Movie[] movies = response.body();
-                            if(!response.isSuccessful()) {
-                                Log.e("LoginActivity - getMovieOrderedList", "onResponse(): " + response.code());
-                                return;
+                    if(age!=null && gender!=null) {
+                        Recommend recommend = new Recommend(age.getValue().split("~")[0], gender.getValue());
+                        service.getMovieOrderedList(recommend).enqueue(new Callback<Movie[]>() {
+                            @Override
+                            public void onResponse(Call<Movie[]> call, Response<Movie[]> response) {
+                                Movie[] movies = response.body();
+                                if (!response.isSuccessful()) {
+                                    Log.e("LoginActivity - getMovieOrderedList", "onResponse(): " + response.code());
+                                    return;
+                                }
+                                if (movies == null) {
+                                    Log.e("LoginActivity - getMovieOrderedList", "onResponse(): there are no movies");
+                                    return;
+                                }
+                                SharedPreferences.Editor editor2 = movieSP.edit();
+                                Gson gson = new Gson();
+                                editor2.putString("my_ranking", gson.toJson(Arrays.asList(movies)));
+                                editor2.apply();
                             }
-                            if(movies == null){
-                                Log.e("LoginActivity - getMovieOrderedList", "onResponse(): there are no movies");
-                                return;
-                            }
-                            SharedPreferences.Editor editor2 = movieSP.edit();
-                            Gson gson = new Gson();
-                            editor2.putString("my_ranking", gson.toJson(Arrays.asList(movies)));
-                            editor2.apply();
-                        }
 
-                        @Override
-                        public void onFailure(Call<Movie[]> call, Throwable t) {
-                            Log.e("LoginActivity - getMovieOrderedList", "onFailure(): " + t.getMessage());
-                        }
-                    });
+                            @Override
+                            public void onFailure(Call<Movie[]> call, Throwable t) {
+                                Log.e("LoginActivity - getMovieOrderedList", "onFailure(): " + t.getMessage());
+                            }
+                        });
+                    }
 
                     User user = new User(account.getProfile().getProfileImageUrl(),
                             account.getProfile().getNickname(), account.getEmail(),
-                            Objects.requireNonNull(account.getGender()).getValue(),
-                            account.getAgeRange().getValue());
+                            gender==null? "null": gender.getValue(),
+                            age==null? "null": age.getValue());
 
                     Gson gson = new Gson();
                     editor = userSP.edit();
@@ -114,7 +120,7 @@ public class LoginActivity extends AppCompatActivity {
                         // 휴대폰 정보는 TelephonyManager 를 이용
                         TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
-                        Toast.makeText(LoginActivity.this,"dfsdsvsdv", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this,"checkPermision", Toast.LENGTH_SHORT).show();
                         // READ_PHONE_NUMBERS 또는 READ_PHONE_STATE 권한을 허가 받았는지 확인
                         if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
                                 && ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
@@ -122,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         Toast.makeText(LoginActivity.this,"전화번호 : [ getLine1Number ] >>> " + tm.getLine1Number(), Toast.LENGTH_SHORT).show();
 
-                        editor.putString("phone_number", (tm.getLine1Number().equals("")?"01012345678":tm.getLine1Number()));
+                        editor.putString("phone_number", (tm.getLine1Number().equals("")? "01012345678": tm.getLine1Number()));
                         editor.apply();
                     }
 
