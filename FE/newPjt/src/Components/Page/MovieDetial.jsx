@@ -14,12 +14,9 @@ const style = {
   p: 4,
 };
 
-function MovieDetail() {
-  // const movie_code = window.location.href
-  // console.log(movie_code)
-  // console.log(window.location.href.slice[-1])
-
+function MovieDetail(props) {
   const navigate = useNavigate();
+  const axios = require("axios").default;
 
   const goBack = () => {
     navigate(-1);
@@ -27,11 +24,23 @@ function MovieDetail() {
 
   let juso = window.location.href.split("/");
   const movie_code = juso.slice(-1);
-  console.log(movie_code);
+  // console.log(movie_code[0]);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  // console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
+  // axios
+  //   .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
+  //   .catch(function (err) {
+  //     console.log(err, "movies 데이터x");
+  //   })
+  //   .then(function (response) {
+  //     // 성공 핸들링
+  //     console.log(response.data);
+  //     const info_data = response.data;
+  //   });
 
   return (
     <div className="MovieDetail">
