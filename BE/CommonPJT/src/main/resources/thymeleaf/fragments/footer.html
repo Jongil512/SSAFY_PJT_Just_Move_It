@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<div th:fragment="footer">
+    <div id="DIV_ERROR_BOX"></div>
+
+    <input type="hidden" id="hid_txt_err_shutdown" th:value="#{system.error.shutdown}" />
+    <input type="hidden" id="hid_txt_language" th:value="${local_language}" />
+</div>
+</body>
+</html>
