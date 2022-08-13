@@ -53,7 +53,7 @@ public class MovieController {
     }
 
     @ApiOperation(value = "영화 정보 삭제", notes = "영화 정보를 삭제합니다.")
-    @DeleteMapping("/{movieId}")
+    @DeleteMapping("/movieCode/{movieId}")
     public void deleteMovieById(@PathVariable Long movieId) {
         movieService.deleteById(movieId);
     }
