@@ -14,7 +14,7 @@ import org.springframework.web.socket.WebSocketSession;
 
 public class SocketController {
 //    @GetMapping("/socket/print")
-    @MessageMapping("/print")
+    @GetMapping("/print")
     public String chatGET(){
         System.out.println("receive: ");
         //return "socket";
