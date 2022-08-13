@@ -1,3 +1,4 @@
+import { VideoFile } from "@mui/icons-material";
 import * as faceapi from "face-api.js";
 import React from "react";
 
@@ -121,6 +122,7 @@ function Face() {
     videoRef.current.pause();
     videoRef.current.srcObject.getTracks()[0].stop();
     setCaptureVideo(false);
+    //let video = videoRef.current;
   };
 
   return (

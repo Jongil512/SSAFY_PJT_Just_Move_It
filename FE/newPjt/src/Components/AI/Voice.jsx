@@ -2,28 +2,9 @@ import React from "react";
 import * as speechCommands from "@tensorflow-models/speech-commands";
 
 function Voice() {
-  const a = window.location.href;
-  console.log(a);
   const vURL = "https://teachablemachine.withgoogle.com/models/wkbINqRdV/";
 
   voice();
-
-  async function createModel() {
-    const checkpointURL = vURL + "model.json"; // model topology
-    const v_metadataURL = vURL + "metadata.json"; // model metadata
-
-    const recognizer = speechCommands.create(
-      "BROWSER_FFT", // fourier transform type, not useful to change
-      undefined, // speech commands vocabulary feature, not useful for your models
-      checkpointURL,
-      v_metadataURL
-    );
-    // check that model and metadata are loaded via HTTPS requests.
-
-    await recognizer.ensureModelLoaded();
-
-    return recognizer;
-  }
 
   async function voice() {
     const recognizer = await createModel();
@@ -67,6 +48,22 @@ function Voice() {
         overlapFactor: 0.5, // probably want between 0.5 and 0.75. More info in README
       }
     );
+  }
+  async function createModel() {
+    const checkpointURL = vURL + "model.json"; // model topology
+    const v_metadataURL = vURL + "metadata.json"; // model metadata
+
+    const recognizer = speechCommands.create(
+      "BROWSER_FFT", // fourier transform type, not useful to change
+      undefined, // speech commands vocabulary feature, not useful for your models
+      checkpointURL,
+      v_metadataURL
+    );
+    // check that model and metadata are loaded via HTTPS requests.
+
+    await recognizer.ensureModelLoaded();
+
+    return recognizer;
   }
 
   return (
