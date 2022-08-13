@@ -1,13 +1,9 @@
 import React from "react";
 
 function Seats() {
-    const a = window.location.href
-    console.log(a)
-    
-    return(
-        <div className="Seats">
+  const a = window.location.href;
+  console.log(a);
 
-        </div>
-    );
+  return <div className="Seats"></div>;
 }
-export default Seats
+export default Seats;

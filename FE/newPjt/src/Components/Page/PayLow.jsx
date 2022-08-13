@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
-function Pay() {
+function PayLow() {
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -10,7 +10,7 @@ function Pay() {
   };
 
   return (
-    <div className="Pay">
+    <div className="PayLow">
       <h1>여기는 결제창 입니다</h1>
       {/* <Link to='/movies'></Link> */}
       <Button onClick={goBack}>결제 취소하기</Button>
@@ -18,4 +18,4 @@ function Pay() {
     </div>
   );
 }
-export default Pay;
+export default PayLow;
