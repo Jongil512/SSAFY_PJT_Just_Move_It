@@ -2,7 +2,7 @@ import React from "react";
 import * as speechCommands from "@tensorflow-models/speech-commands";
 
 function Voice() {
-  const vURL = "https://teachablemachine.withgoogle.com/models/wkbINqRdV/";
+  const vURL = "https://teachablemachine.withgoogle.com/models/a61Ml39F9/";
 
   voice();
 
