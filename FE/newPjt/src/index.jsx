@@ -33,7 +33,6 @@ root.render(
         element={<PayendLow />}
       ></Route>
     </Routes>
-    {/* <App /> */}
   </BrowserRouter>
 );
 
