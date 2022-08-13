@@ -17,7 +17,6 @@ function App() {
         <Link to="./low/movies">
           <Button>작은 ui로 이동하기</Button>
         </Link>
-
         <Face></Face>
         <Voice></Voice>
         <Pose></Pose>

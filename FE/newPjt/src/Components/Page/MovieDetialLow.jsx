@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Modal, Box, Pagination } from "@mui/material";
+import { Button, Modal, Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 
 const style = {
