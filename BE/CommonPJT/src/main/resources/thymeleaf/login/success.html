@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: application-header"/>
+</head>
+<body>
+<div>
+    欢迎&nbsp;[[${session.loginUser}]]
+</div>
+<div th:replace="fragments/footer :: footer"/>
+</body>
+</html>
