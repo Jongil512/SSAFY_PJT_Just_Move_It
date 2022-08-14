@@ -5,19 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fbf1147-5686-48bd-92ea-10287dc15d16" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/error/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/error/417.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/error/5xx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/fragments/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/fragments/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/login/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/login/success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/result01.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/result02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/resources/thymeleaf/socket/textWebSocket.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ssafy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ssafy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
@@ -26,18 +13,19 @@
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/build/classes/java/main/com/ssafy/CommonPJT/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/build/classes/java/main/com/ssafy/CommonPJT/domain/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/build/classes/java/main/com/ssafy/CommonPJT/service/MoviePlayingInfoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/build/classes/java/main/com/ssafy/CommonPJT/service/MoviePlayingInfoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/build/classes/java/main/com/ssafy/CommonPJT/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/build/classes/java/main/com/ssafy/CommonPJT/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/logs/spring.log" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/logs/spring.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/logs/spring.log.2022-08-05.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/config/socketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/config/socketConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/controller/SocketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/controller/SocketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/config/socketREConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/config/socketRPConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/controller/SocketController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/controller/SocketREController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/controller/SocketRPController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/handler/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/handler/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/handler/HandlerForRE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BE/CommonPJT/src/main/java/com/ssafy/CommonPJT/handler/HandlerForRP.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/IoT/Websocket.test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/IoT/Websocket.test/test.py" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,38 +35,41 @@
     <session id="-603841428">
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="893" />
+          <entry key="py" value="1193" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="893" />
+          <entry key="Python" value="1193" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="7" />
+          <entry key="py" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="7" />
+          <entry key="Python" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/IoT/Websocket.test/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+            <state relative-caret-position="323">
+              <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -99,9 +90,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1083" />
-    <option name="width" value="844" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectId" id="2CPgeQuXWwXcKfQ4geH1B0s7Onm" />
@@ -227,26 +218,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="867" y="0" width="675" height="830" extended-state="0" />
+    <frame x="-6" y="0" width="781" height="830" extended-state="0" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23197491" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32954547" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4957265" weight="0.16290322" />
+      <window_info id="Structure" order="1" sideWeight="0.50319827" side_tool="true" weight="0.16129032" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3275862" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3275862" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39367816" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32954547" />
+      <window_info anchor="bottom" id="Python Console" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -279,15 +273,15 @@
     </entry>
     <entry file="file://$USER_HOME$/venv/Lib/site-packages/websocket/_core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="594" selection-start-line="594" selection-end-line="594" />
+        <state relative-caret-position="11267">
+          <caret line="593" selection-start-line="593" selection-end-line="593" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IoT/Websocket.test/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        <state relative-caret-position="323">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

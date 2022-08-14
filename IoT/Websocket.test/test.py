@@ -1,26 +1,28 @@
 from socket import *
-from select import select
-import sys
-import time
 from websocket import create_connection
 
-
-def sendmessage(msg):
+# raspberry
+def sendmessage(data):
     try:
         ws = create_connection("ws://localhost:8081/api/socket")
+        # 연결됨
+        connected = ws.recv()
 
-        while 1:
-            time.sleep(1)
-            print("Sending")
-            ws.send("print")
-            # ws.close()
-            ret = ws.recv()
-            print(ret)
-            if ret == "done": break
+        if connected == 'all_connected':
+            while 1:
+                # 초음파 측정????
+                # 메세지 보냄
+                ws.send(data)
+                # 재전송 요청 받음?
+                ret = ws.recv()
+                if ret == 'done':
+                    print("초음파 종료")
+                    break
 
         ws.close()
+
     except Exception as e:
         print(e)
 
 if __name__ == "__main__":
-    sendmessage('fuck off')
+    sendmessage("파이참!!!")
