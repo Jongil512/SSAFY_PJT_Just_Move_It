@@ -23,11 +23,11 @@ public class MoviePlayingInfo implements Serializable {
         this.tickets = tickets;
     }
 
-    public Long getId() {
+    public Long getMoviePlayingInfoId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setMoviePlayingInfoId(Long id) {
         this.id = id;
     }
 

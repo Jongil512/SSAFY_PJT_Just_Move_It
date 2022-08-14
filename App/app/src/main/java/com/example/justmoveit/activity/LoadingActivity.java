@@ -12,6 +12,8 @@ import com.example.justmoveit.api.MovieApi;
 import com.example.justmoveit.model.Movie;
 import com.google.gson.Gson;
 
+import java.util.Arrays;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -79,13 +81,7 @@ public class LoadingActivity extends Activity {
 
                     // SP에 저장
                     Gson gson = new Gson();
-                    int i=0;
-                    for(Movie movie: movies) {
-                        if(i == 10)   break;
-                        editor.putString(movie.getMoviePlayingInfoByIndex(0).getMovieId()+"", gson.toJson(movie));
-                        Log.i("movieSP", movie.getMoviePlayingInfoByIndex(0).getMovieId()+"" + " 삽입");
-                        ++i;
-                    }
+                    editor.putString("general_ranking", gson.toJson(Arrays.asList(movies)));
                     editor.apply();
                     Log.i("movieSP", "모든 영화 삽입 완료");
                 }

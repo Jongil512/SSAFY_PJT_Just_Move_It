@@ -19,7 +19,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.justmoveit.R;
-import com.example.justmoveit.api.MovieApi;
 import com.example.justmoveit.api.UserTicketApi;
 import com.example.justmoveit.model.Movie;
 import com.example.justmoveit.model.MoviePlayingInfo;
@@ -27,6 +26,7 @@ import com.example.justmoveit.model.ReservedTicket;
 import com.example.justmoveit.model.Ticket;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.kakao.auth.Session;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -34,7 +34,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.TimeZone;
 
@@ -66,7 +65,7 @@ public class TicketingActivity extends AppCompatActivity {
         // 영화 상영 정보
         MoviePlayingInfo[] infos = movie.getMoviePlayingInfoList();
         for(MoviePlayingInfo info: infos){
-            String str = info.getId() + "";
+            String str = info.getMoviePlayingInfoId() + "";
             if(moviePlayingInfoId.equals(str)){
                 moviePlayingInfo = info;
                 break;
@@ -126,7 +125,7 @@ public class TicketingActivity extends AppCompatActivity {
                     return;
                 }
 
-                // classification 저장
+               // classification 저장
                 String classification = ReservedTicket.convertClassificationToString(clsf);
 
                 // seat 저장
@@ -149,9 +148,21 @@ public class TicketingActivity extends AppCompatActivity {
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                Ticket ticket = new Ticket(0L, moviePlayingInfo.getId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
-                        moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), "01052584112", classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
 
+                // Todo: 로그인 되어있지 않으면 리다이렉트, 전화번호 없으면 입력하게 만들기
+                if(!Session.getCurrentSession().isOpened()) {
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+
+                String pn = userSP.getString("phone_number", "");
+                if(pn == null || pn.equals("")){
+                    // Todo: 전화번호 입력 액티비티???
+
+                }
+
+                Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
+                        moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
 
                 // Todo: 로직 paymentActivity로 넘기기
                 // 서버에 넣음
@@ -278,7 +289,6 @@ public class TicketingActivity extends AppCompatActivity {
         }
 
         private void getReserveTicket() {
-            // 서버 통신을 위해 movieinfoid가 필요함, SP에 저장하기 위해서 movieid도 필요 근데 이건 플레잉 인포에 이미 있음
             UserTicketApi ticketService = UserTicketApi.retrofit.create(UserTicketApi.class);
             ticketService.reserveTicket(ticket).enqueue(new Callback<Ticket>() {
                 @Override
