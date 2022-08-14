@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Modal, Box } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -14,9 +14,9 @@ const style = {
   p: 4,
 };
 
-function MovieDetail(props) {
+function MovieDetail() {
   const navigate = useNavigate();
-  const axios = require("axios").default;
+  // const axios = require("axios").default;
 
   const goBack = () => {
     navigate(-1);
@@ -41,10 +41,16 @@ function MovieDetail(props) {
   //     console.log(response.data);
   //     const info_data = response.data;
   //   });
+  // console.log(state);
+  const location = useLocation();
+  // const { from } = location.state;
+  const state = location.state;
+  // console.log(state);
 
   return (
     <div className="MovieDetail">
       <h1>여기는 디테일</h1>
+      <h2>{state["title"]}</h2>
       <Button onClick={goBack}>뒤로가기</Button>
 
       <div>
