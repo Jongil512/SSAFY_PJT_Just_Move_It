@@ -56,12 +56,19 @@ public class TicketingActivity extends AppCompatActivity {
     private void loadMovie() {
         Intent intent = getIntent();
 
-        String movieId = intent.getStringExtra("movieId");
+        String movieCode = intent.getStringExtra("movie_code");
         String moviePlayingInfoId = intent.getStringExtra("moviePlayingInfoId");
 
         Gson gson = new Gson();
         // 영화
-        movie = gson.fromJson(movieSP.getString(movieId, ""), Movie.class);
+        ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
+        for(Movie m: movies){
+            if(m.getMovieCode().equals(movieCode)){
+                movie = m;
+                break;
+            }
+        }
+
         // 영화 상영 정보
         MoviePlayingInfo[] infos = movie.getMoviePlayingInfoList();
         for(MoviePlayingInfo info: infos){
