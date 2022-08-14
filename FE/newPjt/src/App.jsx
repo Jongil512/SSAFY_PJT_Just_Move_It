@@ -5,21 +5,18 @@ import { Link } from "react-router-dom";
 
 import Voice from "./Components/AI/Voice";
 import Pose from "./Components/AI/Pose";
+import Router from "./Router";
 
 function App() {
   return (
     <div className="App">
-      <div className="App-header">
-        <Link to="./movies">
-          <Button>평범한 ui로 이동하기</Button>
-        </Link>
-        <Link to="./low/movies">
-          <Button>작은 ui로 이동하기</Button>
-        </Link>
+      {/* <div className="App-header">
 
-      <Voice></Voice>
-      <Pose></Pose>
-      </div>
+
+        <Voice></Voice>
+        <Pose></Pose>
+      </div> */}
+      <Router />
     </div>
   );
 }
