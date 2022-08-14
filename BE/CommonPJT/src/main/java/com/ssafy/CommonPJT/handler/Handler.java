@@ -10,22 +10,22 @@ import org.springframework.web.socket.handler.TextWebSocketHandler;
 @Component
 @Log4j2
 public class Handler extends TextWebSocketHandler {
-    private WebSocketSession raspberry;
+    private static WebSocketSession raspberry;
 
     /* Client가 접속 시 호출되는 메서드 */
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        System.out.println(session.getId() + ": connected");
+        System.out.println("connected");
         this.raspberry = session;
         log.info(session + " 클라이언트 접속");
     }
 
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+        System.out.println("connected 2");
         String payload = message.getPayload();
-        System.out.println("handle message: " + payload);
+        System.out.println(payload);
         log.info("payload : " + payload);
-
         TextMessage msg = new TextMessage("받았음!!");
         session.sendMessage(msg);
     }
@@ -33,7 +33,7 @@ public class Handler extends TextWebSocketHandler {
     /* Client가 접속 해제 시 호출되는 메서드드 */
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        System.out.println(session.getId() + ": disconnected");
+        System.out.println("disconnected");
         this.raspberry = null;
         log.info(session + " 클라이언트 접속 해제");
     }
