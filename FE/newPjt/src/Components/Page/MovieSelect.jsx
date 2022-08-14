@@ -63,7 +63,7 @@ axios
 function MovieSelect() {
   const callback = function (index) {
     // console.log(index);
-    console.log(movies[index]);
+    // console.log(movies[index]);
     movieCode(movies[index].movieCode);
     movieTitlef(movies[index].title);
     movieRatef(movies[index].rating);
@@ -78,6 +78,7 @@ function MovieSelect() {
   let [movieTotalCustomer, movieTotalCustomerChange] = useState("0");
   let [movieAge, movieAgeChange] = useState("0");
   let [movieDataAll, movieDataAllChange] = useState("0");
+  // console.log(movieDataAll);
 
   const movieCode = (inputData) => {
     movieCodeChange(inputData);
@@ -114,15 +115,15 @@ function MovieSelect() {
       <span>{movieRate}</span>
       <span> {movieTotalCustomer}명</span>
       <br></br>
-      {/* <Link to={"./" + movieCodeUrl}> */}
-      <Link
+      {/* <Link
         to={{
           pathname: "./" + movieCodeUrl,
           state: {
             movie: movieDataAll,
           },
         }}
-      >
+      > */}
+      <Link to={"./" + movieCodeUrl} state={movieDataAll}>
         <Button>영화 선택</Button>
       </Link>
     </div>
