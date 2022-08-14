@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Movie implements Serializable {
-    private Long movieId;
     private String country;
     private String director;
     private String actor;
@@ -27,8 +26,7 @@ public class Movie implements Serializable {
     private String movieCode;
     private MoviePlayingInfo[] moviePlayingInfoList;
 
-    public Movie(Long movieId, String country, String director, String actor, String title, String genre, String summary, String runningTime, String img, String img2, String img3, String img4, String img5, String img6, String rating, String engTitle, String ageLimit, String releaseDate, String totalCustomer, String movieCode, MoviePlayingInfo[] moviePlayingInfoList) {
-        this.movieId = movieId;
+    public Movie(String country, String director, String actor, String title, String genre, String summary, String runningTime, String img, String img2, String img3, String img4, String img5, String img6, String rating, String engTitle, String ageLimit, String releaseDate, String totalCustomer, String movieCode, MoviePlayingInfo[] moviePlayingInfoList) {
         this.country = country;
         this.director = director;
         this.actor = actor;
@@ -49,14 +47,6 @@ public class Movie implements Serializable {
         this.totalCustomer = totalCustomer;
         this.movieCode = movieCode;
         this.moviePlayingInfoList = moviePlayingInfoList;
-    }
-
-    public Long getMovieId() {
-        return moviePlayingInfoList[0].getMovieId();
-    }
-
-    public void setMovieId(Long movieId) {
-        this.movieId = movieId;
     }
 
     public String getCountry() {
