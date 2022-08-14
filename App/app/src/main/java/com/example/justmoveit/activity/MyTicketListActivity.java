@@ -66,6 +66,7 @@ public class MyTicketListActivity extends AppCompatActivity {
                 editor1 = userSP.edit();
                 editor1.remove("user_info");
                 editor1.remove("user_tickets");
+                editor1.remove("phone_number");
                 editor1.apply();
 
                 editor2 = movieSP.edit();
