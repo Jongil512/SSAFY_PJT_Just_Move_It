@@ -1,2 +1,134 @@
 2022-08-14 10:20:19.260  WARN 14508 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11h15m48s934ms217µs100ns).
 2022-08-14 10:22:56.109  WARN 14508 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m10s528ms328µs400ns).
+2022-08-14 16:11:46.426  INFO 1388 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Starting CommonPjtApplication using Java 11.0.15 on DESKTOP-KVCQHCD with PID 1388 (C:\Users\multicampus\Documents\ssafy_compjt\BE\CommonPJT\build\classes\java\main started by multicampus in C:\Users\multicampus\Documents\ssafy_compjt\BE\CommonPJT)
+2022-08-14 16:11:46.428  INFO 1388 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-14 16:11:46.479  INFO 1388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-14 16:11:46.479  INFO 1388 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-14 16:11:47.417  INFO 1388 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-14 16:11:47.486  INFO 1388 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 6 JPA repository interfaces.
+2022-08-14 16:11:48.017  INFO 1388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-14 16:11:48.026  INFO 1388 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-14 16:11:48.026  INFO 1388 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-08-14 16:11:48.106  INFO 1388 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2022-08-14 16:11:48.106  INFO 1388 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1626 ms
+2022-08-14 16:11:48.133  INFO 1388 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-14 16:11:48.488  INFO 1388 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-14 16:11:48.498  INFO 1388 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://i7d207.p.ssafy.io:3306/ssafy?serverTimezone=Asia/Seoul'
+2022-08-14 16:11:48.625  INFO 1388 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-14 16:11:48.664  INFO 1388 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-08-14 16:11:48.790  INFO 1388 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-14 16:11:48.876  INFO 1388 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-14 16:11:49.550  INFO 1388 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-14 16:11:49.557  INFO 1388 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-14 16:11:50.129  WARN 1388 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-14 16:11:50.323  INFO 1388 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-14 16:11:50.477  INFO 1388 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-08-14 16:11:50.766  INFO 1388 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Started CommonPjtApplication in 4.786 seconds (JVM running for 6.052)
+2022-08-14 16:12:07.700  INFO 1388 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-14 16:12:07.701  INFO 1388 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-14 16:12:07.702  INFO 1388 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-14 16:12:38.338  INFO 1388 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-14 16:12:38.341  INFO 1388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-14 16:12:38.454  INFO 1388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-14 16:12:42.611  INFO 15456 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Starting CommonPjtApplication using Java 11.0.15 on DESKTOP-KVCQHCD with PID 15456 (C:\Users\multicampus\Documents\ssafy_compjt\BE\CommonPJT\build\classes\java\main started by multicampus in C:\Users\multicampus\Documents\ssafy_compjt\BE\CommonPJT)
+2022-08-14 16:12:42.612  INFO 15456 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-14 16:12:42.657  INFO 15456 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-14 16:12:42.657  INFO 15456 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-14 16:12:43.559  INFO 15456 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-14 16:12:43.613  INFO 15456 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 6 JPA repository interfaces.
+2022-08-14 16:12:44.322  INFO 15456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-14 16:12:44.331  INFO 15456 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-14 16:12:44.332  INFO 15456 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-08-14 16:12:44.451  INFO 15456 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2022-08-14 16:12:44.451  INFO 15456 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1793 ms
+2022-08-14 16:12:44.483  INFO 15456 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-14 16:12:44.871  INFO 15456 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-14 16:12:44.880  INFO 15456 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://i7d207.p.ssafy.io:3306/ssafy?serverTimezone=Asia/Seoul'
+2022-08-14 16:12:45.007  INFO 15456 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-14 16:12:45.055  INFO 15456 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-08-14 16:12:45.209  INFO 15456 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-14 16:12:45.337  INFO 15456 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-14 16:12:46.112  INFO 15456 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-14 16:12:46.120  INFO 15456 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-14 16:12:46.770  WARN 15456 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-14 16:12:46.974  INFO 15456 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-14 16:12:47.135  INFO 15456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-08-14 16:12:47.398  INFO 15456 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Started CommonPjtApplication in 5.211 seconds (JVM running for 6.497)
+2022-08-14 16:12:48.297  INFO 15456 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-14 16:12:48.298  INFO 15456 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-14 16:12:48.299  INFO 15456 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-08-14 16:12:48.347  INFO 15456 --- [http-nio-8081-exec-1] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=f4dd19e0-6177-e4ab-a1b7-dd3254506550, uri=ws://localhost:8081/api/socket] 클라이언트 접속
+2022-08-14 16:12:54.144  INFO 15456 --- [http-nio-8081-exec-2] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=710b99b6-7e6b-5472-5d0b-ebeec936f19a, uri=ws://localhost:8081/api/socket] 클라이언트 접속
+2022-08-14 16:12:54.150  INFO 15456 --- [http-nio-8081-exec-3] com.ssafy.CommonPJT.handler.Handler      : payload : request
+2022-08-14 16:12:54.151  INFO 15456 --- [http-nio-8081-exec-2] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=710b99b6-7e6b-5472-5d0b-ebeec936f19a, uri=ws://localhost:8081/api/socket] 클라이언트 접속 해제
+2022-08-14 16:12:54.159 ERROR 15456 --- [http-nio-8081-exec-3] w.s.h.ExceptionWebSocketHandlerDecorator : Closing session due to exception for StandardWebSocketSession[id=f4dd19e0-6177-e4ab-a1b7-dd3254506550, uri=ws://localhost:8081/api/socket]
+
+java.lang.IllegalStateException: Message will not be sent because the WebSocket session has been closed
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.writeMessagePart(WsRemoteEndpointImplBase.java:442) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:314) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendMessageBlock(WsRemoteEndpointImplBase.java:254) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.WsRemoteEndpointImplBase.sendPartialString(WsRemoteEndpointImplBase.java:227) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.WsRemoteEndpointBasic.sendText(WsRemoteEndpointBasic.java:49) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketSession.sendTextMessage(StandardWebSocketSession.java:215) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.adapter.AbstractWebSocketSession.sendMessage(AbstractWebSocketSession.java:106) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at com.ssafy.CommonPJT.handler.Handler.handleTextMessage(Handler.java:46) ~[main/:na]
+	at org.springframework.web.socket.handler.AbstractWebSocketHandler.handleMessage(AbstractWebSocketHandler.java:43) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.handler.WebSocketHandlerDecorator.handleMessage(WebSocketHandlerDecorator.java:75) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.handler.LoggingWebSocketHandlerDecorator.handleMessage(LoggingWebSocketHandlerDecorator.java:56) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.handler.ExceptionWebSocketHandlerDecorator.handleMessage(ExceptionWebSocketHandlerDecorator.java:58) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.handleTextMessage(StandardWebSocketHandlerAdapter.java:114) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter.access$000(StandardWebSocketHandlerAdapter.java:43) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:85) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.springframework.web.socket.adapter.standard.StandardWebSocketHandlerAdapter$3.onMessage(StandardWebSocketHandlerAdapter.java:82) ~[spring-websocket-5.3.21.jar:5.3.21]
+	at org.apache.tomcat.websocket.WsFrameBase.sendMessageText(WsFrameBase.java:415) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.server.WsFrameServer.sendMessageText(WsFrameServer.java:129) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.WsFrameBase.processDataText(WsFrameBase.java:515) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.WsFrameBase.processData(WsFrameBase.java:301) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.WsFrameBase.processInputBuffer(WsFrameBase.java:133) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.server.WsFrameServer.onDataAvailable(WsFrameServer.java:85) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.server.WsFrameServer.doOnDataAvailable(WsFrameServer.java:183) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.server.WsFrameServer.notifyDataAvailable(WsFrameServer.java:162) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.websocket.server.WsHttpUpgradeHandler.upgradeDispatch(WsHttpUpgradeHandler.java:157) ~[tomcat-embed-websocket-9.0.64.jar:9.0.64]
+	at org.apache.coyote.http11.upgrade.UpgradeProcessorInternal.dispatch(UpgradeProcessorInternal.java:60) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:890) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1787) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.64.jar:9.0.64]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+2022-08-14 16:12:54.160  INFO 15456 --- [http-nio-8081-exec-3] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=f4dd19e0-6177-e4ab-a1b7-dd3254506550, uri=ws://localhost:8081/api/socket] 클라이언트 접속 해제
+2022-08-14 16:12:59.737  INFO 15456 --- [http-nio-8081-exec-4] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=183318b3-065f-e0e1-b0da-0c0cd8e7d783, uri=ws://localhost:8081/api/socket] 클라이언트 접속
+2022-08-14 16:12:59.738  INFO 15456 --- [http-nio-8081-exec-4] com.ssafy.CommonPJT.handler.Handler      : payload : 파이참!!!
+2022-08-14 16:13:06.606  INFO 15456 --- [http-nio-8081-exec-5] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=5de451de-5a10-e0ef-7cfe-3de1f3bcfbc3, uri=ws://localhost:8081/api/socket] 클라이언트 접속
+2022-08-14 16:13:06.607  INFO 15456 --- [http-nio-8081-exec-8] com.ssafy.CommonPJT.handler.Handler      : payload : 파이참!!!
+2022-08-14 16:13:06.607  INFO 15456 --- [http-nio-8081-exec-7] com.ssafy.CommonPJT.handler.Handler      : payload : request
+2022-08-14 16:13:06.608  INFO 15456 --- [http-nio-8081-exec-8] com.ssafy.CommonPJT.handler.Handler      : payload : 파이참!!!
+2022-08-14 16:13:06.609  INFO 15456 --- [http-nio-8081-exec-8] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=183318b3-065f-e0e1-b0da-0c0cd8e7d783, uri=ws://localhost:8081/api/socket] 클라이언트 접속 해제
+2022-08-14 16:13:06.609  INFO 15456 --- [http-nio-8081-exec-6] com.ssafy.CommonPJT.handler.Handler      : StandardWebSocketSession[id=5de451de-5a10-e0ef-7cfe-3de1f3bcfbc3, uri=ws://localhost:8081/api/socket] 클라이언트 접속 해제
+2022-08-14 16:15:10.214  INFO 15456 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-08-14 16:15:10.217  INFO 15456 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-08-14 16:15:10.335  INFO 15456 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-14 16:15:10.420  INFO 15456 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Starting CommonPjtApplication using Java 11.0.15 on DESKTOP-KVCQHCD with PID 15456 (C:\Users\multicampus\Documents\ssafy_compjt\BE\CommonPJT\build\classes\java\main started by multicampus in C:\Users\multicampus\Documents\ssafy_compjt\BE\CommonPJT)
+2022-08-14 16:15:10.420  INFO 15456 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-14 16:15:10.713  INFO 15456 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-14 16:15:10.733  INFO 15456 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 6 JPA repository interfaces.
+2022-08-14 16:15:10.803  INFO 15456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-14 16:15:10.804  INFO 15456 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-14 16:15:10.804  INFO 15456 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-08-14 16:15:10.855  INFO 15456 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2022-08-14 16:15:10.855  INFO 15456 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 433 ms
+2022-08-14 16:15:10.863  INFO 15456 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2022-08-14 16:15:10.996  INFO 15456 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2022-08-14 16:15:10.996  INFO 15456 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://i7d207.p.ssafy.io:3306/ssafy?serverTimezone=Asia/Seoul'
+2022-08-14 16:15:11.026  INFO 15456 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-14 16:15:11.033  INFO 15456 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-14 16:15:11.191  INFO 15456 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-14 16:15:11.191  INFO 15456 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-14 16:15:11.358  WARN 15456 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-14 16:15:11.411  INFO 15456 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-14 16:15:11.449  INFO 15456 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path '/api'
+2022-08-14 16:15:11.534  INFO 15456 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Started CommonPjtApplication in 1.145 seconds (JVM running for 150.633)
+2022-08-14 16:15:11.536  INFO 15456 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
