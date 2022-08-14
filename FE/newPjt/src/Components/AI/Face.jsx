@@ -13,7 +13,7 @@ function Face() {
   let flag;
 
   React.useEffect(() => {
-    const loadModels = async () => {
+    const loadModels = () => {
       const MODEL_URL = process.env.PUBLIC_URL + "/models";
 
       Promise.all([
@@ -23,7 +23,9 @@ function Face() {
         faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
         faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL),
         faceapi.nets.ageGenderNet.loadFromUri(MODEL_URL),
-      ]).then(setModelsLoaded(true));
+      ])
+        .then(setModelsLoaded(true))
+        .then(startVideo());
     };
     loadModels();
   }, []);
@@ -44,7 +46,10 @@ function Face() {
 
   const handleVideoOnPlay = () => {
     let intervalId = setInterval(async () => {
-      if (flag) clearInterval(intervalId); //인식 하기 전까지 계속 돌다가 인식하면 모델 종료
+      if (flag) {
+        clearInterval(intervalId); //인식 하기 전까지 계속 돌다가 인식하면 모델 종료
+        closeWebcam();
+      }
       if (canvasRef && canvasRef.current) {
         canvasRef.current.innerHTML = faceapi.createCanvasFromMedia(
           videoRef.current
@@ -55,16 +60,6 @@ function Face() {
         };
 
         faceapi.matchDimensions(canvasRef.current, displaySize);
-
-        // const detections = await faceapi
-        //   .detectAllFaces(
-        //     videoRef.current,
-        //     new faceapi.TinyFaceDetectorOptions()
-        //   )
-        //   .withFaceLandmarks()
-        //   .withFaceExpressions()
-        //   .withAgeAndGender()
-        //   .withFaceDescriptors();
 
         const detections = await faceapi
           .detectSingleFace(
@@ -84,20 +79,6 @@ function Face() {
         console.log(age + "나이");
         const gender = resizedDetections.gender;
         console.log(gender + "성별");
-
-        // const age1 = resizedDetections[1].age;
-        // console.log(age + "나이 2");
-        // const gender1 = resizedDetections[1].gender;
-        // console.log(gender + "성별 2");
-
-        // react로 어떻게 바꾸지 ㅠ
-        // resizedDetections.forEach((detection) => {
-        //   const box = detection.detection.box;
-        //   const drawBox = new faceapi.draw.DrawBox(box, {
-        //     label: Math.round(detection.age) + " year old " + detection.gender,
-        //   });
-        //   drawBox.draw(canvasRef.current,drawBox);
-        // });
 
         canvasRef &&
           canvasRef.current &&
@@ -128,39 +109,6 @@ function Face() {
 
   return (
     <div>
-      <div style={{ textAlign: "center", padding: "10px" }}>
-        {captureVideo && modelsLoaded ? (
-          <button
-            onClick={closeWebcam}
-            style={{
-              cursor: "pointer",
-              backgroundColor: "green",
-              color: "white",
-              padding: "15px",
-              fontSize: "25px",
-              border: "none",
-              borderRadius: "10px",
-            }}
-          >
-            Close Webcam
-          </button>
-        ) : (
-          <button
-            onClick={startVideo}
-            style={{
-              cursor: "pointer",
-              backgroundColor: "green",
-              color: "white",
-              padding: "15px",
-              fontSize: "25px",
-              border: "none",
-              borderRadius: "10px",
-            }}
-          >
-            Open Webcam
-          </button>
-        )}
-      </div>
       {captureVideo ? (
         modelsLoaded ? (
           <div>

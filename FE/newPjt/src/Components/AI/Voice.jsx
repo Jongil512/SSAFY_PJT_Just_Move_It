@@ -5,12 +5,13 @@ function Voice() {
   const vURL = "https://teachablemachine.withgoogle.com/models/a61Ml39F9/";
 
   voice();
+  let location = "";
+  let flag = false;
 
   async function voice() {
     const recognizer = await createModel();
     const classLabels = recognizer.wordLabels(); // get class labels
     const vlabelContainer = document.getElementById("v-label-container");
-    let location = "";
 
     for (let i = 0; i < classLabels.length; i++) {
       vlabelContainer.appendChild(document.createElement("div"));
@@ -25,20 +26,19 @@ function Voice() {
             classLabels[i] + ": " + result.scores[i].toFixed(2);
           vlabelContainer.childNodes[i].innerHTML = vclassPrediction;
           if (result.scores[i].toFixed(2) > 0.5) {
-            console.log(isNaN(classLabels[i]));
             if (
-              (location.length == 0 || location.length == 3) &&
+              (location.length == 0 || location.length == 2) &&
               isNaN(classLabels[i])
             ) {
-              location = classLabels[i] + "0";
-              console.log(location);
+              location = classLabels[i];
+              flag = false;
             }
-            if (location.length == 2 && !isNaN(classLabels[i])) {
+            if (location.length == 1 && !isNaN(classLabels[i])) {
               location += classLabels[i];
-              console.log(location);
+              console.log("최종 결과값 ", location);
+              flag = true;
             }
           }
-          console.log(location);
         }
       },
       {
