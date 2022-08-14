@@ -5,11 +5,6 @@ from websocket import create_connection
 def sendmessage(data):
     try:
         ws = create_connection("ws://localhost:8081/api/socket")
-<<<<<<< HEAD
-        print("Sending")
-        ws.send(msg)
-        # print(ws.recv())
-=======
         # 연결됨
         connected = ws.recv()
 
@@ -24,7 +19,6 @@ def sendmessage(data):
                     print("초음파 종료")
                     break
 
->>>>>>> feature/BE/socket_khs
         ws.close()
 
     except Exception as e:
