@@ -103,7 +103,7 @@ function Pose() {
   async function loop() {
     webcam.update(); // update the webcam frame
     await predict();
-    window.requestAnimationFrame(loop);
+    window.requestAnimationFrame(loop); // setInterval의 역할
   }
 
   async function predict() {
