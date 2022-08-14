@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -73,7 +72,7 @@ public class TimesAdapter extends RecyclerView.Adapter<TimesAdapter.TimeViewHold
                 //클릭 이벤트
                 Intent intent = new Intent(context.getApplicationContext(), TicketingActivity.class);
                 intent.putExtra("movieId", movie.getMoviePlayingInfoByIndex(index).getMovieId()+"");
-                intent.putExtra("moviePlayingInfoId", movie.getMoviePlayingInfoByIndex(index).getId()+"");
+                intent.putExtra("moviePlayingInfoId", movie.getMoviePlayingInfoByIndex(index).getMoviePlayingInfoId()+"");
                 context.startActivity(intent);
             }
         });

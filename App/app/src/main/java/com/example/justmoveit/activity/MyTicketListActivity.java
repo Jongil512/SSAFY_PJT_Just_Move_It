@@ -1,5 +1,6 @@
 package com.example.justmoveit.activity;
 
+import static com.example.justmoveit.activity.LoadingActivity.movieSP;
 import static com.example.justmoveit.activity.LoadingActivity.userSP;
 
 import android.content.SharedPreferences;
@@ -30,7 +31,8 @@ import retrofit2.Response;
 
 public class MyTicketListActivity extends AppCompatActivity {
     private Gson gson;
-    private SharedPreferences.Editor editor;
+    private SharedPreferences.Editor editor1;
+    private SharedPreferences.Editor editor2;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,10 +63,14 @@ public class MyTicketListActivity extends AppCompatActivity {
         logout.setOnClickListener(view -> UserManagement.getInstance().requestLogout(new LogoutResponseCallback() {
             @Override
             public void onCompleteLogout() {
-                editor = userSP.edit();
-                editor.remove("user_info");
-                editor.remove("user_tickets");
-                editor.apply();
+                editor1 = userSP.edit();
+                editor1.remove("user_info");
+                editor1.remove("user_tickets");
+                editor1.apply();
+
+                editor2 = movieSP.edit();
+                editor2.remove("my_ranking");
+                editor2.apply();
                 finish(); // 현재 액티비티 종료 -> 메인으로 돌아감
             }
         }));
@@ -109,14 +115,14 @@ public class MyTicketListActivity extends AppCompatActivity {
                 public void onResponse(Call<Ticket[]> call, Response<Ticket[]> response) {
                     Ticket[] ticketListFromServer = response.body();
 
-                    // 서버에 예매 이력이 없으면 종료
+                    // 서버에 예매 내역이 없으면 종료
                     if(ticketListFromServer==null || ticketListFromServer.length==0){
                         Log.e("getUserTicketsFromServer", "ticket list from server doesn't exist");
                         return;
                     }
                     Log.d("ConnectionThread - getUserTicketList", "onResponse()");
 
-                    // 서버에 이력이 있으면 추가함
+                    // 서버에 예매 내역이 있으면 추가함
                     ArrayList<ReservedTicket> finalTicketListFromPS = new ArrayList<>();
                     for (Ticket ticket : ticketListFromServer) {
                         finalTicketListFromPS.add(new ReservedTicket(ticket));

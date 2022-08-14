@@ -5,7 +5,6 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Movie implements Serializable {
-    @SerializedName("id")
     private Long movieId;
     private String country;
     private String director;
@@ -53,7 +52,7 @@ public class Movie implements Serializable {
     }
 
     public Long getMovieId() {
-        return movieId;
+        return moviePlayingInfoList[0].getMovieId();
     }
 
     public void setMovieId(Long movieId) {
