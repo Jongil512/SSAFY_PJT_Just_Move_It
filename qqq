@@ -1,0 +1,1662 @@
+[33mcommit c51585ce365e31dba4ca67d9db2d8e94ac97728c[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;32mfeature/BE/editURL[m[33m)[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Sat Aug 13 13:23:08 2022 +0900
+
+    REFACTOR: 인공지능 해결중..
+
+[33mcommit 8b167c4c35ec4ca69fbe06d2c02dad8a8c0e5afb[m
+Author: choi_young_jin <root@ip-172-26-6-129.ap-northeast-2.compute.internal>
+Date:   Sat Aug 13 02:38:16 2022 +0000
+
+    ..
+
+[33mcommit 2cbb2276f1f03637c3a7aaa96e2462267ab29347[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Sat Aug 13 11:00:56 2022 +0900
+
+    REFACTOR: 서버 테스트용 함수 분배
+
+[33mcommit b5baceabb55ac8a65a49aa5acbded51277909a8c[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Sat Aug 13 10:40:46 2022 +0900
+
+    pose, motion divide
+
+[33mcommit e20c9a3c5d9f02fbef1e4fd60f30030b1f18c8af[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Sat Aug 13 10:26:48 2022 +0900
+
+    FEAT: single face detection
+
+[33mcommit 08167d495953f55b5aa1d3884e7e46684f614db4[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Sat Aug 13 02:36:15 2022 +0900
+
+    FEAT: 얼굴인식(성별,나이,감정 까지 !!)
+
+[33mcommit 1554e358ea484598f6950a26b18df7269acea8d8[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Fri Aug 12 22:31:35 2022 +0900
+
+    REFACTORING: 카메라 고침
+
+[33mcommit 03aaa294565b1d392953dc5359ec8d0fcf3e7914[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Fri Aug 12 22:25:45 2022 +0900
+
+    REFACTOR: 마이크 권한
+
+[33mcommit a40dff84c36022552de42c0eb8c594fc3a2f4e1a[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Fri Aug 12 21:50:19 2022 +0900
+
+    FEAT:  npm  추가
+
+[33mcommit 3948739334b72fb6234aea8094ff330b0bffb539[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Fri Aug 12 17:12:00 2022 +0900
+
+    REFACTOR: git ignore 설정 변경
+
+[33mcommit fff17e3c8fd93537c02a37a95fa3be7285c6d5a6[m
+Merge: c8cd60e 0901e53
+Author: 정성우 <sw133v@naver.com>
+Date:   Fri Aug 12 13:49:36 2022 +0900
+
+    Merge branch 'feature/FE/add_states' into 'develop'
+    
+    Feature/fe/add states
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!43
+
+[33mcommit 0901e53b20ba9712b831240e862d8295612f5817[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Fri Aug 12 13:48:38 2022 +0900
+
+    new_pjt
+
+[33mcommit c8cd60e9ec783c018c14033995ff6f45935128c2[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Fri Aug 12 13:14:17 2022 +0900
+
+    FEAT: websocket test with python-spring
+
+[33mcommit 5415b6be69822eae88d3d043f5179e8acb77a74d[m
+Merge: 38738ce 849ee24
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Fri Aug 12 11:43:37 2022 +0900
+
+    Merge branch 'feature/BE/server' into develop
+
+[33mcommit 849ee246e06091d35d87528dc5efb064b0be2d8c[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Fri Aug 12 11:42:39 2022 +0900
+
+    FEAT: 소켓 통신
+
+[33mcommit 38738ce9d4fc077a22eea5026e111dafcf223971[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Fri Aug 12 11:20:46 2022 +0900
+
+    FEAT: 소켓 통신
+
+[33mcommit 94be8d8327bb7a17fb60b9d8e98e5f82141fbca5[m
+Merge: 79f9655 e0ac054
+Author: 정종일 <jongil519@gmail.com>
+Date:   Fri Aug 12 10:31:01 2022 +0900
+
+    Merge branch 'feature/BE/Exception' into 'develop'
+    
+    수정사항: id_name
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!42
+
+[33mcommit e0ac05477ac72157b5f2c6208e4b2ae90ffa9f49[m[33m ([m[1;31morigin/feature/BE/Exception[m[33m, [m[1;32mfeature/BE/Exception[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Aug 12 10:30:23 2022 +0900
+
+    수정사항: id_name
+
+[33mcommit 79f9655ce8c1623df9c8e277d2316795f760b0cf[m
+Merge: 369bdf2 c9802ca
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 11 15:07:58 2022 +0900
+
+    Merge branch 'feature/App/serverConnection' into develop
+
+[33mcommit c9802ca0db5e4f3288876630cd60e5cbd0c1aa54[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 11 14:51:23 2022 +0900
+
+    FEAT: 로딩 화면 추가
+
+[33mcommit a4418f4b96b62d199f332e566110c7be164e9111[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 11 13:47:56 2022 +0900
+
+    테스트
+
+[33mcommit b53925fa08e18ef7a4dea1983929c9e983e6eea7[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 11 10:38:58 2022 +0900
+
+    ETC: 메인 액티비티에 해시 키 추가
+
+[33mcommit 7d1c54073fa31deeb38490853c4163495e3064f6[m[33m ([m[1;31morigin/feature/FE/add_states[m[33m)[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Aug 11 08:50:32 2022 +0900
+
+    moring commit
+
+[33mcommit 4b9c58999ca609263e2303a53d517cebe528d04b[m
+Author: 김효선 <apso123@naver.com>
+Date:   Thu Aug 11 01:32:33 2022 +0900
+
+    FIX: getMoviePlayingInfo() - rest api url 수정
+
+[33mcommit 98f8c8928cc98276197928026bad01bcd7375291[m
+Author: 김효선 <apso123@naver.com>
+Date:   Thu Aug 11 01:14:31 2022 +0900
+
+    FEAT: 예매 취소 서버 통신 완료
+
+[33mcommit 369bdf2e70e53f6b4d4def78ef8b6cea6f727d9d[m[33m ([m[1;31morigin/feature/FE/state[m[33m)[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 10 23:59:26 2022 +0900
+
+    FEAT: HTTP METHOD 추가
+
+[33mcommit f886c0a15738e411bc7c2abe17df4210e2aca3e8[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 10 18:08:06 2022 +0900
+
+    REFACTOR:  yml 설정
+
+[33mcommit 7df60b247287314862d58cb33b7455edcbec1a85[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 10 17:51:40 2022 +0900
+
+    REFACTOR: 헤더 메서드
+
+[33mcommit f82de4e41c45acc8eff121b3e766ccb21b52012a[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 10 17:45:02 2022 +0900
+
+    REFACTOR: 오타 수정
+
+[33mcommit 76d92c9f27f3ae6955fce688be8a7ba5f467ad95[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 10 17:42:39 2022 +0900
+
+    FEAT: hidden method 설정 추가
+
+[33mcommit a79cfe680236dc6f1877d76c816db30944810d4d[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 10 17:26:48 2022 +0900
+
+    FEAT: HiddenHttpMethodFilter 추가
+
+[33mcommit b6636657ffe4836f70e80b95e94929ea51f7f6dc[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 16:26:54 2022 +0900
+
+    FIX: 상영 시간 버튼 수정, 예매 내역 리스트 정렬 수정
+
+[33mcommit 8a0256c21e954852e5e94835b069e74ea433bb25[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 14:46:06 2022 +0900
+
+    FEAT: 티켓 예매 서버 연결
+    ETC: 예매 날짜 date 포맷 변경
+
+[33mcommit 258cfefd9c15611da82b04762186728925781a04[m
+Merge: f0af48a f4fa2aa
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 10 14:21:51 2022 +0900
+
+    Merge branch 'feature/BE/server' into develop
+
+[33mcommit f4fa2aad3f986b1424dbc5da975bc7486c224ad1[m[33m ([m[1;31morigin/feature/BE/server[m[33m)[m
+Author: choi_young_jin <root@ip-172-26-6-129.ap-northeast-2.compute.internal>
+Date:   Wed Aug 10 05:20:30 2022 +0000
+
+    FEAT: FE docker setting
+
+[33mcommit 3cbfacf21dc2dd2364a648303234a18575b6a074[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 11:33:43 2022 +0900
+
+    FEAT: 예매 완료 티켓 가격 표시
+
+[33mcommit 19f1e002c252b64fa9393d6e30ae611cbb21a72f[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 11:17:11 2022 +0900
+
+    FEAT: 영화 목록 가져오기, 사용자 예매 내역 가져오기 완료
+
+[33mcommit f0af48a477350c53ac29584c17ae0f11bdb57572[m
+Merge: d73b337 a3a7b6a
+Author: 정성우 <sw133v@naver.com>
+Date:   Wed Aug 10 10:57:46 2022 +0900
+
+    Merge branch 'feature/FE/add_states' into 'develop'
+    
+    build file
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!39
+
+[33mcommit a3a7b6ae62baf5880130fcaf5fcd34d382a3ec1d[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Wed Aug 10 10:57:11 2022 +0900
+
+    build file
+
+[33mcommit dbec29246f58a5de63ae928c62fa9f35c818710a[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 10:40:41 2022 +0900
+
+    FEAT: MainActivity, MyTicketListActivity fragment 화 및 blank fragment 추가
+
+[33mcommit d73b33769464191c2006c2ff8d585e0ffc09b4ab[m
+Merge: 738d709 7934741
+Author: 정성우 <sw133v@naver.com>
+Date:   Wed Aug 10 10:12:28 2022 +0900
+
+    Merge branch 'feature/FE/add_states' into 'develop'
+    
+    add_state not done
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!38
+
+[33mcommit 7934741c797b501ab008111a810b79bd625a5e48[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Wed Aug 10 10:11:46 2022 +0900
+
+    add_state not done
+
+[33mcommit 843eb72a138655ce66611745f11c4db9096b6eeb[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 02:13:32 2022 +0900
+
+    STYLE: 앱 로고 변경, 전체적으로 padding, margin 값 수정
+
+[33mcommit fab29ba0b4b9dd0410cc93d03158f0a2ae6186e6[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 00:42:18 2022 +0900
+
+    FEAT: 티켓 만료시 예매 취소 막기
+
+[33mcommit 9f419cc5ebe36e4defe572cf674e14b31a7e7c5f[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 00:39:12 2022 +0900
+
+    FEAT: 티켓 예매 요청 스레드 생성
+
+[33mcommit 7846acbbc1fd3ee0db477bd5af8849905015b8f7[m
+Author: 김효선 <apso123@naver.com>
+Date:   Wed Aug 10 00:16:54 2022 +0900
+
+    FEAT: 예매 취소 요청 스레드 생성
+    REFATOR: MyTicketsListActivity, TicketInfoActivity, TicketingActivity, ReservedTicket
+
+[33mcommit c532f1490e866e55797732b014d0b317e292e90c[m
+Author: 김효선 <apso123@naver.com>
+Date:   Tue Aug 9 23:15:21 2022 +0900
+
+    FEAT: 메인 화면 서버 연결 성공
+
+[33mcommit 738d709f592f2fa28893923c3cf3d52fffa00504[m
+Merge: f11d22e 21718d9
+Author: ks <whrudtn9727@naver.com>
+Date:   Tue Aug 9 17:52:10 2022 +0900
+
+    Merge branch 'develop' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into develop
+
+[33mcommit f11d22eba295d025bc56d9fd87319deca80a9043[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Tue Aug 9 17:51:57 2022 +0900
+
+    0809
+
+[33mcommit e21e818328958458089ff89646a08c3d543cf355[m
+Author: 김효선 <apso123@naver.com>
+Date:   Tue Aug 9 17:31:22 2022 +0900
+
+    서버 에러
+
+[33mcommit 21718d902820091e5b2eac2fe19adc766221f640[m
+Merge: 1562a3b d2747d6
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 9 15:40:59 2022 +0900
+
+    Merge branch 'feature/BE/server' into develop
+
+[33mcommit 1562a3bbba610552d1f3a03cdcf67c65b0024273[m
+Merge: 3583e39 9d8fa11
+Author: 정성우 <sw133v@naver.com>
+Date:   Tue Aug 9 14:29:32 2022 +0900
+
+    Merge branch 'feature/FE/add_states' into 'develop'
+    
+    forder divide
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!37
+
+[33mcommit 9d8fa111a064d9275b95ce0be63e6bed7661722d[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Tue Aug 9 14:28:41 2022 +0900
+
+    forder divide
+
+[33mcommit 3583e3904df82d34bf2925c523bbc714652694c4[m
+Author: 정성우 <sw133v@naver.com>
+Date:   Tue Aug 9 14:06:53 2022 +0900
+
+    Delete package-lock.json
+
+[33mcommit d2747d6c0760f8e4939511cc000fb40710bafb8d[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 9 13:25:34 2022 +0900
+
+    REFACTOR: git ignore (로그정보 )추가
+
+[33mcommit 3c3f1da60cbcc43f97ed2af639028b403c7cc32d[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 9 13:19:52 2022 +0900
+
+    REFACTOR: SWAGGER 주소 변경
+
+[33mcommit a3a1dfae2f833e03bdf7c1b6d924ecb8707e724f[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 9 11:33:16 2022 +0900
+
+    REFACTOR: CONTEXT PATH 수정
+
+[33mcommit 7773631335baea043b5a1b39d74eeba8d63cd9e8[m
+Author: 최영진 <ip951122@naver.com>
+Date:   Mon Aug 8 17:39:45 2022 +0900
+
+    FEAT: 스프링부트 설정 (SWAGGER 고치는중)
+
+[33mcommit 2ce588350b612c95ca3da5f7ec844681d0c3cdef[m
+Merge: ce5ef7a e0a7c52
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Aug 8 17:38:42 2022 +0900
+
+    Merge branch 'develop' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into develop
+
+[33mcommit ce5ef7abaaecc254674ce90fa5f5ce704274ed90[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Aug 8 17:38:12 2022 +0900
+
+    0808
+
+[33mcommit e0a7c52a7db79ba8731071c366be6703cebdf76f[m[33m ([m[1;31morigin/feature/IoT/age_gender_prediction[m[33m)[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Mon Aug 8 17:37:31 2022 +0900
+
+    Face Detection Master
+
+[33mcommit 9ff808403d82443c0047895712b923a6c0410ed0[m
+Merge: 879ccf0 c7facd7
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Mon Aug 8 17:31:47 2022 +0900
+
+    Merge branch 'develop' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into develop
+
+[33mcommit c7facd7647db27957fddff617d14c38e240dc2df[m[33m ([m[1;31morigin/feature/IoT/ultrasonic[m[33m)[m
+Author: donggwan <dpfwpf2999@naver.com>
+Date:   Mon Aug 8 17:27:15 2022 +0900
+
+    ultrasonic distance
+
+[33mcommit 95fb51d93c315f82bbf3bccd42f82003e8060d8e[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Mon Aug 8 16:15:44 2022 +0900
+
+    FEAT: SharedPreference 연결 완료
+    ETC: 장애인 항목 삭제, 예매 날짜 포맷 수정
+
+[33mcommit c31867965dc88c754d0db8f4d6b543afac4a774c[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Mon Aug 8 16:12:09 2022 +0900
+
+    푸시 파일 수정
+
+[33mcommit dd4e88e8956e1130cd75de6aa74c782922a94cb9[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Mon Aug 8 16:11:22 2022 +0900
+
+    CHORE: gitignore 수정
+
+[33mcommit 77f0d3c2684d0ca9b154bdf65eebea9422bf6629[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Mon Aug 8 16:08:34 2022 +0900
+
+    Revert "FEAT: SharedPreference 연결 완료"
+    
+    This reverts commit 839ef44ac4dc201a1e0c0474b2c3f7376233645b.
+
+[33mcommit 839ef44ac4dc201a1e0c0474b2c3f7376233645b[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Mon Aug 8 16:07:38 2022 +0900
+
+    FEAT: SharedPreference 연결 완료
+    ETC: 장애인 항목 삭제, 예매 날짜 포맷 수정
+
+[33mcommit 5f8dec19d8c1f7f368b32ba493c2ee75eb08ad72[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Aug 8 10:10:36 2022 +0900
+
+    REFACTOR: 서버 포트 변경
+
+[33mcommit 6159c87ace9f61783a39b36253865a3c69a582a9[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Aug 8 10:08:14 2022 +0900
+
+    package
+
+[33mcommit 8ced54822fe365c476643ea4872a545e9a4d620a[m
+Merge: 2fcb253 edfeae2
+Author: 정성우 <sw133v@naver.com>
+Date:   Mon Aug 8 09:07:23 2022 +0900
+
+    Merge branch 'feature/FE/seatPicker' into 'develop'
+    
+    FEAT:routing
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!35
+
+[33mcommit edfeae2dc1b7fc527328f9edbf21ed7308cf1476[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Aug 8 09:06:16 2022 +0900
+
+    FEAT:routing
+
+[33mcommit ac360ed92c401cde6969fd3cae97ac39955fdf94[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Aug 8 03:20:36 2022 +0900
+
+    REFACTOR: yml 수정
+
+[33mcommit 8bfa93c7082a92ca46e5d07fa739ffd4f7ac95fd[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Aug 8 02:52:24 2022 +0900
+
+    FEAT: yml 수정
+
+[33mcommit e2aaa412ed4e02307cedde5d6b26799dfcf6c821[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Aug 8 02:22:42 2022 +0900
+
+    FEAT: 도커파일 생성
+
+[33mcommit 608c8a1232858d0085dd531349e583696e90f1d6[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Aug 8 02:22:22 2022 +0900
+
+    FEAT: 도커 파일 생성
+
+[33mcommit b1be694b91f655f10c21037039d895cb67486ab2[m
+Author: 김효선 <apso123@naver.com>
+Date:   Sun Aug 7 18:42:07 2022 +0900
+
+    sharedpreference 교체
+
+[33mcommit 2fcb2533cbfb7fe659f330c43c82b6e96f3b8b66[m
+Merge: 6b4d7e5 4bedd6a
+Author: 정종일 <jongil519@gmail.com>
+Date:   Sun Aug 7 17:22:28 2022 +0900
+
+    Merge branch 'refactor/BE/controller' into 'develop'
+    
+    REFACTOR: 응답 형태 변경
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!34
+
+[33mcommit 4bedd6ade0bba8b5a7d478cac06bac82b1289c55[m[33m ([m[1;31morigin/refactor/BE/controller[m[33m, [m[1;32mrefactor/BE/controller[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Sun Aug 7 17:21:19 2022 +0900
+
+    REFACTOR: 응답 형태 변경
+
+[33mcommit 6b4d7e5f93bcecd7f1213227a3f30a6685a06592[m
+Merge: 0937e4a 77b2227
+Author: 김효선 <apso123@naver.com>
+Date:   Sun Aug 7 16:57:41 2022 +0900
+
+    Merge branch 'feature/App/kakaoPay' into develop
+
+[33mcommit 77b22275c3aa8abd50fb2cb7b7c181220ef1a30e[m[33m ([m[1;31morigin/feature/App/kakaoPay[m[33m)[m
+Author: 김효선 <apso123@naver.com>
+Date:   Sun Aug 7 16:51:04 2022 +0900
+
+    FEAT: 예매 취소 버튼 생성
+    ETC: DTO 모델 수정
+
+[33mcommit 0937e4a4f105073a254ca60d254bb3d19c8de01f[m
+Merge: 72a6fd4 1922427
+Author: 정종일 <jongil519@gmail.com>
+Date:   Sun Aug 7 16:48:07 2022 +0900
+
+    Merge branch 'feature/BE/수정사항' into 'develop'
+    
+    FEAT: 수정사항 변경
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!33
+
+[33mcommit 192242795c148b55d5e26393498c4188f9375d7b[m[33m ([m[1;31morigin/feature/BE/수정사항[m[33m, [m[1;32mfeature/BE/수정사항[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Sun Aug 7 16:47:17 2022 +0900
+
+    FEAT: 수정사항 변경
+
+[33mcommit bfcb503980dc15f90556273e88c1615351a6acff[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Sun Aug 7 16:46:44 2022 +0900
+
+    REFACTOR: 수정사항 변경
+
+[33mcommit 72a6fd4d5f9723d11a10908b17c88553f10d2cde[m
+Merge: 607b02d 0c75418
+Author: 정종일 <jongil519@gmail.com>
+Date:   Sun Aug 7 16:21:47 2022 +0900
+
+    Merge branch 'feature/BE/recommend' into 'develop'
+    
+    FEAT: 추천 알고리즘 구현
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!32
+
+[33mcommit 0c75418674c4ae590e07c80570d715d2c2f2a176[m[33m ([m[1;31morigin/feature/BE/recommend[m[33m)[m
+Merge: c91655d 607b02d
+Author: 정종일 <jongil519@gmail.com>
+Date:   Sun Aug 7 07:21:42 2022 +0000
+
+    Merge branch 'develop' into 'feature/BE/recommend'
+    
+    # Conflicts:
+    #   BE/CommonPJT/logs/spring.log
+
+[33mcommit 607b02d690d681ca76539b02a04927e71cda8207[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Sun Aug 7 16:19:52 2022 +0900
+
+    BE
+
+[33mcommit c91655dffbac5b13cc77aab500cde166cbf2ae39[m[33m ([m[1;32mfeature/BE/recommend[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Sun Aug 7 16:16:39 2022 +0900
+
+    FEAT: 추천 알고리즘 구현
+
+[33mcommit e144cbe0fabe6850b6feebbc7f76f248594b3e70[m
+Merge: 81dd527 c66f4fc
+Author: 김효선 <apso123@naver.com>
+Date:   Sat Aug 6 20:57:25 2022 +0900
+
+    Merge branch 'feature/App/kakaoPay' into develop
+
+[33mcommit c66f4fcfd14159a997e049a7274b0257f6812e72[m
+Author: 김효선 <apso123@naver.com>
+Date:   Sat Aug 6 20:56:22 2022 +0900
+
+    FEAT: 좌석 예매 페이지 완성
+
+[33mcommit 2d3dbb16b89f45387461ed1d3ffadf4d974db5bb[m
+Author: 김효선 <apso123@naver.com>
+Date:   Sat Aug 6 01:25:38 2022 +0900
+
+    FEAT: Retrofit api 인터페이스 생성
+
+[33mcommit 81dd5270863a244bf9b7f6f48cc571ebf2ea488f[m
+Author: 최영진 <ip951122@naver.com>
+Date:   Fri Aug 5 21:44:28 2022 +0900
+
+    Update readme.md
+
+[33mcommit 766c95271a07264fb8ddee9fedaf54cc012aa02e[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Aug 5 17:48:09 2022 +0900
+
+    FEAT_추천 알고리즘 구현
+
+[33mcommit 34b4502451e4d3814fdfaf86d227d4c18bd785a6[m[33m ([m[1;31morigin/feature_Recommendation[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Aug 5 17:46:40 2022 +0900
+
+    FEAT_추천 알고리즘 구현
+
+[33mcommit 3202af3d0e455d21a3ac72beae75308837a40dd9[m
+Merge: 24685cf 0bf8d53
+Author: 김효선 <apso123@naver.com>
+Date:   Fri Aug 5 17:21:12 2022 +0900
+
+    Merge branch 'feature_App_kakaoPay' into develop
+
+[33mcommit 0bf8d53442255e447750b6ea822557837fb254c1[m
+Author: 김효선 <apso123@naver.com>
+Date:   Fri Aug 5 17:20:31 2022 +0900
+
+    FEAT: 예매 페이지 좌석 선택 기능 추가
+    REFACTOR: ticketingActivity
+    ETC: ticketingActivity -> paymentActivity 인텐트 연결, 디자인 수정
+
+[33mcommit 24685cf90f5f95ba2a45f05510f9d5ac5cc3ba50[m
+Merge: f2a156d a4234c0
+Author: 정성우 <sw133v@naver.com>
+Date:   Fri Aug 5 17:18:52 2022 +0900
+
+    Merge branch 'feature/FE/seatPicker' into 'develop'
+    
+    FEAT:seats_picker
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!31
+
+[33mcommit a4234c05cb5a989c5d02185b5004ead7e657f389[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Fri Aug 5 17:16:31 2022 +0900
+
+    FEAT:seats_picker
+
+[33mcommit 879ccf08b2c0ce7c503ece9ed4fe5bb1a8c640ef[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Fri Aug 5 17:09:53 2022 +0900
+
+    220805 개발
+
+[33mcommit f2a156da0d92d76278fdd8f6eef558c087d30f62[m
+Merge: 9fe7bd7 8e6567a
+Author: 정성우 <sw133v@naver.com>
+Date:   Fri Aug 5 15:39:31 2022 +0900
+
+    Merge branch 'feature_FE_seatPicker' into 'develop'
+    
+    add/conponents
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!30
+
+[33mcommit 8e6567a925801fa5bc008a325ba54ce66a7f6777[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Fri Aug 5 15:39:07 2022 +0900
+
+    add/conponents
+
+[33mcommit 9fe7bd7527ac331c2a9da0eff445da67d7568106[m
+Merge: 9e5232c 0cbf6ad
+Author: 정성우 <sw133v@naver.com>
+Date:   Fri Aug 5 15:38:08 2022 +0900
+
+    Merge branch 'feature_FE_seatPicker' into 'develop'
+    
+    Feature fe seat picker
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!29
+
+[33mcommit 0cbf6ad23b7a2129e045e1019515d67afd624a5c[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Fri Aug 5 15:29:38 2022 +0900
+
+    seats/picker
+
+[33mcommit a6b5f0ba663b6f5bd9679756fd9e8f9a8a43946a[m
+Author: 김효선 <apso123@naver.com>
+Date:   Fri Aug 5 13:34:07 2022 +0900
+
+    STYLE: 코드 포맷팅, 변수 수정
+    REFACTOR, 패키지 변경
+
+[33mcommit faf79957e1a9dbc96dff37bed5fbc170a9a40a2d[m
+Author: 김효선 <apso123@naver.com>
+Date:   Fri Aug 5 10:20:34 2022 +0900
+
+    ETC: gitignore 수정
+
+[33mcommit f95ed719a411d5fc81d50db303c6bba9ffd24ad7[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Aug 4 17:37:12 2022 +0900
+
+    data restore
+
+[33mcommit fc5565bf597a7dcf042d554edb3d042c5844a13b[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 4 17:33:45 2022 +0900
+
+    ETC: 로그인, 티켓예매페이지, 예매확인페이지 디자인 수정
+
+[33mcommit 9e5232cab44f73b766570127bbd6d52afc5c9cb5[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Thu Aug 4 17:20:40 2022 +0900
+
+    FEAT: 영화 추천 구현
+
+[33mcommit f1a2067dceec4d864198aae8c08d59703d559ec4[m
+Merge: 586cc3d a566fa8
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Aug 4 17:15:42 2022 +0900
+
+    Merge branch 'FEAT_Recommend' into 'develop'
+    
+    FEAT: 영화 추천 구현
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!28
+
+[33mcommit a566fa8ba899ea1cea7631c35b5372069bb0b091[m[33m ([m[1;31morigin/FEAT_Recommend[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Thu Aug 4 17:14:11 2022 +0900
+
+    FEAT: 영화 추천 구현
+
+[33mcommit 586cc3d688cee388579ab3533f7171727ab2ed5a[m
+Merge: b5682ed 1757a3f
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Aug 4 17:09:09 2022 +0900
+
+    Merge branch 'FEAT_Recommend' into 'develop'
+    
+    FEAT: 영화 추천 구현
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!27
+
+[33mcommit fb232443f5a1f8e660fa3302b3d985c3dd03be32[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 4 16:33:51 2022 +0900
+
+    FEAT: 카카오페이 테스트 결제 성공
+
+[33mcommit 1757a3f9cc572bca8d64d5f8acf5df5d3f1e425b[m[33m ([m[1;31morigin/FEAT_Reccomend[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Thu Aug 4 16:27:07 2022 +0900
+
+    FEAT: 영화 추천
+
+[33mcommit b5682edafdf4dfc6d343ed003f5a0cfa2d93d967[m
+Merge: 6730a2d dd6ec5f
+Author: 정성우 <sw133v@naver.com>
+Date:   Thu Aug 4 16:27:06 2022 +0900
+
+    Merge branch 'feature_FE_jsw' into 'develop'
+    
+    data save
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!25
+
+[33mcommit 6730a2d4be821f15d1c13e88d07b092be0c7c779[m
+Merge: aca2de1 f968db2
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Aug 4 16:26:16 2022 +0900
+
+    Merge branch 'FEAT_Reccomend' into 'develop'
+    
+    FEAT: 영화 추천
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!24
+
+[33mcommit dd6ec5f746e915fd4dc81bc84fcd423153b61e6e[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Aug 4 16:25:55 2022 +0900
+
+    data save
+
+[33mcommit f968db2b1d5314a63c665b36a13a701f5239f45b[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Thu Aug 4 16:25:14 2022 +0900
+
+    FEAT: 영화 추천
+
+[33mcommit aca2de175becd07edd4379715c3ea3abe696f320[m
+Merge: e0f0e77 cc4c203
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 4 16:22:34 2022 +0900
+
+    Merge branch 'feature_cyj_MainPage' into develop
+
+[33mcommit cc4c20322f958c261c5b084127388be3dbe8ea07[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 4 16:21:33 2022 +0900
+
+    FEAT: 카카오페이 테스트 결제 추가
+
+[33mcommit e0f0e77b541d5616655e080615eb57e32e8035b1[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: 7386e72 20eb1da
+Author: 조경수 <whrudtn9727@naver.com>
+Date:   Thu Aug 4 15:51:01 2022 +0900
+
+    Merge branch 'develop' into 'master'
+    
+    Develop
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!23
+
+[33mcommit 20eb1da04457faf1e46712cc1988a9e625437748[m
+Merge: 601f459 51295fb
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Thu Aug 4 15:49:40 2022 +0900
+
+    .
+
+[33mcommit 601f459948ac02423e8369e84b09ef60bb1e2ac0[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Thu Aug 4 15:48:53 2022 +0900
+
+    .
+
+[33mcommit 669af85e48e54f6e725dc8d209a571a61e143181[m
+Author: Hyoseon Kim <apso123@naver.com>
+Date:   Thu Aug 4 14:12:36 2022 +0900
+
+    FEAT: 로그인, 티켓예매내역 조회 기능 통합
+
+[33mcommit 51295fb6a2512bb71fd71ceae1b754333ff05a4e[m
+Merge: 7386e72 8884afa
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Aug 4 14:03:00 2022 +0900
+
+    Merge branch 'develop_FE' into develop
+
+[33mcommit 8884afa91068a5c875d2153c9c2812c207af4356[m
+Merge: 7692861 f5e226f
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Aug 4 13:44:22 2022 +0900
+
+    Merge branch 'develop_FE' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into develop_FE
+
+[33mcommit ea315646efb5e8903d19bbdb77cfd3bdce633695[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Thu Aug 4 13:43:55 2022 +0900
+
+    .
+
+[33mcommit 31ddfe6345281303075ed959aed284caf973886d[m
+Merge: 66ba6d4 3b98aa1
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Thu Aug 4 13:43:05 2022 +0900
+
+    Merge branch 'develop_IoT' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into develop_IoT
+
+[33mcommit 7386e72aedb27450c99015ec8d33abe52165a5fc[m
+Merge: 9776599 eec0743
+Author: 정성우 <sw133v@naver.com>
+Date:   Thu Aug 4 13:35:58 2022 +0900
+
+    Merge branch 'develop' into 'master'
+    
+    Develop
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!21
+
+[33mcommit eec07431fa6a65828c459127fd7e9cdc57897433[m
+Merge: 86da1c4 d679b8e
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Aug 4 13:34:40 2022 +0900
+
+    Merge branch 'develop_FE' into develop
+
+[33mcommit 7692861424441370349b4e233101911e07a26ea2[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Aug 4 11:50:36 2022 +0900
+
+    develop-FE first commit
+
+[33mcommit 86da1c40113e484691b5b17204da2559c22558d6[m
+Merge: 751805a b362146
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Aug 4 11:32:13 2022 +0900
+
+    Merge branch 'feature_jji' into 'develop'
+    
+    FEAT: 로그인 구현
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!20
+
+[33mcommit 751805a708e3f558760cd3e332f5c200bf58793e[m
+Merge: 9776599 668ea2e
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Aug 4 11:27:16 2022 +0900
+
+    Merge branch 'feat_login' into 'develop'
+    
+    FEAT: 로그인 구현
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!19
+
+[33mcommit 668ea2e0cfe40f3de583076883b65c8b1a434f35[m[33m ([m[1;31morigin/feat_login[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Thu Aug 4 11:23:02 2022 +0900
+
+    FEAT: 로그인 구현
+
+[33mcommit b362146cfb038c7ae00d51a9c35433782fb6ec1a[m[33m ([m[1;31morigin/feature_jji[m[33m)[m
+Merge: 87ab8f2 8792e0e
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Aug 4 11:21:07 2022 +0900
+
+    Merge branch 'feat_login' into 'feature_jji'
+    
+    FEAT: 로그인 구현
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!17
+
+[33mcommit 8792e0edac23583566de4bac46ccaaed58fe2fbd[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Thu Aug 4 11:20:17 2022 +0900
+
+    FEAT: 로그인 구현
+
+[33mcommit 808f850babc7580e84d6ac4731cbc9d72d242c22[m[33m ([m[1;31morigin/feature_cyj_MainPage[m[33m)[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Thu Aug 4 10:02:00 2022 +0900
+
+    FEAT: 좌석페이지
+
+[33mcommit 66ba6d4051cf8481d58a8e824b2e7ce5b6093cb2[m
+Merge: ae8f6fd f5e226f
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Thu Aug 4 10:00:20 2022 +0900
+
+    Merge branch 'develop_FE' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into feature_IoT_motionrecog
+
+[33mcommit 3b98aa111ef3a8c839c08000c1509a983260ca4c[m[33m ([m[1;31morigin/feature_IoT_kdg[m[33m, [m[1;31morigin/develop_IoT[m[33m)[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Thu Aug 4 09:51:46 2022 +0900
+
+    age_gender_recognition
+
+[33mcommit 38e83ba119ba6b7e06311f4e8d618000251b593e[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Thu Aug 4 09:47:20 2022 +0900
+
+    FEAT: 좌석 적용
+
+[33mcommit f5e226f0f585f30f5862a762b4e78c5a233c09e8[m[33m ([m[1;31morigin/develop_FE[m[33m)[m
+Merge: d679b8e b8321ce
+Author: 정성우 <sw133v@naver.com>
+Date:   Wed Aug 3 18:46:24 2022 +0900
+
+    Merge branch 'feature_FE_jsw' into 'develop_FE'
+    
+    Feature fe jsw
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!16
+
+[33mcommit b8321ced461a4817c5cfd1b81a33676c712a24f1[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Wed Aug 3 18:01:44 2022 +0900
+
+    좌석 미완성
+
+[33mcommit ae8f6fd1e2a81e9f6e9d3425e9c157e010dfe57b[m[33m ([m[1;31morigin/feature_IoT_motionrecog[m[33m)[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Wed Aug 3 17:53:12 2022 +0900
+
+    0803
+
+[33mcommit 87ab8f26dcbadcadc468830b31b60420a1e7101b[m
+Merge: 7aae504 cff65e8
+Author: 정종일 <jongil519@gmail.com>
+Date:   Wed Aug 3 17:43:59 2022 +0900
+
+    Merge branch 'feat_login' into 'feature_jji'
+    
+    Feat login
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!14
+
+[33mcommit d20964b889aa7cfb161a48926f37b9d0c7a360ce[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Wed Aug 3 17:43:24 2022 +0900
+
+    220803 개발
+
+[33mcommit cff65e898ad1995fe0392bff1c6ac00fd7635ac4[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Wed Aug 3 17:42:44 2022 +0900
+
+    FEAT: 로그인 구현
+
+[33mcommit e51987281a3a173099644aa82c0b3002c55ae6a7[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Wed Aug 3 16:13:44 2022 +0900
+
+    FEAT: 로그인 구현
+
+[33mcommit 20724d665fb998eb7577ca019a97eb10a9a816e8[m
+Merge: d679b8e 165b8c4
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Wed Aug 3 13:27:24 2022 +0900
+
+    Merge branch 'develop_BE' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into feature_FE_jsw
+
+[33mcommit d679b8ecca8e6c3173697e108f9b7d0351a51291[m
+Merge: 0ce4773 e15e333
+Author: 정성우 <sw133v@naver.com>
+Date:   Wed Aug 3 13:23:25 2022 +0900
+
+    Merge branch 'develop_FE_jsw_feature' into 'develop_FE'
+    
+    temp
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!13
+
+[33mcommit e15e333dc05ae8f4177f52c23c5e3ef67d935f14[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Wed Aug 3 13:16:32 2022 +0900
+
+    temp
+
+[33mcommit b8b07ed23d74cd40fe28d6dafea4a87c4c92c44e[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 3 12:56:22 2022 +0900
+
+    FEAT: 시간 버튼 구현
+
+[33mcommit 165b8c43495a617c1d1635de295fb74fb7d41515[m
+Merge: c664065 7aae504
+Author: 정종일 <jongil519@gmail.com>
+Date:   Wed Aug 3 11:18:56 2022 +0900
+
+    Merge branch 'feature_jji' into 'develop_BE'
+    
+    Feature dto
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!12
+
+[33mcommit 7aae504c3250b74e9d75cef66833ff69c098a45f[m
+Merge: 3b2ed9c 550c2de
+Author: 정종일 <jongil519@gmail.com>
+Date:   Wed Aug 3 11:18:20 2022 +0900
+
+    Merge branch 'feature_dto' into 'feature_jji'
+    
+    feature DTO
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!11
+
+[33mcommit 550c2de17650550b6c3ccc4bb1ace44905f49c86[m[33m ([m[1;31morigin/feature_dto[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Wed Aug 3 11:17:22 2022 +0900
+
+    feature DTO
+
+[33mcommit 20ce26955e8c31fd231d7ea16ccb64da6de48007[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Aug 3 10:23:15 2022 +0900
+
+    REFACTORING: 상세 페이지 수정
+
+[33mcommit f2696f7f492b052c2d08ee033c8092b35571a253[m
+Merge: 3222e95 f5ebcd7
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 21:50:16 2022 +0900
+
+    Merge branch 'feature_cyj_MainPage' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into feature_cyj_MainPage
+
+[33mcommit 3222e95881e451e2f50e469faa66a1bfeffd65ec[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 21:40:15 2022 +0900
+
+    REFACTOR: BE 지우고 다시 받아보기..
+
+[33mcommit 2b548c0d359cbd08f09c14d3bd298de733a17213[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 21:30:09 2022 +0900
+
+    MERGE: 백엔드와 병합
+
+[33mcommit 5268fb4083b5c3d09f123d7546491498c0cf10ce[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 17:44:44 2022 +0900
+
+    FEAT: 영화 상세 페이지
+
+[33mcommit 63542fa89a639bf76aefd4f122b69be2cdd8b0d1[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Aug 1 17:50:26 2022 +0900
+
+    Feat: Slider Indicator 제작
+
+[33mcommit f724e67a450462625328dfc62aee59c0929466f2[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Thu Jul 28 20:42:00 2022 +0900
+
+    FEAT:메인페이지 예매 버튼 생성
+
+[33mcommit fbd3c4693c764bcf00850ab340fcfd9bdd03852f[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Thu Jul 28 20:41:39 2022 +0900
+
+    FEAT: 메인페이지 예매 버튼 생성
+
+[33mcommit e38b38eef23289f9af7b59c311cd0e6a0a35fcd1[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Jul 27 22:09:25 2022 +0900
+
+    FEAT:ToolBar 구현
+
+[33mcommit b6f11d00d2c64a153b8d4c89afa5087b3927f219[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Jul 26 20:28:28 2022 +0900
+
+    FEAT Card View Slider
+
+[33mcommit 8a72542b55e5d2e2e7201b590b30b3c532f67be6[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Jul 25 09:52:43 2022 +0900
+
+    FEAT: NEW PROJECT
+
+[33mcommit f5ebcd72c98fdaca4118be1288e90795071fef2e[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 21:40:15 2022 +0900
+
+    REFACTOR: BE 지우고 다시 받아보기..
+
+[33mcommit 98db73416fb266ef0af97fbf55e49b61d3ae0cc6[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 21:30:09 2022 +0900
+
+    MERGE: 백엔드와 병합
+
+[33mcommit 4341f59f30e40c8c8a656f929458fcd75789ef14[m
+Merge: ebe3f8d c664065
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 21:12:55 2022 +0900
+
+    Merge branch 'develop_BE' into feature_cyj_MainPage
+
+[33mcommit 0ce4773a4c9237540a8fc57462c104d6b07f3266[m
+Merge: 7c09db6 e278f3d
+Author: 정성우 <sw133v@naver.com>
+Date:   Tue Aug 2 18:13:15 2022 +0900
+
+    Merge branch 'develop_FE_jsw_feature' into 'develop_FE'
+    
+    Develop fe jsw feature
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!10
+
+[33mcommit e278f3d3231814652b752508d73759c9889c4891[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Tue Aug 2 17:47:38 2022 +0900
+
+    메인페이지(이동 구현x)
+
+[33mcommit 7939beecf72d2a2d6cf2577d5fff4049266ebd59[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Tue Aug 2 17:46:03 2022 +0900
+
+    0802
+
+[33mcommit 293ff07c25ce255348d3e51b2db1661f9fbcdaa3[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Tue Aug 2 17:45:52 2022 +0900
+
+    220802 개발내역
+
+[33mcommit ebe3f8d1ee05a40d5e8813e0bb6dc0b8e893650f[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Aug 2 17:44:44 2022 +0900
+
+    FEAT: 영화 상세 페이지
+
+[33mcommit c66406506290e5c33b6f555dae6085835df030b9[m
+Merge: bce6476 3b2ed9c
+Author: 정종일 <jongil519@gmail.com>
+Date:   Tue Aug 2 16:12:41 2022 +0900
+
+    Merge branch 'feature_jji' into 'develop_BE'
+    
+    Feature DTO
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!9
+
+[33mcommit 3b2ed9c6f1ccba836c214239b26f9c5ff686e042[m
+Merge: bce6476 744139d
+Author: 정종일 <jongil519@gmail.com>
+Date:   Tue Aug 2 16:12:03 2022 +0900
+
+    Merge branch 'feature_dto' into 'feature_jji'
+    
+    Feature dto
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!8
+
+[33mcommit 744139db9c181963fdd381ce36a40e983d359fb8[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Tue Aug 2 16:11:09 2022 +0900
+
+    feature DTO
+
+[33mcommit a3a52452c8b1775b03f7346d2aeddb1d8d479207[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Tue Aug 2 10:04:25 2022 +0900
+
+    feature dto
+
+[33mcommit 787465c1e57ea9fcd26dbfbf8d96eb99bf01e312[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Aug 1 17:52:25 2022 +0900
+
+    0801
+
+[33mcommit 0b4d3d4337ecc810d54b379d40763f2a1e37aab5[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Mon Aug 1 17:51:57 2022 +0900
+
+    220801 commit
+
+[33mcommit 7c09db6b7527b2a9ecfc13f5d414ee8d67b84e2e[m
+Merge: 9093a7d 8776bf2
+Author: 정성우 <sw133v@naver.com>
+Date:   Mon Aug 1 17:51:44 2022 +0900
+
+    Merge branch 'develop_FE_jsw_feature' into 'develop_FE'
+    
+    Develop fe jsw feature
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!7
+
+[33mcommit a5439f3e37f4a731efdbf0f770ca45696d8ed9fd[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Aug 1 17:50:26 2022 +0900
+
+    Feat: Slider Indicator 제작
+
+[33mcommit 8776bf2c0d66f337581c6c0dd24d4a3602a41790[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Aug 1 17:49:57 2022 +0900
+
+    API + React
+
+[33mcommit 4bdf455574c09e070d3e73f5b1b8a5a0b6de6c9f[m
+Merge: a4e0533 bce6476
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Aug 1 10:02:59 2022 +0900
+
+    Merge branch 'develop_BE' of https://lab.ssafy.com/s07-webmobile3-sub2/S07P12D207 into develop_FE_jsw_feature
+
+[33mcommit bce647649566b7cfc3752a15ec3071d9dcfb3dfa[m
+Merge: 486ef9c d60b4ca
+Author: 정종일 <jongil519@gmail.com>
+Date:   Mon Aug 1 10:00:17 2022 +0900
+
+    Merge branch 'feature_entity' into 'develop_BE'
+    
+    connect swagger
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!6
+
+[33mcommit d60b4ca4862d8b0484d965d8caa2780339b00586[m[33m ([m[1;31morigin/feature_entity[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Mon Aug 1 09:58:24 2022 +0900
+
+    feature DTO
+
+[33mcommit 9093a7d8ecb1a4f08ad3d93fbebd0078329bc1a9[m
+Merge: c704dd9 a4e0533
+Author: 정성우 <sw133v@naver.com>
+Date:   Mon Aug 1 09:55:17 2022 +0900
+
+    Merge branch 'develop_FE_jsw_feature' into 'develop_FE'
+    
+    refactoring
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!5
+
+[33mcommit a4e0533cef098162f77bedc518a1ef6359925cf4[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Aug 1 08:57:20 2022 +0900
+
+    refactoring
+
+[33mcommit c704dd99c4c29e06368e0cfca55f5d51542a684d[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Fri Jul 29 16:41:05 2022 +0900
+
+    jsw mainpage repactoring
+
+[33mcommit 4e0026c59b7b3de29c6328f5e2bcd7123cf03ba4[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Fri Jul 29 16:15:39 2022 +0900
+
+    0729
+
+[33mcommit e9b05296d284e4f49a1e765f469d87dead2cc787[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 16:09:31 2022 +0900
+
+    feature ticket
+
+[33mcommit 624a6d869ea388293cf57b9eaa0c64df2877cd4f[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 16:06:07 2022 +0900
+
+    feature ticket
+
+[33mcommit 66e01824dc66e55b3d5cf2daf8d798497608159e[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 16:04:38 2022 +0900
+
+    feature tickets
+
+[33mcommit 516c9a0d96fe0d596c8df2e9f2fc1e7c3c6d997c[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 13:28:49 2022 +0900
+
+    connect swagger
+
+[33mcommit 51ec8cf7949fd9021826ac748fe44f98c94b33d7[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 11:30:36 2022 +0900
+
+    connect swagger
+
+[33mcommit 5e682d091bfc1ab2954b842b7a79cfb94e3a5969[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 11:28:13 2022 +0900
+
+    connect swagger
+
+[33mcommit a1bd83ee85698b90462ccbcf44afc78bf6d2e19c[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 11:21:24 2022 +0900
+
+    connect swagger
+
+[33mcommit 486ef9c21856e94fefa0f589ad7a5e5eefb567b1[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 29 11:09:35 2022 +0900
+
+    create entity
+
+[33mcommit b530316cb84236c02285d552802a1fedb995c6b7[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Thu Jul 28 21:01:45 2022 +0900
+
+    0728
+
+[33mcommit efb294d98631000680a065aba24a112fffec7d07[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Thu Jul 28 20:42:00 2022 +0900
+
+    FEAT:메인페이지 예매 버튼 생성
+
+[33mcommit 58f152448a8a748d7710d88982127c064bacc8be[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Thu Jul 28 20:41:39 2022 +0900
+
+    FEAT: 메인페이지 예매 버튼 생성
+
+[33mcommit fa04caac7a20c2ad9e5f0de4ff62460908832dde[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Thu Jul 28 17:55:27 2022 +0900
+
+    220728 commit
+
+[33mcommit 63a7a1af42f1ad87d0702b20a59970aff467b853[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Thu Jul 28 17:51:36 2022 +0900
+
+    no message
+
+[33mcommit 69649cd14ac2c827a5b6afe6816863d8aa223ca7[m
+Merge: d258842 5820956
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Jul 28 13:07:44 2022 +0900
+
+    Merge branch 'feature_jji' into 'develop_BE'
+    
+    Feature jji
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!4
+
+[33mcommit 5820956950b172f302fdf5de90924e550814d61a[m
+Merge: b891eab 8fb7614
+Author: 정종일 <jongil519@gmail.com>
+Date:   Thu Jul 28 12:59:19 2022 +0900
+
+    Merge branch 'feature_jpa' into 'feature_jji'
+    
+    Feature jpa
+    
+    See merge request s07-webmobile3-sub2/S07P12D207!3
+
+[33mcommit 8fb7614776745683a0cf085093bb581539a8c379[m[33m ([m[1;31morigin/feature_jpa[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Thu Jul 28 12:57:35 2022 +0900
+
+    connect JPA
+
+[33mcommit 5ca1203b44a1e2143755e09a1b9254baf47bfed3[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Wed Jul 27 22:09:25 2022 +0900
+
+    FEAT:ToolBar 구현
+
+[33mcommit b37f10d564cb06a671562152ae698a87706fc649[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Wed Jul 27 19:57:27 2022 +0900
+
+    0727
+
+[33mcommit 0e76a945b66ef61e9932d6c8714f9d7b548d73d0[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Wed Jul 27 17:28:27 2022 +0900
+
+    connect jpa
+
+[33mcommit eb1c68d742dcd9107602e7ffc08d4373055a023d[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Tue Jul 26 21:45:38 2022 +0900
+
+    git name
+
+[33mcommit 2afcf968023e10059d10603be26bbdb6a09ef1dd[m
+Author: ks <whrudtn9727@naver.com>
+Date:   Tue Jul 26 21:42:37 2022 +0900
+
+    0726
+
+[33mcommit 74ec0439737dd0586856dc6f670ce02515aa7fe3[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Tue Jul 26 20:28:28 2022 +0900
+
+    FEAT Card View Slider
+
+[33mcommit d66f6d45310cf29320005b199b7b3c152555e1ad[m[33m ([m[1;31morigin/jji_feature_jpa[m[33m)[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Tue Jul 26 15:46:01 2022 +0900
+
+    connect JPA
+
+[33mcommit 02b07811a2bb4b4bdfe176b44708772bfd560448[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Tue Jul 26 10:13:42 2022 +0900
+
+    connect JPA
+
+[33mcommit 8d4aadf2546a3801af536489e1c949be79b3e4f9[m
+Author: 강동관 <dpfwpf2999@naver.com>
+Date:   Mon Jul 25 17:23:41 2022 +0900
+
+    220725 develop
+
+[33mcommit d86a45c5e7d275254d6008020d956e0a5830cbc7[m[33m ([m[1;31morigin/feature_IoT_jks[m[33m)[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Jul 25 17:19:56 2022 +0900
+
+    feature_IoT_jks_0725
+
+[33mcommit 38bce66d3e10d3237c2d9542e6bec763f2657d4f[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Jul 25 17:16:41 2022 +0900
+
+    kiosk_web_hompage(carousel)
+
+[33mcommit eaece61c7ee99b23efd328e798861fabc917a4b9[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Jul 25 17:14:37 2022 +0900
+
+    iot
+
+[33mcommit c24c6fa25b4c591fee2a33e7e7c4cb6d6164d5bf[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Mon Jul 25 10:04:01 2022 +0900
+
+    create model
+
+[33mcommit 901555af68c3ff12778b9af040542e829407d94a[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Mon Jul 25 10:00:28 2022 +0900
+
+    jpa setting in yml
+
+[33mcommit dbac8324a70a1ce02726d8ea3c23bd99b3dd584f[m[33m ([m[1;31morigin/develop_App[m[33m)[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Jul 25 09:52:43 2022 +0900
+
+    FEAT: NEW PROJECT
+
+[33mcommit 1bc7790a91053f94a84adf7194dab639c8ecbc3f[m[33m ([m[1;31morigin/develop_FE_jsw_feature[m[33m)[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Fri Jul 22 17:39:11 2022 +0900
+
+    'readme modify'
+
+[33mcommit b891eab8aadd53061455912126dc275242c13194[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Fri Jul 22 17:28:28 2022 +0900
+
+    0722 BE
+
+[33mcommit d2588429ce0caef682ac02496a2993106c72db09[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Fri Jul 22 11:02:46 2022 +0900
+
+    UPDATE: 기본 설정
+
+[33mcommit 977659929b226923d3848b2adef23092ac51da98[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Fri Jul 22 10:40:00 2022 +0900
+
+    폴더 생성
+
+[33mcommit 25190ec433cd91ad6548026ceaf89f00e119d483[m
+Author: choiyoungjin <ip951122@naver.com>
+Date:   Fri Jul 22 10:38:31 2022 +0900
+
+    깃 초기화
+
+[33mcommit 4ac744772eb4616d6a2e5e18e5dfb86e889fdb06[m
+Merge: 34894cc 9ad073f
+Author: 김효선 <apso123@naver.com>
+Date:   Tue Jul 19 17:28:15 2022 +0900
+
+    Merge branch 'khs_master'
+
+[33mcommit 9ad073f5efd2bdf16f40756c98024f3b2f2aeed1[m
+Author: 김효선 <apso123@naver.com>
+Date:   Tue Jul 19 17:26:42 2022 +0900
+
+    create 0719.txt
+
+[33mcommit 34894ccb7b5c01617f168ed06964e1ac87274499[m
+Merge: ec1b144 7970e99
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Jul 18 17:30:51 2022 +0900
+
+    Merge branch 'jsw_master'
+    
+    # Conflicts:
+    #       readme.md
+
+[33mcommit ec1b14433cda2071068cc13eb435292f62a0504e[m
+Merge: 7645ee0 7d25f42
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Jul 18 17:28:59 2022 +0900
+
+    Merge branch 'jks_master'
+    
+    # Conflicts:
+    #       readme.md
+
+[33mcommit 7970e99bd9de1d77db415aca819374010f8e0893[m
+Author: DESKTOP-KVCQHCD\multicampus <sw133v@naver.com>
+Date:   Mon Jul 18 17:28:16 2022 +0900
+
+    additional func
+
+[33mcommit 7d25f42d5ca2782de4750a9618e5f51342fa4aec[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Jul 18 17:26:23 2022 +0900
+
+    ks
+
+[33mcommit e60da91bb93d836096f1b288700a958d5cd45047[m
+Author: DESKTOP-KVCQHCD\multicampus <whrudtn9727@naver.com>
+Date:   Mon Jul 18 17:23:15 2022 +0900
+
+    ks
+
+[33mcommit 7645ee02cf64671d5bc030a1b8738a8bcb659e46[m
+Merge: daf55ca 03bf3e8
+Author: DESKTOP-KVCQHCD\multicampus <apso123@naver.com>
+Date:   Mon Jul 18 17:21:26 2022 +0900
+
+    Merge branch 'khs_master'
+    
+    # Conflicts:
+    #       readme.md
+
+[33mcommit daf55ca81aeda3657497f7927cfdb300e8b608de[m
+Merge: 2596059 1514297
+Author: jongil512 <jongil519@gmail.com>
+Date:   Mon Jul 18 17:18:47 2022 +0900
+
+    Merge branch 'jji_feature_community'
+    
+    # Conflicts:
+    #       readme.md
+
+[33mcommit 15142976db74f4aec77b51c4569c62e6161ba67e[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Mon Jul 18 17:13:34 2022 +0900
+
+    DOCS: jji_feature_community
+
+[33mcommit 259605992f2cce81036c8dc16911f5b514195f44[m
+Author: SSAFYCYJ <dakadern@gmail.com>
+Date:   Mon Jul 18 17:08:04 2022 +0900
+
+    DOCS: technical specification
+
+[33mcommit 03bf3e849053badc459246e9cc2deeab48956176[m
+Merge: 7df6646 890c57d
+Author: DESKTOP-KVCQHCD\multicampus <apso123@naver.com>
+Date:   Mon Jul 18 17:07:30 2022 +0900
+
+    Merge branch 'khs_develop' into khs_master
+
+[33mcommit 890c57db9c25df72fdf6634db21cd7d05e21e2f5[m
+Author: DESKTOP-KVCQHCD\multicampus <apso123@naver.com>
+Date:   Mon Jul 18 17:06:45 2022 +0900
+
+    create readme
+
+[33mcommit 2e32d93ab13a11f60d20efa9976bc20a99fb7c80[m
+Author: jongil512 <jongil519@gmail.com>
+Date:   Mon Jul 18 16:59:37 2022 +0900
+
+    jji_feature_community
+
+[33mcommit 44fd55490be43aa61ffc33786a6d200529e1c2ae[m
+Author: SSAFY <whrudtn9727@naver.com>
+Date:   Mon Jul 18 16:54:37 2022 +0900
+
+    ks
+
+[33mcommit 7df66460c3ee6988e865c24954d692fb55577461[m
+Author: 최영진 <ip951122@naver.com>
+Date:   Mon Jul 18 16:49:04 2022 +0900
+
+    Update readme.md

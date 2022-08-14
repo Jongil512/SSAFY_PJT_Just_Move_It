@@ -44,7 +44,7 @@ public class MovieService {
     }
 
     @Transactional
-    public void deleteById(Long movieId) {
-        movieRepository.deleteById(movieId);
+    public void deleteByMovieCode(String movieCode) {
+        movieRepository.deleteByMovieCode(movieCode);
     }
 }
