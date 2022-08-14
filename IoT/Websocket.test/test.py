@@ -11,6 +11,7 @@ def sendmessage(msg):
         ws = create_connection("ws://localhost:8081/api/socket")
         print("Sending")
         ws.send(msg)
+        # print(ws.recv())
         ws.close()
     except Exception as e:
         print(e)
