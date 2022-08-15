@@ -165,9 +165,11 @@ public class TicketingActivity extends AppCompatActivity {
                 String pn = userSP.getString("phone_number", "");
                 if(pn == null || pn.equals("")){
                     // Todo: 전화번호 입력 액티비티???
-
+                    Intent intent = new Intent(getApplicationContext(), PhoneNumberActivity.class);
+                    startActivity(intent);
                 }
 
+                pn = userSP.getString("phone_number", "");
                 Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
                         moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
 

@@ -39,6 +39,6 @@ public interface MovieApi {
     Call<Movie[]> getMovieOrderedList(@Body Recommend recommend);
 
     // 영화 상영 정보
-    @GET("/api/movies/{id}")
-    Call<Movie> getMoviePlayingInfo(@Path("id") String id);
+    @GET("/api/movies/{movieCode}")
+    Call<Movie> getMoviePlayingInfo(@Path("movieCode") String movieCode);
 }

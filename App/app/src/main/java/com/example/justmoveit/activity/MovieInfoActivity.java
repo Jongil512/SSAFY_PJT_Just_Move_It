@@ -269,10 +269,10 @@ public class MovieInfoActivity extends AppCompatActivity {
     }
 
     private static class ConnectionThread extends Thread {
-        private final String id;
+        private final String movieCode;
 
-        public ConnectionThread(String movieId){
-            this.id = movieId;
+        public ConnectionThread(String movieCode){
+            this.movieCode = movieCode;
         }
 
         @Override
@@ -289,7 +289,7 @@ public class MovieInfoActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = movieSP.edit();
 
             MovieApi service = MovieApi.retrofit.create(MovieApi.class);
-            service.getMoviePlayingInfo(id).enqueue(new Callback<Movie>() {
+            service.getMoviePlayingInfo(movieCode).enqueue(new Callback<Movie>() {
                 @Override
                 public void onResponse(Call<Movie> call, Response<Movie> response) {
                     Movie movie = response.body();
