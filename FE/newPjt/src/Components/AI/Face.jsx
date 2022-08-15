@@ -23,9 +23,8 @@ function Face() {
         faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL),
         faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL),
         faceapi.nets.ageGenderNet.loadFromUri(MODEL_URL),
-      ])
-        .then(setModelsLoaded(true))
-        .then(startVideo());
+      ]).then(setModelsLoaded(true));
+      setTimeout(startVideo, 5000);
     };
     loadModels();
   }, []);
