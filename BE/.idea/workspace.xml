@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08d28291-ac7c-4492-95e9-03910aaa06ea" name="Changes" comment="Changes" />
+    <list default="true" id="08d28291-ac7c-4492-95e9-03910aaa06ea" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/CommonPJT/.gradle/7.5/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/CommonPJT/.gradle/7.5/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonPJT/.gradle/7.5/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CommonPJT/.gradle/7.5/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonPJT/.gradle/7.5/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/CommonPJT/.gradle/7.5/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IoT/Websocket.test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../IoT/Websocket.test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IoT/Websocket.test/test2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../IoT/Websocket.test/test2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../IoT/ultrasonic/distance3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../IoT/ultrasonic/distance3.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,10 +46,22 @@
       <updated>1659601514499</updated>
       <workItem from="1659601516001" duration="633000" />
       <workItem from="1660290763443" duration="38000" />
+      <workItem from="1660544631182" duration="17000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
