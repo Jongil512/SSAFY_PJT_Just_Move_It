@@ -6,7 +6,7 @@ function Pose() {
   const mURL = "https://teachablemachine.withgoogle.com/models/8pmvwt-v8/";
 
   let model, webcam, ctx, mlabelContainer, maxPredictions;
-  let direction;
+  let direction; //app jsx로 보내야됨
 
   setTimeout(motion, 5000);
   // motion();

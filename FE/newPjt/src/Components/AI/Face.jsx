@@ -11,6 +11,7 @@ function Face() {
   const videoWidth = 640;
   const canvasRef = React.useRef();
   let flag;
+  let age,gender; //app jsx로 보내야됨
 
   React.useEffect(() => {
     const loadModels = () => {
@@ -74,9 +75,9 @@ function Face() {
           detections,
           displaySize
         );
-        const age = resizedDetections.age;
+         age = resizedDetections.age;
         console.log(age + "나이");
-        const gender = resizedDetections.gender;
+         gender = resizedDetections.gender;
         console.log(gender + "성별");
 
         canvasRef &&
