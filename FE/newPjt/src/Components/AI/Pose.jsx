@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import * as tmPose from "@teachablemachine/pose";
 // import * as speechCommands from "@tensorflow-models/speech-commands";
 
-function Pose() {
+function Pose(props) {
   const mURL = "https://teachablemachine.withgoogle.com/models/8pmvwt-v8/";
 
   let model, webcam, ctx, mlabelContainer, maxPredictions;
@@ -42,6 +42,9 @@ function Pose() {
   }
 
   async function predict() {
+    function sendData(dir) {
+      props.setDirction(dir);
+    }
     const { pose, posenetOutput } = await model.estimatePose(webcam.canvas);
     const prediction = await model.predict(posenetOutput);
 
@@ -52,6 +55,7 @@ function Pose() {
     }
     console.log(direction);
     drawPose(pose);
+    sendData(direction);
   }
 
   function drawPose(pose) {

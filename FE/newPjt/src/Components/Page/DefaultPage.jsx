@@ -3,10 +3,11 @@ import Header from "../Elements/Header";
 import Footer from "../Elements/Footer";
 import DefaultRouter from "./DefaultRouter";
 
-function DefaultPage() {
+function DefaultPage(props) {
+  console.log(props.data);
   return (
     <div className="DefaultPage">
-      <Header />
+      <Header dir={props.data["dirction"]} />
       <h1>여기는 디폴트 페이지</h1>
       <DefaultRouter />
       <Footer />

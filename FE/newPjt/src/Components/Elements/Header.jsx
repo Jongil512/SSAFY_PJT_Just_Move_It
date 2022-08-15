@@ -1,9 +1,10 @@
 import React from "react";
 
-function Header() {
+function Header(props) {
+  // console.log(props.dir);
   return (
     <div className="Header">
-      <h1>헤더다</h1>
+      <h1>{props.dir}</h1>
     </div>
   );
 }
