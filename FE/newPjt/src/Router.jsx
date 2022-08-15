@@ -6,13 +6,13 @@ import DefaultPage from "./Components/Page/DefaultPage";
 import LowPage from "./Components/Page/LowPage";
 // import NotFound from "./Components/Page/NotFound";
 
-const Router = () => {
+const Router = (props) => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dagi />}></Route>
-        <Route path="/low/*" element={<LowPage />}></Route>
-        <Route path="/default/*" element={<DefaultPage />}></Route>
+        <Route path="/low/*" element={<LowPage />} data={props}></Route>
+        <Route path="/default/*" element={<DefaultPage data={props} />}></Route>
 
         {/* <Route path="/movies" element={<MovieSelect />}></Route>
         <Route path="/movies/:movieCode" element={<MovieDetail />}></Route>

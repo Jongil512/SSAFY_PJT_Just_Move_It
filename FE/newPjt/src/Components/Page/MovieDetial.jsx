@@ -16,7 +16,7 @@ const style = {
 
 function MovieDetail() {
   const navigate = useNavigate();
-  // const axios = require("axios").default;
+  const axios = require("axios").default;
 
   const goBack = () => {
     navigate(-1);
@@ -24,33 +24,40 @@ function MovieDetail() {
 
   let juso = window.location.href.split("/");
   const movie_code = juso.slice(-1);
+  let state;
   // console.log(movie_code[0]);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
-  // axios
-  //   .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
-  //   .catch(function (err) {
-  //     console.log(err, "movies 데이터x");
-  //   })
-  //   .then(function (response) {
-  //     // 성공 핸들링
-  //     console.log(response.data);
-  //     const info_data = response.data;
-  //   });
-  // console.log(state);
-  const location = useLocation();
+  console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
+  axios
+    .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
+    .catch(function (err) {
+      console.log(err, "default 데이터x");
+    })
+    .then(function (response) {
+      // 성공 핸들링
+      console.log(response.data);
+      state = response.data;
+    });
+  console.log(state);
+
+  // const location = useLocation();
   // const { from } = location.state;
-  const state = location.state;
+  // const state = location.state;
   // console.log(state);
 
   return (
     <div className="MovieDetail">
       <h1>여기는 디테일</h1>
+      <img src={state["img"]} alt="사진이 없어용 ㅠ" />
       <h2>{state["title"]}</h2>
+      <span>평점 : {state["rating"]},</span>
+      <span> 총 관객수 : {Number(state["totalCustomer"]) / 1000}</span>
+      <span> 연령 : {state["ageLimit"].slice(0, 3)}</span>
+      <h5>{state["summary"]}</h5>
       <Button onClick={goBack}>뒤로가기</Button>
 
       <div>

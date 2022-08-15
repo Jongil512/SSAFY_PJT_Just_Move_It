@@ -3,7 +3,7 @@ import Header from "../Elements/Header";
 import Footer from "../Elements/Footer";
 import LowRouter from "./LowRouter";
 
-function LowPage() {
+function LowPage(props) {
   return (
     <div className="LowPage">
       <Header />
