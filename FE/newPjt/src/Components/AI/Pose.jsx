@@ -8,7 +8,8 @@ function Pose() {
   let model, webcam, ctx, mlabelContainer, maxPredictions;
   let direction;
 
-  motion();
+  setTimeout(motion, 5000);
+  // motion();
 
   async function motion() {
     const modelURL = mURL + "model.json";
@@ -25,6 +26,7 @@ function Pose() {
     await webcam.play();
 
     // window.requestAnimationFrame(loop);
+
     setInterval(loop, 1000);
 
     const canvas = document.getElementById("canvas");
