@@ -25,12 +25,18 @@ function Voice() {
           const vclassPrediction =
             classLabels[i] + ": " + result.scores[i].toFixed(2);
           vlabelContainer.childNodes[i].innerHTML = vclassPrediction;
-          if (result.scores[i].toFixed(2) > 0.5) {
+          if (
+            result.scores[i].toFixed(2) > 0.75
+            // classLabels[i] !== "배경 소음"
+          ) {
             if (
               (location.length == 0 || location.length == 2) &&
               isNaN(classLabels[i])
             ) {
               location = classLabels[i];
+
+              // if (location !== "배경 소음")
+              console.log("???  ", location);
               flag = false;
             }
             if (location.length == 1 && !isNaN(classLabels[i])) {
@@ -38,6 +44,8 @@ function Voice() {
               console.log("최종 결과값 ", location);
               flag = true;
             }
+            console.log("....", location);
+            // console.log(classLabels[i]);
           }
         }
       },
@@ -48,6 +56,8 @@ function Voice() {
         overlapFactor: 0.5, // probably want between 0.5 and 0.75. More info in README
       }
     );
+    console.log("인식한 값 :", location);
+    setTimeout(() => recognizer.stopListening(), 5000);
   }
   async function createModel() {
     const checkpointURL = vURL + "model.json"; // model topology

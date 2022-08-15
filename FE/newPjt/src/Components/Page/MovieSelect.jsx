@@ -9,8 +9,6 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Carousel } from "3d-react-carousal";
-// import Pose from "../AI/Pose";
-// import Voice from "../AI/Voice";
 
 const axios = require("axios").default;
 const slide = [];
