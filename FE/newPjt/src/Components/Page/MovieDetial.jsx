@@ -24,30 +24,30 @@ function MovieDetail() {
 
   let juso = window.location.href.split("/");
   const movie_code = juso.slice(-1);
-  let state;
+  let movie_data;
   // console.log(movie_code[0]);
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
-  axios
-    .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
-    .catch(function (err) {
-      console.log(err, "default 데이터x");
-    })
-    .then(function (response) {
-      // 성공 핸들링
-      console.log(response.data);
-      state = response.data;
-    });
-  console.log(state);
-
-  // const location = useLocation();
-  // const { from } = location.state;
-  // const state = location.state;
+  // console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
+  // axios
+  //   .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
+  //   .catch(function (err) {
+  //     console.log(err, "default 데이터x");
+  //   })
+  //   .then(function (response) {
+  //     // 성공 핸들링
+  //     console.log(response.data);
+  //     state = response.data;
+  //   });
   // console.log(state);
+
+  const location = useLocation();
+  const { from } = location.state;
+  const state = location.state;
+  console.log(state);
 
   return (
     <div className="MovieDetail">
