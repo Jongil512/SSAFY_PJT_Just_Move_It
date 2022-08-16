@@ -16,10 +16,12 @@ import com.bumptech.glide.Glide;
 import com.example.justmoveit.R;
 import com.example.justmoveit.api.UserTicketApi;
 import com.example.justmoveit.fragment.BlankFragment;
+import com.example.justmoveit.model.Movie;
 import com.example.justmoveit.model.ReservedTicket;
 import com.example.justmoveit.model.Ticket;
 import com.example.justmoveit.model.User;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
 
@@ -76,13 +78,21 @@ public class MyTicketListActivity extends AppCompatActivity {
             }
         }));
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Gson gson = new Gson();
+        Log.d("MyTicketListActivity - onResume()", "실행");
         // 서버에서 받아왔는데 아무것도 없으면 빈 프래그먼트로 교체
-        String userTickets = userSP.getString("user_tickets", "");
+        ArrayList<ReservedTicket> userTickets = gson.fromJson(userSP.getString("user_tickets", ""), TypeToken.getParameterized(ArrayList.class, ReservedTicket.class).getType());
         String userPN = userSP.getString("phone_number", "");
         if(userPN.equals("")){
             BlankFragment blankFragment = new BlankFragment("전화 번호 정보가 없습니다.");
             getSupportFragmentManager().beginTransaction().replace(R.id.TL_container, blankFragment).commit();
-        } else if(userTickets.equals("")){
+        } else if(userTickets==null || userTickets.size()==0){
             BlankFragment blankFragment = new BlankFragment("예매 내역이 없습니다.");
             getSupportFragmentManager().beginTransaction().replace(R.id.TL_container, blankFragment).commit();
         }
