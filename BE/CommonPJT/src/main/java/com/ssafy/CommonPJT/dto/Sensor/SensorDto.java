@@ -17,10 +17,6 @@ public class SensorDto {
         this.lengthValue = sensor.getLengthValue();
     }
 
-    public void setLengthValue(String lengthValue) {
-        this.lengthValue = lengthValue;
-    }
-
     @Builder
     public Sensor toEntity() {
         return Sensor.builder()
