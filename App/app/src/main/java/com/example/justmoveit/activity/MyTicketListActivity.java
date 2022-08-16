@@ -47,19 +47,19 @@ public class MyTicketListActivity extends AppCompatActivity {
         ConnectionThread thread = new ConnectionThread();
         Log.d("MyTicketsListActivity", "connection thread start");
         thread.start();
-        try {
+        /*try {
             thread.join(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        /*synchronized (thread){
+        }*/
+        synchronized (thread){
             try {
                 Log.d("MyTicketsListActivity", "main thread waiting");
                 thread.wait();
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
-        }*/
+        }
 
         setContentView(R.layout.activity_my_ticket_list);
 
