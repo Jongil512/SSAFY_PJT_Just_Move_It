@@ -1,9 +1,9 @@
 import React from "react";
 
-function Seats() {
+function Seats(props) {
   return (
     <div className="Seats">
-      <h3>여기 좌석 정보다 뿌앵</h3>
+      <h3>여기 좌석을 골라라</h3>
     </div>
   );
 }
