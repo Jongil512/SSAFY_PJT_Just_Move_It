@@ -19,6 +19,6 @@ public class socketConfig implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(handler, "/socket").setAllowedOrigins("*").addInterceptors(new HttpSessionHandshakeInterceptor());;
+        registry.addHandler(handler, "/socket").setAllowedOrigins("https://i7d207.p.ssafy.io/","http://i7d207.p.ssafy.io/").addInterceptors(new HttpSessionHandshakeInterceptor());;
     }
 }

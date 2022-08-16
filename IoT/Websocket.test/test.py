@@ -4,7 +4,7 @@ from websocket import create_connection
 # raspberry
 def sendmessage(data):
     try:
-        ws = create_connection("ws://i7d207.p.ssafy.io/api/socket")
+        ws = create_connection("http://i7d207.p.ssafy.io/api/socket",verify=False)
         # 연결됨
         connected = ws.recv()
 
