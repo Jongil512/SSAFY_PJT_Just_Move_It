@@ -3,7 +3,7 @@ package com.example.justmoveit.model;
 import java.io.Serializable;
 
 public class MoviePlayingInfo implements Serializable {
-    private Long id;
+    private Long moviePlayingInfoId;
     private Long movieId;
     private String movieTitle;
     private String ageLimit;
@@ -12,8 +12,8 @@ public class MoviePlayingInfo implements Serializable {
     private String theaterNo;
     private Ticket[] tickets;
 
-    public MoviePlayingInfo(Long id, Long movieId, String movieTitle, String ageLimit, String startTime, String endTime, String theaterNo, Ticket[] tickets) {
-        this.id = id;
+    public MoviePlayingInfo(Long moviePlayingInfoId, Long movieId, String movieTitle, String ageLimit, String startTime, String endTime, String theaterNo, Ticket[] tickets) {
+        this.moviePlayingInfoId = moviePlayingInfoId;
         this.movieId = movieId;
         this.movieTitle = movieTitle;
         this.ageLimit = ageLimit;
@@ -24,11 +24,11 @@ public class MoviePlayingInfo implements Serializable {
     }
 
     public Long getMoviePlayingInfoId() {
-        return id;
+        return moviePlayingInfoId;
     }
 
-    public void setMoviePlayingInfoId(Long id) {
-        this.id = id;
+    public void setMoviePlayingInfoId(Long moviePlayingInfoId) {
+        this.moviePlayingInfoId = moviePlayingInfoId;
     }
 
     public Long getMovieId() {

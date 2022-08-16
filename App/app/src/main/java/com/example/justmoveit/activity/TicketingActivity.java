@@ -56,12 +56,19 @@ public class TicketingActivity extends AppCompatActivity {
     private void loadMovie() {
         Intent intent = getIntent();
 
-        String movieId = intent.getStringExtra("movieId");
+        String movieCode = intent.getStringExtra("movie_code");
         String moviePlayingInfoId = intent.getStringExtra("moviePlayingInfoId");
 
         Gson gson = new Gson();
         // 영화
-        movie = gson.fromJson(movieSP.getString(movieId, ""), Movie.class);
+        ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
+        for(Movie m: movies){
+            if(m.getMovieCode().equals(movieCode)){
+                movie = m;
+                break;
+            }
+        }
+
         // 영화 상영 정보
         MoviePlayingInfo[] infos = movie.getMoviePlayingInfoList();
         for(MoviePlayingInfo info: infos){
@@ -158,9 +165,11 @@ public class TicketingActivity extends AppCompatActivity {
                 String pn = userSP.getString("phone_number", "");
                 if(pn == null || pn.equals("")){
                     // Todo: 전화번호 입력 액티비티???
-
+                    Intent intent = new Intent(getApplicationContext(), PhoneNumberActivity.class);
+                    startActivity(intent);
                 }
 
+                pn = userSP.getString("phone_number", "");
                 Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
                         moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
 

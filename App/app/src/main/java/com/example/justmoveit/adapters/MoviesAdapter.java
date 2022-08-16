@@ -65,24 +65,15 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context.getApplicationContext(), MovieInfoActivity.class);
-                intent.putExtra("movie_id", getMovieIdFromTitle(movies.get(index).getTitle()));
+                intent.putExtra("movie_code", movies.get(index).getMovieCode());
                 context.startActivity(intent);
             }
         });
         holder.reserveBtn.setOnClickListener(view -> {
             Intent intent = new Intent(context.getApplicationContext(), MovieInfoActivity.class);
-            intent.putExtra("movie_id", getMovieIdFromTitle(movies.get(index).getTitle()));
+            intent.putExtra("movie_code", movies.get(index).getMovieCode());
             context.startActivity(intent);
         });
-    }
-
-    private String getMovieIdFromTitle(String title){
-        for(Movie m: movieList){
-            if(m.getTitle().equals(title)){
-                return m.getMovieId()+"";
-            }
-        }
-        return "";
     }
 
     @Override

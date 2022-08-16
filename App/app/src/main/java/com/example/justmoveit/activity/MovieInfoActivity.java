@@ -48,15 +48,15 @@ public class MovieInfoActivity extends AppCompatActivity {
     private ViewPager2 sliderViewPager;
     private Handler sliderHandler = new Handler();
 
-    private String movieId;
+    private String movieCode;
 
     private void loadMovieDetails(){
         Intent intent = getIntent();
         // 선택된 영화의 id
-        movieId = intent.getStringExtra("movie_id");
+        movieCode = intent.getStringExtra("movie_code");
 
         // 서버 통신 스레드 - movie id로 통신 -> 새로운 playinginfo 있으면 SP 저장
-        ConnectionThread thread = new ConnectionThread(movieId);
+        ConnectionThread thread = new ConnectionThread(movieCode);
         Log.d("TicketingActivity", "connection thread start");
         thread.start();
         synchronized (thread){
@@ -96,8 +96,8 @@ public class MovieInfoActivity extends AppCompatActivity {
         ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
 
         for(Movie m: movies){
-            String id = m.getMovieId()+"";
-            if(id.equals(movieId)){
+            String code = m.getMovieCode()+"";
+            if(code.equals(movieCode)){
                 movie = m;
                 break;
             }
@@ -269,10 +269,10 @@ public class MovieInfoActivity extends AppCompatActivity {
     }
 
     private static class ConnectionThread extends Thread {
-        private final String id;
+        private final String movieCode;
 
-        public ConnectionThread(String movieId){
-            this.id = movieId;
+        public ConnectionThread(String movieCode){
+            this.movieCode = movieCode;
         }
 
         @Override
@@ -289,7 +289,7 @@ public class MovieInfoActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = movieSP.edit();
 
             MovieApi service = MovieApi.retrofit.create(MovieApi.class);
-            service.getMoviePlayingInfo(id).enqueue(new Callback<Movie>() {
+            service.getMoviePlayingInfo(movieCode).enqueue(new Callback<Movie>() {
                 @Override
                 public void onResponse(Call<Movie> call, Response<Movie> response) {
                     Movie movie = response.body();
