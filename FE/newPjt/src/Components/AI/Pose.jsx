@@ -53,7 +53,7 @@ function Pose(props) {
         direction = prediction[i].className;
       }
     }
-    console.log(direction);
+    // console.log(direction);
     drawPose(pose);
     sendData(direction);
   }
