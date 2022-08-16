@@ -1162,3 +1162,30 @@ java.lang.IllegalArgumentException: 이미 값이 존재합니다.
 2022-08-16 14:18:51.388  INFO 13588 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2022-08-16 14:18:51.391  INFO 13588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2022-08-16 14:18:51.394  INFO 13588 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2022-08-16 18:16:40.652  INFO 15644 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Starting CommonPjtApplication using Java 1.8.0_192 on DESKTOP-G71FRBB with PID 15644 (C:\ssafy1\BE\CommonPJT\build\classes\java\main started by choi in C:\ssafy1\BE\CommonPJT)
+2022-08-16 18:16:40.654  INFO 15644 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-08-16 18:16:40.688  INFO 15644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-08-16 18:16:40.689  INFO 15644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-08-16 18:16:41.477  INFO 15644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-08-16 18:16:41.552  INFO 15644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 7 JPA repository interfaces.
+2022-08-16 18:16:42.065  INFO 15644 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2022-08-16 18:16:42.072  INFO 15644 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-08-16 18:16:42.073  INFO 15644 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.64]
+2022-08-16 18:16:42.185  INFO 15644 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-08-16 18:16:42.185  INFO 15644 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1496 ms
+2022-08-16 18:16:42.216  INFO 15644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-08-16 18:16:42.567  INFO 15644 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-08-16 18:16:42.575  INFO 15644 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:mysql://i7d207.p.ssafy.io:3306/ssafy?serverTimezone=Asia/Seoul'
+2022-08-16 18:16:42.694  INFO 15644 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-08-16 18:16:42.736  INFO 15644 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-08-16 18:16:42.896  INFO 15644 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-08-16 18:16:42.995  INFO 15644 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-08-16 18:16:43.724  INFO 15644 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-08-16 18:16:43.733  INFO 15644 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-08-16 18:16:44.348  WARN 15644 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-08-16 18:16:44.535  INFO 15644 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-08-16 18:16:44.809  INFO 15644 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2022-08-16 18:16:45.082  INFO 15644 --- [restartedMain] c.ssafy.CommonPJT.CommonPjtApplication   : Started CommonPjtApplication in 4.857 seconds (JVM running for 6.012)
+2022-08-16 18:16:49.435  INFO 15644 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-08-16 18:16:49.435  INFO 15644 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-08-16 18:16:49.437  INFO 15644 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
