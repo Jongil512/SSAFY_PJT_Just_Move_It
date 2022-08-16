@@ -16,7 +16,7 @@ import java.util.List;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
-//http://localhost/justmoveit/swagger-ui/index.html
+//https://i7d207.p.ssafy.io/api/swagger-ui/index.html#/movie-recommend-controller/rankUsingPOST
 
 @Configuration
 @EnableSwagger2
