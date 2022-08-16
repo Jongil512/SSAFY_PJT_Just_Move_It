@@ -54,6 +54,14 @@ public class TicketInfoActivity extends AppCompatActivity {
         // 영화 예매 정보 뿌림
         getSetTexts(ticket);
 
+        // 이전 페이지
+        findViewById(R.id.ok_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         // 예매 취소
         findViewById(R.id.reserve_cancel_button).setOnClickListener(new View.OnClickListener(){
             @Override
@@ -80,14 +88,15 @@ public class TicketInfoActivity extends AppCompatActivity {
         // 영화 포스터 등록
         Gson gson = new Gson();
         ImageView poster = findViewById(R.id.movie_poster);
+        Movie movie = gson.fromJson(movieSP.getString(ticket.getMovieId()+"", ""), Movie.class);
 
-        ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
+        /*ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
         Movie movie = null;
         for(Movie m: movies){
             if(m.getTitle().equals(ticket.getMovieTitle())){
                 movie = m;
             }
-        }
+        }*/
 
         Picasso.get().load(movie.getImg()).into(poster);
 
