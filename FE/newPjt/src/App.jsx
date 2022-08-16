@@ -19,8 +19,9 @@ function App() {
         나이는 : {AppAge}, 성별은 : {AppGender}
       </h3>
       <h3>방향은 현재 {dirction} 을 가리키고 있다!</h3> */}
-      <Face setAge={setAge} setGender={setGender}></Face>
-      <Pose setDirction={setDirction}></Pose>
+
+      {/* <Face setAge={setAge} setGender={setGender}></Face>
+      <Pose setDirction={setDirction}></Pose> */}
     </div>
   );
 }
