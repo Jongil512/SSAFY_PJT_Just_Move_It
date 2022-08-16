@@ -66,6 +66,7 @@ public class MyTicketListActivity extends AppCompatActivity {
                 editor1 = userSP.edit();
                 editor1.remove("user_info");
                 editor1.remove("user_tickets");
+                editor1.remove("phone_number");
                 editor1.apply();
 
                 editor2 = movieSP.edit();
@@ -76,8 +77,12 @@ public class MyTicketListActivity extends AppCompatActivity {
         }));
 
         // 서버에서 받아왔는데 아무것도 없으면 빈 프래그먼트로 교체
-        String str = userSP.getString("user_tickets", "");
-        if(str.equals("")){
+        String userTickets = userSP.getString("user_tickets", "");
+        String userPN = userSP.getString("phone_number", "");
+        if(userPN.equals("")){
+            BlankFragment blankFragment = new BlankFragment("전화 번호 정보가 없습니다.");
+            getSupportFragmentManager().beginTransaction().replace(R.id.TL_container, blankFragment).commit();
+        } else if(userTickets.equals("")){
             BlankFragment blankFragment = new BlankFragment("예매 내역이 없습니다.");
             getSupportFragmentManager().beginTransaction().replace(R.id.TL_container, blankFragment).commit();
         }
@@ -110,6 +115,11 @@ public class MyTicketListActivity extends AppCompatActivity {
             UserTicketApi ticketService = UserTicketApi.retrofit.create(UserTicketApi.class);
             String phoneNumber = userSP.getString("phone_number", "");
 
+            if(phoneNumber.equals("")){
+                Log.e("MyTicketListActivity - getUserTicketsFromServer()", "no user phone number");
+                return;
+            }
+
             ticketService.getUserTicketList(phoneNumber).enqueue(new Callback<Ticket[]>() {
                 @Override
                 public void onResponse(Call<Ticket[]> call, Response<Ticket[]> response) {
@@ -117,10 +127,10 @@ public class MyTicketListActivity extends AppCompatActivity {
 
                     // 서버에 예매 내역이 없으면 종료
                     if(ticketListFromServer==null || ticketListFromServer.length==0){
-                        Log.e("getUserTicketsFromServer", "ticket list from server doesn't exist");
+                        Log.e("MyTicketListActivity - getUserTicketList", "ticket list from server doesn't exist");
                         return;
                     }
-                    Log.d("ConnectionThread - getUserTicketList", "onResponse()");
+                    Log.d("MyTicketListActivity - getUserTicketList", "onResponse()");
 
                     // 서버에 예매 내역이 있으면 추가함
                     ArrayList<ReservedTicket> finalTicketListFromPS = new ArrayList<>();
@@ -137,7 +147,7 @@ public class MyTicketListActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<Ticket[]> call, Throwable t) {
-                    Log.e("ConnectionThread - getUserTicketList", "onFailure");
+                    Log.e("MyTicketListActivity - getUserTicketList", "onFailure: " + t.getMessage());
                 }
             });
         }
