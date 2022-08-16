@@ -5,6 +5,7 @@ import static com.example.justmoveit.activity.LoadingActivity.userSP;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,6 +47,11 @@ public class MyTicketListActivity extends AppCompatActivity {
         ConnectionThread thread = new ConnectionThread();
         Log.d("MyTicketsListActivity", "connection thread start");
         thread.start();
+        /*try {
+            thread.join(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         synchronized (thread){
             try {
                 Log.d("MyTicketsListActivity", "main thread waiting");
@@ -74,6 +80,7 @@ public class MyTicketListActivity extends AppCompatActivity {
                 editor2 = movieSP.edit();
                 editor2.remove("my_ranking");
                 editor2.apply();
+
                 finish(); // 현재 액티비티 종료 -> 메인으로 돌아감
             }
         }));

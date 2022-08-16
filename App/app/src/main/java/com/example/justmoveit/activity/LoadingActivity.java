@@ -35,6 +35,11 @@ public class LoadingActivity extends Activity {
         ConnectionThread thread = new ConnectionThread();
         Log.d("LoadingActivity", "connection thread start");
         thread.start();
+        /*try {
+            thread.join(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
         synchronized (thread){
             try {
                 Log.d("LoadingActivity", "main thread waiting");
@@ -44,14 +49,13 @@ public class LoadingActivity extends Activity {
             }
         }
 
-
-        Handler handler = new Handler();
-        handler.postDelayed(() -> {
+//        Handler handler = new Handler();
+//        handler.postDelayed(() -> {
             Intent intent = new Intent(this, MainActivity.class);
             Log.i("LoadingActivity", "move to mainActivity");
             startActivity(intent);
             finish();
-        }, 1000);
+//        }, 1000);
     }
 
     private static class ConnectionThread extends Thread {
@@ -81,9 +85,12 @@ public class LoadingActivity extends Activity {
 
                     // SP에 저장
                     Gson gson = new Gson();
-                    editor.putString("general_ranking", gson.toJson(Arrays.asList(movies)));
+
+                    for(Movie m: movies){
+                        editor.putString(m.getMovieId(), gson.toJson(m));
+                    }
                     editor.apply();
-                    Log.i("movieSP", "모든 영화 삽입 완료");
+                    Log.d("movieSP", "모든 영화 삽입 완료");
                 }
 
                 @Override

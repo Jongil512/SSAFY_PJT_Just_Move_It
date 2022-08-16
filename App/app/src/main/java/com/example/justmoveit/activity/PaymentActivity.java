@@ -128,6 +128,11 @@ public class PaymentActivity extends AppCompatActivity {
                         ConnectionThread thread = new ConnectionThread();
                         Log.d("PaymentActivity", "connection thread start");
                         thread.start();
+                        /*try {
+                            thread.join(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }*/
                         synchronized (thread) {
                             try {
                                 Log.d("PaymentActivity", "main thread waiting");

@@ -25,17 +25,15 @@ import com.squareup.picasso.Picasso;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewHolder> {
     private final List<Movie> movies;    // 영화 순서
     private Context context;
-    private final ArrayList<Movie> movieList; // general_ranking 영화 리스트
 
     public MoviesAdapter(List<Movie> movies) {
         this.movies = movies;
-        Gson gson = new Gson();
-        movieList = gson.fromJson(movieSP.getString("general_ranking", ""),
-                TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
     }
 
     @NonNull
@@ -58,23 +56,47 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
         int index = position % movies.size();
 
+        // movies: 순서만 보는거.. movieList: 실제 데이저 참조해야하는 거
         holder.ranking.setText((index+1)+"위");
-        holder.setMovie(movies.get(index));
+
+        String id = getMovieIdFromTitle(movies.get(index).getTitle());
+        Gson gson = new Gson();
+        holder.setMovie(gson.fromJson(movieSP.getString(id, ""), Movie.class));
         // 홀더 아이템 클릭시 영화 상세 페이지로 이동
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context.getApplicationContext(), MovieInfoActivity.class);
-                intent.putExtra("movie_code", movies.get(index).getMovieCode());
+                intent.putExtra("movie_id", id);
+//                intent.putExtra("movie_code", movies.get(index).getMovieCode());
                 context.startActivity(intent);
             }
         });
         holder.reserveBtn.setOnClickListener(view -> {
             Intent intent = new Intent(context.getApplicationContext(), MovieInfoActivity.class);
-            intent.putExtra("movie_code", movies.get(index).getMovieCode());
+            intent.putExtra("movie_id", id);
+//            intent.putExtra("movie_code", movies.get(index).getMovieCode());
             context.startActivity(intent);
         });
     }
+
+    private String getMovieIdFromTitle(String title){
+        Gson gson = new Gson();
+        for(int id=1; id<11; id++){
+            Movie m = gson.fromJson(movieSP.getString(id + "", ""), Movie.class);
+            if(m.getTitle().equals(title)){
+                return m.getMovieId();
+            }
+        }
+
+        /*for(Movie m: movieList){
+            if(m.getTitle().equals(title)){
+                return m.getMovieId();
+            }
+        }*/
+        return "";
+    }
+
 
     @Override
     public int getItemCount() {
