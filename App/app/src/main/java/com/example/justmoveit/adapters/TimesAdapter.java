@@ -61,7 +61,7 @@ public class TimesAdapter extends RecyclerView.Adapter<TimesAdapter.TimeViewHold
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
         String now = simpleDateFormat.format(new Date());
         if(times.get(index).compareTo(now) < 0){
-            holder.itemView.setEnabled(false);
+//            holder.itemView.setEnabled(false);
             holder.textTime.setTextColor(R.color.black);
             holder.relativeLayout.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("darkgray")));
         }

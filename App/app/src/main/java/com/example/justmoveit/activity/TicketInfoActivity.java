@@ -68,13 +68,18 @@ public class TicketInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ConnectionThread thread = new ConnectionThread(ticket);
                 thread.start();
-                synchronized (thread) {
+                /*try {
+                    thread.join(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
+                /*synchronized (thread) {
                     try {
                         thread.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
+                }*/
                 Toast.makeText(TicketInfoActivity.this, "예매 취소가 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
                 finish();
