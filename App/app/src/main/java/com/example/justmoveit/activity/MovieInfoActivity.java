@@ -48,15 +48,15 @@ public class MovieInfoActivity extends AppCompatActivity {
     private ViewPager2 sliderViewPager;
     private Handler sliderHandler = new Handler();
 
-    private String movieCode;
+    private String movieId;
 
     private void loadMovieDetails(){
         Intent intent = getIntent();
         // 선택된 영화의 id
-        movieCode = intent.getStringExtra("movie_code");
+        movieId = intent.getStringExtra("movie_id");
 
         // 서버 통신 스레드 - movie id로 통신 -> 새로운 playinginfo 있으면 SP 저장
-        ConnectionThread thread = new ConnectionThread(movieCode);
+        ConnectionThread thread = new ConnectionThread(movieId);
         Log.d("TicketingActivity", "connection thread start");
         thread.start();
         synchronized (thread){
@@ -93,15 +93,7 @@ public class MovieInfoActivity extends AppCompatActivity {
 //            public void run() {
 
         // 영화 목록에서 선택된 영화(=movie)를 찾음
-        ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
-
-        for(Movie m: movies){
-            String code = m.getMovieCode()+"";
-            if(code.equals(movieCode)){
-                movie = m;
-                break;
-            }
-        }
+        movie = gson.fromJson(movieSP.getString(movieId, ""), Movie.class);
 
         layoutSliderIndicators = findViewById(R.id.layoutSliderIndicators);
         RoundedImageView imgMoviePoster = findViewById(R.id.imageMoviePoster);
@@ -301,7 +293,7 @@ public class MovieInfoActivity extends AppCompatActivity {
 
                     Gson gson = new Gson();
                     // 서버에서 가져온 movie 정보를 다시 덮어씌워줌
-                    List<Movie> newMovieList = new ArrayList<>();
+                    /*List<Movie> newMovieList = new ArrayList<>();
                     List<Movie> movieList = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
                     for(Movie m: movieList){
                         if(m.getTitle().equals(movie.getTitle())){
@@ -309,8 +301,9 @@ public class MovieInfoActivity extends AppCompatActivity {
                             continue;
                         }
                         newMovieList.add(m);
-                    }
-                    editor.putString("general_ranking", gson.toJson(newMovieList));
+                    }*/
+                    String movieId = movie.getMoviePlayingInfoByIndex(0).getMovieId()+"";
+                    editor.putString(movieId, gson.toJson(movie));
                     editor.apply();
                 }
 

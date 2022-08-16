@@ -81,9 +81,12 @@ public class LoadingActivity extends Activity {
 
                     // SP에 저장
                     Gson gson = new Gson();
-                    editor.putString("general_ranking", gson.toJson(Arrays.asList(movies)));
+
+                    for(Movie m: movies){
+                        editor.putString(m.getMovieId(), gson.toJson(m));
+                    }
                     editor.apply();
-                    Log.i("movieSP", "모든 영화 삽입 완료");
+                    Log.d("movieSP", "모든 영화 삽입 완료");
                 }
 
                 @Override

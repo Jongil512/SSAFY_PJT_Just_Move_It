@@ -26,6 +26,7 @@ import com.example.justmoveit.fragment.ViewPagerFragment;
 import com.kakao.auth.Session;
 
 import java.security.MessageDigest;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onOffMovieRankTab(myRanking, generalRanking);
-                ViewPagerFragment myRankingView = new ViewPagerFragment("my_ranking");
+                ViewPagerFragment myRankingView = new ViewPagerFragment(1);
                 getSupportFragmentManager().beginTransaction().replace(R.id.VP_container, myRankingView).commit();
             }
         });
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onOffMovieRankTab(generalRanking, myRanking);
-                ViewPagerFragment genRankingView = new ViewPagerFragment("general_ranking");
+                ViewPagerFragment genRankingView = new ViewPagerFragment(0);
                 getSupportFragmentManager().beginTransaction().replace(R.id.VP_container, genRankingView).commit();
             }
         });
@@ -87,11 +88,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
+        Map<String, ?> map = movieSP.getAll();
+
         // 로그인되어 있으면 마이 랭킹 켜고 일반 랭킹 끄기
         if(Session.getCurrentSession().isOpened() && movieSP.getString("my_ranking","") != null){
             myRanking.setVisibility(View.VISIBLE);
             myRanking.performClick();
-        } else if (movieSP.getString("general_ranking","") != null && !movieSP.getString("general_ranking","").equals("")) {
+        } else if (map != null && map.size() > 1) {
             myRanking.setVisibility(View.INVISIBLE);
             generalRanking.performClick();
         }

@@ -27,13 +27,14 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class ViewPagerFragment extends Fragment {
-    private String rankBy;  // general_ranking or my_ranking
+    private int rankBy;  // general_ranking(0) or my_ranking(1)
     private MainActivity activity;
     private ViewGroup rootView;
 
-    public ViewPagerFragment(String rankBy){
+    public ViewPagerFragment(int rankBy){
         this.rankBy = rankBy;
     }
 
@@ -80,7 +81,18 @@ public class ViewPagerFragment extends Fragment {
 
         // SP에 저장된 무비 리스트 가져와서 어댑트
         Gson gson = new Gson();
-        List<Movie> movies = gson.fromJson(movieSP.getString(rankBy, ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
+        List<Movie> movies = new ArrayList<>();
+
+        if(rankBy == 1) {
+            movies = gson.fromJson(movieSP.getString("my_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
+        } else {
+            Map<String, ?> map = movieSP.getAll();
+            Set<String> keys = map.keySet();
+            for(String key: keys){
+                if(key.equals("my_ranking"))    continue;
+                movies.add(gson.fromJson(movieSP.getString(key, ""), Movie.class));
+            }
+        }
         // 없으면 종료
         if(movies == null || movies.size() == 0){
             Log.e("setupMoviesViewPager", "there are no movies in SP");
