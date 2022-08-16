@@ -156,7 +156,6 @@ public class TicketingActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                // Todo: 로그인 되어있지 않으면 리다이렉트, 전화번호 없으면 입력하게 만들기
                 if(!Session.getCurrentSession().isOpened()) {
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
@@ -164,7 +163,6 @@ public class TicketingActivity extends AppCompatActivity {
 
                 String pn = userSP.getString("phone_number", "");
                 if(pn == null || pn.equals("")){
-                    // Todo: 전화번호 입력 액티비티???
                     Intent intent = new Intent(getApplicationContext(), PhoneNumberActivity.class);
                     startActivity(intent);
                 }
