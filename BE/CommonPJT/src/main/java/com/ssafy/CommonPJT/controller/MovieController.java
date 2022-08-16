@@ -19,7 +19,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @Api("MovieController") //swagger 컨트롤러 이름
-@RequestMapping("/movies")
+@RequestMapping("/api/movies")
 public class MovieController {
 
     private final MovieService movieService;
