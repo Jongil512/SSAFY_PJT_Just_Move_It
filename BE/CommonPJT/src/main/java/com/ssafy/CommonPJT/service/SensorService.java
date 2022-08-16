@@ -21,13 +21,17 @@ public class SensorService {
         if (sensorRepository.findAll().isEmpty()) {
             sensorRepository.save(sensorDto.toEntity());
         } else {
-            Long id = 1L;
-            Sensor sensor1 = sensorRepository.findById(id)
-                    .orElseThrow(() -> new NoSuchElementException("존재하지 않는 값입니다."));
-            SensorDto sensorDto1 = new SensorDto(sensor1);
-            sensorDto1.setLengthValue(sensorDto.getLengthValue());
-            sensorRepository.save(sensorDto1.toEntity());
+            throw new IllegalArgumentException("이미 값이 존재합니다.");
         }
+    }
+
+    @Transactional void edit(SensorDto sensorDto) {
+        Long id = 1L;
+        Sensor sensor1 = sensorRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("존재하지 않는 값입니다."));
+        SensorDto sensorDto1 = new SensorDto(sensor1);
+        sensorDto1.setLengthValue(sensorDto.getLengthValue());
+        sensorRepository.save(sensorDto1.toEntity());
     }
 
     public SensorDto getValue() {
