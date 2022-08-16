@@ -68,13 +68,18 @@ public class TicketInfoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 ConnectionThread thread = new ConnectionThread(ticket);
                 thread.start();
-                synchronized (thread) {
+                /*try {
+                    thread.join(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }*/
+                /*synchronized (thread) {
                     try {
                         thread.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
+                }*/
                 Toast.makeText(TicketInfoActivity.this, "예매 취소가 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
                 finish();
@@ -88,14 +93,15 @@ public class TicketInfoActivity extends AppCompatActivity {
         // 영화 포스터 등록
         Gson gson = new Gson();
         ImageView poster = findViewById(R.id.movie_poster);
+        Movie movie = gson.fromJson(movieSP.getString(ticket.getMovieId()+"", ""), Movie.class);
 
-        ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
+        /*ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
         Movie movie = null;
         for(Movie m: movies){
             if(m.getTitle().equals(ticket.getMovieTitle())){
                 movie = m;
             }
-        }
+        }*/
 
         Picasso.get().load(movie.getImg()).into(poster);
 

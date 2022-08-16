@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/moviesViewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="150dp"
         android:paddingHorizontal="45dp"
         app:layout_constraintBottom_toBottomOf="parent"

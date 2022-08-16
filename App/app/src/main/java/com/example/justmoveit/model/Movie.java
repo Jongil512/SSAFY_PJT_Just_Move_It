@@ -48,6 +48,9 @@ public class Movie implements Serializable {
         this.movieCode = movieCode;
         this.moviePlayingInfoList = moviePlayingInfoList;
     }
+    public String getMovieId() {
+        return moviePlayingInfoList[0].getMovieId()+"";
+    }
 
     public String getCountry() {
         return country;
