@@ -35,23 +35,27 @@ public class LoadingActivity extends Activity {
         ConnectionThread thread = new ConnectionThread();
         Log.d("LoadingActivity", "connection thread start");
         thread.start();
-        synchronized (thread){
+        try {
+            thread.join(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        /*synchronized (thread){
             try {
                 Log.d("LoadingActivity", "main thread waiting");
                 thread.wait();
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
-        }
+        }*/
 
-
-        Handler handler = new Handler();
-        handler.postDelayed(() -> {
+//        Handler handler = new Handler();
+//        handler.postDelayed(() -> {
             Intent intent = new Intent(this, MainActivity.class);
             Log.i("LoadingActivity", "move to mainActivity");
             startActivity(intent);
             finish();
-        }, 1000);
+//        }, 1000);
     }
 
     private static class ConnectionThread extends Thread {

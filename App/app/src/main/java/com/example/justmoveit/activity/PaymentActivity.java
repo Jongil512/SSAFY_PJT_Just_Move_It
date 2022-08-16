@@ -128,14 +128,19 @@ public class PaymentActivity extends AppCompatActivity {
                         ConnectionThread thread = new ConnectionThread();
                         Log.d("PaymentActivity", "connection thread start");
                         thread.start();
-                        synchronized (thread) {
+                        try {
+                            thread.join(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        /*synchronized (thread) {
                             try {
                                 Log.d("PaymentActivity", "main thread waiting");
                                 thread.wait();
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
-                        }
+                        }*/
 
                         Log.d("PaymentActivity", "payment done");
                         Toast.makeText(PaymentActivity.this, "예매됨", Toast.LENGTH_SHORT).show();

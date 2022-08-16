@@ -56,17 +56,24 @@ public class MovieInfoActivity extends AppCompatActivity {
         movieId = intent.getStringExtra("movie_id");
 
         // 서버 통신 스레드 - movie id로 통신 -> 새로운 playinginfo 있으면 SP 저장
-        ConnectionThread thread = new ConnectionThread(movieId);
+        Gson gson = new Gson();
+        String movieCode = gson.fromJson(movieSP.getString(movieId, ""), Movie.class).getMovieCode();
+        ConnectionThread thread = new ConnectionThread(movieCode);
         Log.d("TicketingActivity", "connection thread start");
         thread.start();
-        synchronized (thread){
+        /*try {
+            thread.join(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }*/
+        /*synchronized (thread){
             try {
                 Log.d("TicketingActivity", "main thread waiting");
                 thread.wait();
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 
     @Override

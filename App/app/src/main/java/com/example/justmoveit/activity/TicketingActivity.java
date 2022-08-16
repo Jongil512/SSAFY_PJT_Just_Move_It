@@ -157,28 +157,48 @@ public class TicketingActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                if(!Session.getCurrentSession().isOpened()) {
-                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                    startActivity(intent);
-                }
-
                 String pn = userSP.getString("phone_number", "");
-                if(pn == null || pn.equals("")){
-                    Intent intent = new Intent(getApplicationContext(), PhoneNumberActivity.class);
+                if(Session.getCurrentSession().isClosed()) {
+                    Intent it = new Intent(TicketingActivity.this, LoginActivity.class);
+                    startActivity(it);
+
+                    /*LoginThread loginThread = new LoginThread();
+                    loginThread.start();
+                    try {
+                        loginThread.join(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }*/
+                    /*synchronized (loginThread) {
+                        try {
+                            loginThread.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }*/
+                } else if (pn == null || pn.equals("")) {
+                    Intent intent = new Intent(TicketingActivity.this, PhoneNumberActivity.class);
                     startActivity(intent);
-                }
+                    /*synchronized (getPNThread) {
+                        try {
+                            getPNThread.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }*/
+                } else {
+                    pn = userSP.getString("phone_number", "");
+                    Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
+                            moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost + "");
 
-                pn = userSP.getString("phone_number", "");
-                Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
-                        moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost+"");
-
-                // Todo: 로직 paymentActivity로 넘기기
-                // 서버에 넣음
-                postTicketToServer(ticket);
-                finish();
+                    // Todo: 로직 paymentActivity로 넘기기
+                    // 서버에 넣음
+                    postTicketToServer(ticket);
+                    finish();
 //                PaymentActivity paymentActivity = new PaymentActivity(movie, ticket);
 //                Intent it = new Intent(getApplicationContext(), paymentActivity.getClass());
 //                startActivity(it);
+                }
             }
         });
     }
@@ -249,14 +269,14 @@ public class TicketingActivity extends AppCompatActivity {
         ConnectionThreadTemp thread = new ConnectionThreadTemp(ticket);
         Log.d("PaymentActivity", "connection thread start");
         thread.start();
-        synchronized (thread) {
+        /*synchronized (thread) {
             try {
                 Log.d("PaymentActivity", "main thread waiting");
                 thread.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 
     class seatSelectListener implements CompoundButton.OnCheckedChangeListener {
