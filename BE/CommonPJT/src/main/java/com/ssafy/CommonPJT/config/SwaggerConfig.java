@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 .securityContexts(Arrays.asList(securityContext()))
                 .securitySchemes(Arrays.asList(apiKey()))
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ssafy.CommonPJT.controller")).paths(regex("/api/.*")).build();
+                .apis(RequestHandlerSelectors.basePackage("com.ssafy.CommonPJT.controller")).paths(regex("/.*")).build();
     }
 
 
