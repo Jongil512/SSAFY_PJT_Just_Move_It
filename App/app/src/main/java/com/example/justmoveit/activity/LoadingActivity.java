@@ -35,19 +35,19 @@ public class LoadingActivity extends Activity {
         ConnectionThread thread = new ConnectionThread();
         Log.d("LoadingActivity", "connection thread start");
         thread.start();
-        try {
+        /*try {
             thread.join(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
-        /*synchronized (thread){
+        }*/
+        synchronized (thread){
             try {
                 Log.d("LoadingActivity", "main thread waiting");
                 thread.wait();
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
-        }*/
+        }
 
 //        Handler handler = new Handler();
 //        handler.postDelayed(() -> {
