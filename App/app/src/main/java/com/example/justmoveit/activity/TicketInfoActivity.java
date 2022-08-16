@@ -54,6 +54,14 @@ public class TicketInfoActivity extends AppCompatActivity {
         // 영화 예매 정보 뿌림
         getSetTexts(ticket);
 
+        // 이전 페이지
+        findViewById(R.id.ok_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
         // 예매 취소
         findViewById(R.id.reserve_cancel_button).setOnClickListener(new View.OnClickListener(){
             @Override
