@@ -120,13 +120,11 @@ public class LoginActivity extends AppCompatActivity {
                         // 휴대폰 정보는 TelephonyManager 를 이용
                         TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
-                        Toast.makeText(LoginActivity.this,"checkPermision", Toast.LENGTH_SHORT).show();
                         // READ_PHONE_NUMBERS 또는 READ_PHONE_STATE 권한을 허가 받았는지 확인
                         if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED
                                 && ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
                             return;
                         }
-                        Toast.makeText(LoginActivity.this,"전화번호 : [ getLine1Number ] >>> " + tm.getLine1Number(), Toast.LENGTH_SHORT).show();
 
                         editor.putString("phone_number", (tm.getLine1Number().equals("")? "01012345678": tm.getLine1Number()));
                         editor.apply();
