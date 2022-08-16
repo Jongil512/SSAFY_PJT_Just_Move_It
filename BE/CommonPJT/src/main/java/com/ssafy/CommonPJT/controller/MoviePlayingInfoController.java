@@ -18,7 +18,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @Api("MoviePlayingInfoController")
-@RequestMapping("/info")
+@RequestMapping("/api/info")
 public class MoviePlayingInfoController {
 
     private final MoviePlayingInfoService moviePlayingInfoService;

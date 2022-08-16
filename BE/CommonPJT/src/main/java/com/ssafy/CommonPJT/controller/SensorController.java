@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequiredArgsConstructor
 @Slf4j
-@RequestMapping("/sensor")
+@RequestMapping("/api/sensor")
 @Api("SensorController")
 public class SensorController {
 
