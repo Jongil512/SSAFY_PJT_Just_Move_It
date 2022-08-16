@@ -11,10 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -31,9 +28,15 @@ public class SensorController {
         return new ResponseEntity<>(sensorService.getValue(), HttpStatus.OK);
     }
 
-    @PutMapping
-    @ApiOperation(value = "새로운 수치 갱신")
+    @PostMapping
+    @ApiOperation(value = "새로운 수치 저장")
     public void setValue(SensorDto sensorDto) {
         sensorService.save(sensorDto);
+    }
+
+    @PutMapping
+    @ApiOperation(value = "새로운 수치 갱신")
+    public void putValue(SensorDto sensorDto) {
+        sensorService.edit(sensorDto);
     }
 }

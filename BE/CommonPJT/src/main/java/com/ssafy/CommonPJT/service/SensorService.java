@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -25,13 +26,13 @@ public class SensorService {
         }
     }
 
-    @Transactional void edit(SensorDto sensorDto) {
+    @Transactional
+    public void edit(SensorDto sensorDto) {
         Long id = 1L;
         Sensor sensor1 = sensorRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("존재하지 않는 값입니다."));
-        SensorDto sensorDto1 = new SensorDto(sensor1);
-        sensorDto1.setLengthValue(sensorDto.getLengthValue());
-        sensorRepository.save(sensorDto1.toEntity());
+        sensor1.setLengthValue(sensorDto.getLengthValue());
+        sensorRepository.save(sensor1);
     }
 
     public SensorDto getValue() {

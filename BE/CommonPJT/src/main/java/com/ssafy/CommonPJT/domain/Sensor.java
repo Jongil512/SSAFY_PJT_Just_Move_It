@@ -23,4 +23,8 @@ public class Sensor {
 
     @Column
     String lengthValue;
+
+    public void setLengthValue(String lengthValue) {
+        this.lengthValue = lengthValue;
+    }
 }

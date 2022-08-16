@@ -22,9 +22,9 @@ spring:
 
 
 server:
-  port: 8081
+  port: 80
   servlet:
-    contextPath: /api
+    contextPath: /justmoveit
 
 
 logging:
