@@ -71,21 +71,35 @@ function MovieSelect() {
   return (
     <div className="MovieSelect">
       <h1>now playing</h1>
-      <Carousel
-        slides={slide}
-        arrows={false}
-        autoplay={false}
-        interval={1000}
-        onSlideChange={callback}
-      />
-      <h1>{movieTitle}</h1>
-      <span> {movieAge}</span>
-      <span>{movieRate}</span>
-      <span> {movieTotalCustomer}명</span>
-      <br></br>
-      <Link to={"./" + movieCodeUrl} state={movieDataAll}>
-        <Button>영화 선택</Button>
-      </Link>
+      <div className="container rows">
+        <div className="row">
+          <div className="colrum-2"></div>
+          <div className="colrum-8">
+            <Carousel
+              slides={slide}
+              arrows={false}
+              autoplay={false}
+              interval={1000}
+              onSlideChange={callback}
+            />
+          </div>
+          <div className="colrum-2"></div>
+        </div>
+        <div className="row">
+          <h1>{movieTitle}</h1>
+        </div>
+        <div className="row">
+          <span> {movieAge}</span>
+          <span>{movieRate}</span>
+          <span> {movieTotalCustomer}명</span>
+        </div>
+        <br></br>
+        <div className="row">
+          <Link to={"./" + movieCodeUrl} state={movieDataAll}>
+            <Button>영화 선택</Button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
