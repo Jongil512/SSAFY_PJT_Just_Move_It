@@ -12,6 +12,32 @@ function App() {
   const [AppAge, setAge] = useState("0");
   const [AppGender, setGender] = useState("1");
   const [dirction, setDirction] = useState("1");
+  const axios = require("axios").default;
+  // console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
+  // axios
+  //   .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
+  //   .catch(function (err) {
+  //     console.log(err, "default 데이터x");
+  //   })
+  //   .then(function (response) {
+  //     // 성공 핸들링
+  //     console.log(response.data);
+  //     state = response.data;
+  //   });
+  // console.log(state);
+
+  // var timer = setInterval(function () {
+  //   // console.log("Hello!!");
+  //   axios
+  //     .get("https://i7d207.p.ssafy.io/api/sensor")
+  //     .catch(function (err) {
+  //       console.log(err, "센서값 못받아옴");
+  //     })
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //     });
+  // }, 1000);
+
   return (
     <div className="App">
       <Router dirction={dirction} />
