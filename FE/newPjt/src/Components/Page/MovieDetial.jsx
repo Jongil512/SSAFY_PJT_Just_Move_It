@@ -128,7 +128,7 @@ function MovieDetail() {
               kid={kisPerson}
               setPerson={setkidPersonInfo}
             />
-            <Seat data={seatInfo} />
+            <Seat data={seatInfo} person={defaultPerson + kisPerson} />
             {/* <Link to='/pay'><Button>결제</Button></Link> */}
             <Link to="./pay">
               <Button>결제</Button>

@@ -61,7 +61,7 @@ function Seats(props) {
         selectedCatogory.name !== catogory.name
       ) {
         alert("Select seats from same catogory");
-      } else if (selectedSeats.length > 4) {
+      } else if (selectedSeats.length >= props.person) {
         alert("인원 보다 많은 좌석을 선택했어요!");
       } else {
         setSelectedSeats([...selectedSeats, seat]);
