@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.Toast;
@@ -117,7 +118,8 @@ public class LoginActivity extends AppCompatActivity {
                         editor.apply();
                     }
 
-                    finish();
+                    Handler handler = new Handler();
+                    handler.postDelayed(LoginActivity.this::finish, 100);
                 }
 
             });

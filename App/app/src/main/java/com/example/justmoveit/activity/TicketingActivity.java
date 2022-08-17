@@ -3,6 +3,8 @@ package com.example.justmoveit.activity;
 import static com.example.justmoveit.activity.LoadingActivity.movieSP;
 import static com.example.justmoveit.activity.LoadingActivity.userSP;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -53,6 +57,8 @@ public class TicketingActivity extends AppCompatActivity {
     private int canSelectedSeat, totalCost;
     private static Set<String> selectedSeat;
 
+    private Context context;
+
     private void loadMovie() {
         Intent intent = getIntent();
 
@@ -62,13 +68,6 @@ public class TicketingActivity extends AppCompatActivity {
         Gson gson = new Gson();
         // 영화
         movie = gson.fromJson(movieSP.getString(movieId, ""), Movie.class);
-        /*ArrayList<Movie> movies = gson.fromJson(movieSP.getString("general_ranking", ""), TypeToken.getParameterized(ArrayList.class, Movie.class).getType());
-        for(Movie m: movies){
-            if(m.getMovieCode().equals(movieCode)){
-                movie = m;
-                break;
-            }
-        }*/
 
         // 영화 상영 정보
         MoviePlayingInfo[] infos = movie.getMoviePlayingInfoList();
@@ -86,11 +85,14 @@ public class TicketingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticketing);
 
+        context = this;
+
         canSelectedSeat = 0;
         totalCost = 0;
         clsf = new int[2];
         selectedSeat = new HashSet<>();
 
+        setResult();
         // 예매할 영화 정보 서버에서 가져옴
         loadMovie();
 
@@ -168,16 +170,28 @@ public class TicketingActivity extends AppCompatActivity {
                     Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
                             moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost + "");
 
-                    // Todo: 로직 paymentActivity로 넘기기
-                    // 서버에 넣음
-//                    postTicketToServer(ticket);
+//                    setResult(RESULT_OK);
 //                    finish();
-                PaymentActivity paymentActivity = new PaymentActivity(movie, ticket);
-                Intent it = new Intent(getApplicationContext(), paymentActivity.getClass());
-                startActivity(it);
+
+                    PaymentActivity paymentActivity = new PaymentActivity(movie, ticket);
+                    Intent it = new Intent(getApplicationContext(), paymentActivity.getClass());
+                    launcher.launch(it);
                 }
             }
         });
+    }
+
+    private ActivityResultLauncher<Intent> launcher;
+
+    private void setResult(){
+        launcher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        setResult(Activity.RESULT_OK);
+                        this.finish();
+                    }
+                });
     }
 
     private void setNumberPickerValue() {
