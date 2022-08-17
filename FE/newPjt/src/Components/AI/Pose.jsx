@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import * as tmPose from "@teachablemachine/pose";
 // import * as speechCommands from "@tensorflow-models/speech-commands";
 
 function Pose(props) {
-  const mURL = "https://teachablemachine.withgoogle.com/models/8pmvwt-v8/";
+  const mURL = "https://teachablemachine.withgoogle.com/models/wJJWYzoqd/";
 
-  let model, webcam, ctx, mlabelContainer, maxPredictions;
+  let model, webcam, ctx, maxPredictions;
   let direction; //app jsx로 보내야됨
 
   setTimeout(motion, 5000);
