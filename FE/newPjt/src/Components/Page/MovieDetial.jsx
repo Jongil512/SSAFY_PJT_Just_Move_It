@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Modal, Box } from "@mui/material";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import SeatData from "./SeatsData";
+import Seat from "./Seats";
+import PersonButton from "../Elements/PersonButton";
 
 const style = {
   position: "absolute",
@@ -45,6 +47,8 @@ function MovieDetail() {
   const [seatInfo, setSeatInfo] = useState("11");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [defaultPerson, setDefaultPersonInfo] = useState(0);
+  const [kisPerson, setkidPersonInfo] = useState(0);
 
   const handleSeatData = (sData, e) => {
     console.log({ sData });
@@ -110,6 +114,21 @@ function MovieDetail() {
         >
           <Box sx={style}>
             <h1>여기는 모달이야!</h1>
+            <PersonButton
+              text="성인"
+              chosePerson={defaultPerson}
+              default={defaultPerson}
+              kid={kisPerson}
+              setPerson={setDefaultPersonInfo}
+            />
+            <PersonButton
+              text="청소년"
+              chosePerson={kisPerson}
+              default={defaultPerson}
+              kid={kisPerson}
+              setPerson={setkidPersonInfo}
+            />
+            <Seat data={seatInfo} />
             {/* <Link to='/pay'><Button>결제</Button></Link> */}
             <Link to="./pay">
               <Button>결제</Button>
