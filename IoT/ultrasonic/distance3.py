@@ -24,7 +24,7 @@ gpio.setup(trig, gpio.OUT)
 gpio.setup(echo, gpio.IN)
 
 # 서버와 소켓 연결
-ws = create_connection("ws://localhost:8081/api/socket")
+ws = create_connection("wss://i7d207.p.ssafy.io/ws/socket")
 # 소켓연결 후 서버에서 받은 메세지
 received = ws.recv()
 
@@ -64,10 +64,11 @@ if received == 'all_connected':
             distance = pulse_duration * 17000
             # 소수점 둘째자리에서 반올림
             distance = round(distance, 2)
+            print(distance)
             while True:
                 # 서버에 데이터를 보내고 메세지를 수신함
                 received = send_distance(distance)
-                # '서버가 데이터를 받았다'(=done)이면 데이터 보내는 것 종료 
+                # '서버가 데이터를 받았다'(=done)이면 데이터 보내는 것 종료
                 if received == 'done':
                     print("Stop send data")
                     break
