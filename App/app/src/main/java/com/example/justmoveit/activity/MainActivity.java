@@ -39,23 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        /*
-        SharedPreferences.Editor editor1 = LoadingActivity.movieSP.edit();
-        for(int i=1; i<11; i++){
-            editor1.remove(i+"");
-        }
-        editor1.apply();
-
-        SharedPreferences.Editor editor2 = LoadingActivity.userSP.edit();
-        editor2.remove("user_name");
-        editor2.remove("user_email");
-        editor2.remove("user_img_url");
-        editor2.remove("user_age_range");
-        editor2.remove("user_gender");
-        editor2.remove("user_info");
-        editor2.remove("user_tickets");
-        editor2.apply();*/
-
         // 툴바 등록
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("");
@@ -91,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Map<String, ?> map = movieSP.getAll();
 
         // 로그인되어 있으면 마이 랭킹 켜고 일반 랭킹 끄기
-        if(Session.getCurrentSession().isOpened() && movieSP.getString("my_ranking","") != null){
+        if(Session.getCurrentSession().isOpened() && movieSP.getString("my_ranking","") != null && !movieSP.getString("my_ranking","").equals("")){
             myRanking.setVisibility(View.VISIBLE);
             myRanking.performClick();
         } else if (map != null && map.size() > 1) {

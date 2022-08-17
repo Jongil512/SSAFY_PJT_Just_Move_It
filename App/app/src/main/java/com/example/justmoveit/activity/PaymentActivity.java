@@ -114,7 +114,7 @@ public class PaymentActivity extends AppCompatActivity {
             String cid = "TC0ONETIME";
             String tid = tidPin;
             String partner_order_id = "1001";
-            String partner_user_id = "JustMoveIt";
+            String partner_user_id = "gorany";
             String pg_token = pgToken;
             Integer total_amount = PRODUCT_PRICE;
 
