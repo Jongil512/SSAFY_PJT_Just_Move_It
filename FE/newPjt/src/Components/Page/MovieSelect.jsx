@@ -70,6 +70,7 @@ function MovieSelect() {
 
   return (
     <div className="MovieSelect">
+      <h1>now playing</h1>
       <Carousel
         slides={slide}
         arrows={false}
