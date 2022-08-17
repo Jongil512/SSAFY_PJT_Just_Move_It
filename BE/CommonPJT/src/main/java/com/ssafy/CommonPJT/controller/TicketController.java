@@ -1,6 +1,5 @@
 package com.ssafy.CommonPJT.controller;
 
-import com.ssafy.CommonPJT.domain.Ticket;
 import com.ssafy.CommonPJT.dto.Ticket.TicketResDto;
 import com.ssafy.CommonPJT.dto.Ticket.TicketSaveDto;
 import com.ssafy.CommonPJT.service.TicketService;

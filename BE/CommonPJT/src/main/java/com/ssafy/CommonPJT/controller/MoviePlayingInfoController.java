@@ -1,6 +1,5 @@
 package com.ssafy.CommonPJT.controller;
 
-import com.ssafy.CommonPJT.domain.MoviePlayingInfo;
 import com.ssafy.CommonPJT.dto.MoviePlayingInfo.MoviePlayingInfoResDto;
 import com.ssafy.CommonPJT.dto.MoviePlayingInfo.MoviePlayingInfoSaveDto;
 import com.ssafy.CommonPJT.service.MoviePlayingInfoService;
