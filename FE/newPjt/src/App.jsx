@@ -85,8 +85,8 @@ function App() {
       </h3>
       <h3>방향은 현재 {dirction} 을 가리키고 있다!</h3> */}
 
-      {/* <Face setAge={setAge} setGender={setGender}></Face>
-      <Pose setDirction={setDirction}></Pose> */}
+      <Face setAge={setAge} setGender={setGender}></Face>
+      <Pose setDirction={setDirction}></Pose>
       <div class="container">
         <div>
           <div id="msgArea" class="col"></div>
