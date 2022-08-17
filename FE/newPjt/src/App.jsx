@@ -87,10 +87,14 @@ function App() {
     var data = msg.data;
     var message = null;
 
+    var data = msg.data;
+    var message = null;
+
     //현재 세션에 로그인 한 사람
     message = data;
     console.log(message);
   }
+
   function isOpen(ws) {
     return ws.readyState === ws.OPEN;
   }
