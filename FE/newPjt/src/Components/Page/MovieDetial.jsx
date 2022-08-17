@@ -49,14 +49,18 @@ function MovieDetail() {
   const handleClose = () => setOpen(false);
   const [defaultPerson, setDefaultPersonInfo] = useState(0);
   const [kisPerson, setkidPersonInfo] = useState(0);
+  const [ticketSeats, setTicketSeatData] = useState();
+  const [selectedSeats, setSelectedSeats] = useState([]);
 
   const handleSeatData = (sData, e) => {
     console.log({ sData });
+    setDefaultPersonInfo(0);
+    setkidPersonInfo(0);
+    setSelectedSeats([]);
     setSeatInfo(sData);
   };
 
   const location = useLocation();
-  const { from } = location.state;
   const state = location.state;
 
   // console.log(state["moviePlayingInfoList"]);
@@ -88,6 +92,21 @@ function MovieDetail() {
       </Button>
     );
   }
+  function ad() {
+    console.log(defaultPerson);
+    // return defaultPerson;
+  }
+  function kid() {
+    console.log(kisPerson);
+    // return kisPerson;
+  }
+
+  let [ticketData, setTicketData] = useState({
+    movie: state["title"],
+    adult: 1,
+    child: 2,
+    seats: { selectedSeats },
+  });
 
   return (
     <div className="MovieDetail">
@@ -120,6 +139,7 @@ function MovieDetail() {
               default={defaultPerson}
               kid={kisPerson}
               setPerson={setDefaultPersonInfo}
+              // setTicketData={setTicketData}
             />
             <PersonButton
               text="청소년"
@@ -127,10 +147,25 @@ function MovieDetail() {
               default={defaultPerson}
               kid={kisPerson}
               setPerson={setkidPersonInfo}
+              // setTicketData={setTicketData}
             />
-            <Seat data={seatInfo} person={defaultPerson + kisPerson} />
+            <Seat
+              data={seatInfo}
+              person={defaultPerson + kisPerson}
+              setSelectedSeats={setSelectedSeats}
+              selectedSeats={selectedSeats}
+            />
             {/* <Link to='/pay'><Button>결제</Button></Link> */}
-            <Link to="./pay">
+            {/* <Link to="./pay" state={ticketData}> */}
+            <Link
+              to="./pay"
+              state={{
+                movie: state["title"],
+                adult: { defaultPerson },
+                child: { kisPerson },
+                seats: { selectedSeats },
+              }}
+            >
               <Button>결제</Button>
             </Link>
             <Button onClick={handleClose}>취소</Button>

@@ -44,30 +44,31 @@ function Seats(props) {
     // console.log(result);
   }
 
-  const [selectedSeats, setSelectedSeats] = useState([]);
+  // const [selectedSeats, setSelectedSeats] = useState([]);
   const [selectedCatogory, setSelectedCatogory] = useState(null);
 
   const handleOnClick = (seat, catogory) => {
-    const isSelected = selectedSeats.indexOf(seat) > -1;
+    const isSelected = props.selectedSeats.indexOf(seat) > -1;
     if (isSelected) {
-      const newSelectedSeats = selectedSeats.filter(
+      const newSelectedSeats = props.selectedSeats.filter(
         (selectedSeat) => selectedSeat !== seat
       );
-      setSelectedSeats(newSelectedSeats);
+      props.setSelectedSeats(newSelectedSeats);
     } else {
       if (
-        selectedSeats.length !== 0 &&
+        props.selectedSeats.length !== 0 &&
         selectedCatogory &&
         selectedCatogory.name !== catogory.name
       ) {
         alert("Select seats from same catogory");
-      } else if (selectedSeats.length >= props.person) {
+      } else if (props.selectedSeats.length >= props.person) {
         alert("인원 보다 많은 좌석을 선택했어요!");
       } else {
-        setSelectedSeats([...selectedSeats, seat]);
+        props.setSelectedSeats([...props.selectedSeats, seat]);
         setSelectedCatogory(catogory);
       }
     }
+    console.log(props.selectedSeats);
   };
 
   return (
@@ -87,7 +88,7 @@ function Seats(props) {
               {newSeatList.map((seats, i) => (
                 <div key={i} className="seats">
                   {seats.map((seat, j) => {
-                    const isSelected = selectedSeats.indexOf(seat) > -1;
+                    const isSelected = props.selectedSeats.indexOf(seat) > -1;
                     const isOccupied = catogory.occupied.indexOf(seat) > -1;
                     return (
                       <div
