@@ -75,35 +75,22 @@ public class LoginActivity extends AppCompatActivity {
                     // 로그인 성공
                     UserAccount account = result.getKakaoAccount();
 
-                    MovieApi service = MovieApi.retrofit.create(MovieApi.class);
                     AgeRange age = account.getAgeRange();
                     Gender gender = account.getGender();
 
                     if(age!=null && gender!=null) {
                         Recommend recommend = new Recommend(age.getValue().split("~")[0], gender.getValue());
-                        service.getMovieOrderedList(recommend).enqueue(new Callback<Movie[]>() {
-                            @Override
-                            public void onResponse(Call<Movie[]> call, Response<Movie[]> response) {
-                                Movie[] movies = response.body();
-                                if (!response.isSuccessful()) {
-                                    Log.e("LoginActivity - getMovieOrderedList", "onResponse(): " + response.code());
-                                    return;
-                                }
-                                if (movies == null) {
-                                    Log.e("LoginActivity - getMovieOrderedList", "onResponse(): there are no movies");
-                                    return;
-                                }
-                                SharedPreferences.Editor editor2 = movieSP.edit();
-                                Gson gson = new Gson();
-                                editor2.putString("my_ranking", gson.toJson(Arrays.asList(movies)));
-                                editor2.apply();
+                        ConnectionThread thread = new ConnectionThread(recommend);
+                        thread.start();
+                        synchronized (thread){
+                            try {
+                                thread.wait();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
                             }
-
-                            @Override
-                            public void onFailure(Call<Movie[]> call, Throwable t) {
-                                Log.e("LoginActivity - getMovieOrderedList", "onFailure(): " + t.getMessage());
-                            }
-                        });
+                        }
+                    } else {
+                        Log.e("LoginActivity", "no age, gender info");
                     }
 
                     User user = new User(account.getProfile().getProfileImageUrl(),
@@ -247,5 +234,49 @@ public class LoginActivity extends AppCompatActivity {
                         Log.i("KAKAO_API", "남은 시간(s): " + result.getExpiresInMillis());
                     }
                 });
+    }
+
+    private static class ConnectionThread extends Thread {
+        private final Recommend recommend;
+
+        public ConnectionThread(Recommend recommend){
+            this.recommend = recommend;
+        }
+
+        @Override
+        public void run() {
+            super.run();
+            synchronized (this){
+                getMyRanking();
+                notify();
+            }
+        }
+
+        private void getMyRanking(){
+            MovieApi service = MovieApi.retrofit.create(MovieApi.class);
+            service.getMovieOrderedList(recommend).enqueue(new Callback<Movie[]>() {
+                @Override
+                public void onResponse(Call<Movie[]> call, Response<Movie[]> response) {
+                    Movie[] movies = response.body();
+                    if (!response.isSuccessful()) {
+                        Log.e("LoginActivity - getMovieOrderedList", "onResponse(): " + response.code());
+                        return;
+                    }
+                    if (movies == null) {
+                        Log.e("LoginActivity - getMovieOrderedList", "onResponse(): there are no movies");
+                        return;
+                    }
+                    SharedPreferences.Editor editor2 = movieSP.edit();
+                    Gson gson = new Gson();
+                    editor2.putString("my_ranking", gson.toJson(Arrays.asList(movies)));
+                    editor2.apply();
+                }
+
+                @Override
+                public void onFailure(Call<Movie[]> call, Throwable t) {
+                    Log.e("LoginActivity - getMovieOrderedList", "onFailure(): " + t.getMessage());
+                }
+            });
+        }
     }
 }
