@@ -15,7 +15,7 @@
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.321" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout-v29/activity_ticketing.xml" value="0.30104166666666665" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/activity_loading.xml" value="0.27447916666666666" />
-        <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/activity_my_ticket_list.xml" value="0.1" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/activity_mytickets_list.xml" value="0.16" />
@@ -38,7 +38,7 @@
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/seat_button.xml" value="0.22573749465583584" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/seat_chart.xml" value="0.2997007268063275" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/spinner_dropdown_item.xml" value="0.20778110303548525" />
-        <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/ticket_item.xml" value="0.33" />
+        <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/ticket_item.xml" value="0.25" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/layout/user_profile.xml" value="0.20307823856348867" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/menu/menu.xml" value="0.30055579307396324" />
         <entry key="..\:/SSAFY/S07P12D207/App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.321" />

@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Just Move It"
-                android:layout_marginLeft="34dp"
+                android:layout_marginLeft="40dp"
                 android:textSize="15sp"
                 android:fontFamily="@font/ghanachocolate"
                 android:textColor="@color/white"

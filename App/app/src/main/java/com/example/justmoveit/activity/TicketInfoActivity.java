@@ -73,16 +73,15 @@ public class TicketInfoActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }*/
-                /*synchronized (thread) {
+                synchronized (thread) {
                     try {
                         thread.wait();
+                        Toast.makeText(TicketInfoActivity.this, "예매 취소가 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                        finish();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }*/
-                Toast.makeText(TicketInfoActivity.this, "예매 취소가 완료되었습니다.", Toast.LENGTH_SHORT).show();
-
-                finish();
+                }
             }
         });
 

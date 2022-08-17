@@ -126,7 +126,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             Picasso.get().load(movie.getImg()).into(imagePoster);
             Picasso.get().load(R.drawable.inner_shadow).into(innerShadow);
             textName.setText(movie.getTitle());
-            totalCust.setText("누적 관객 " + Long.parseLong(movie.getTotalCustomer())/10000 +"만명");
+            totalCust.setText("누적 관객 " + Long.parseLong(movie.getTotalCustomer())/10000 +"M");
             starSymbol.setText(Html.fromHtml("&#9733;"));
             ratingBarNum.setText((movie.getRating()));
         }
