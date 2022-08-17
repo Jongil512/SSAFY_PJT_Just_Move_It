@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-import Voice from "../AI/Voice";
 import Pose from "../AI/Pose";
 
 function MovieSelectLow() {
@@ -12,7 +11,7 @@ function MovieSelectLow() {
       <Link to="./1">
         <Button>영화 선택</Button>
       </Link>
-      <Voice></Voice>
+
       <Pose></Pose>
     </div>
   );
