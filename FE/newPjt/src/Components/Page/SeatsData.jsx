@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./SeatsData.css";
+// import styles from "./SeatsData.css";
 
 function SeatsData(props) {
   const seatsCatogory = [
@@ -47,28 +47,28 @@ function SeatsData(props) {
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [selectedCatogory, setSelectedCatogory] = useState(null);
 
-  const handleOnClick = (seat, catogory) => {
-    const isSelected = selectedSeats.indexOf(seat) > -1;
-    if (isSelected) {
-      const newSelectedSeats = selectedSeats.filter(
-        (selectedSeat) => selectedSeat !== seat
-      );
-      setSelectedSeats(newSelectedSeats);
-    } else {
-      if (
-        selectedSeats.length !== 0 &&
-        selectedCatogory &&
-        selectedCatogory.name !== catogory.name
-      ) {
-        alert("Select seats from same catogory");
-      } else if (selectedSeats.length > 4) {
-        alert("인원 보다 많은 좌석을 선택했어요!");
-      } else {
-        setSelectedSeats([...selectedSeats, seat]);
-        setSelectedCatogory(catogory);
-      }
-    }
-  };
+  // const handleOnClick = (seat, catogory) => {
+  //   const isSelected = selectedSeats.indexOf(seat) > -1;
+  //   if (isSelected) {
+  //     const newSelectedSeats = selectedSeats.filter(
+  //       (selectedSeat) => selectedSeat !== seat
+  //     );
+  //     setSelectedSeats(newSelectedSeats);
+  //   } else {
+  //     if (
+  //       selectedSeats.length !== 0 &&
+  //       selectedCatogory &&
+  //       selectedCatogory.name !== catogory.name
+  //     ) {
+  //       alert("Select seats from same catogory");
+  //     } else if (selectedSeats.length > 4) {
+  //       alert("인원 보다 많은 좌석을 선택했어요!");
+  //     } else {
+  //       setSelectedSeats([...selectedSeats, seat]);
+  //       setSelectedCatogory(catogory);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="SeatsData">
@@ -96,12 +96,6 @@ function SeatsData(props) {
                         className={`seat ${isSelected ? "selected" : ""} ${
                           isOccupied ? "occupied" : ""
                         }`}
-                        onClick={() => {
-                          if (!isOccupied) {
-                            handleOnClick(seat, catogory);
-                          } else {
-                          }
-                        }}
                       />
                     );
                   })}
