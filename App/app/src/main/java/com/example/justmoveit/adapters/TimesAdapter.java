@@ -1,5 +1,6 @@
 package com.example.justmoveit.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -10,10 +11,13 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.justmoveit.R;
+import com.example.justmoveit.activity.MovieInfoActivity;
 import com.example.justmoveit.activity.TicketingActivity;
 import com.example.justmoveit.model.Movie;
 
@@ -61,7 +65,7 @@ public class TimesAdapter extends RecyclerView.Adapter<TimesAdapter.TimeViewHold
         simpleDateFormat.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
         String now = simpleDateFormat.format(new Date());
         if(times.get(index).compareTo(now) < 0){
-//            holder.itemView.setEnabled(false);
+            holder.itemView.setEnabled(false);
             holder.textTime.setTextColor(R.color.black);
             holder.relativeLayout.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("darkgray")));
         }
@@ -72,9 +76,8 @@ public class TimesAdapter extends RecyclerView.Adapter<TimesAdapter.TimeViewHold
                 //클릭 이벤트
                 Intent intent = new Intent(context.getApplicationContext(), TicketingActivity.class);
                 intent.putExtra("movieId", movie.getMoviePlayingInfoByIndex(index).getMovieId()+"");
-//                intent.putExtra("movie_code", movie.getMovieCode());
                 intent.putExtra("moviePlayingInfoId", movie.getMoviePlayingInfoByIndex(index).getMoviePlayingInfoId()+"");
-                context.startActivity(intent);
+                MovieInfoActivity.launcher.launch(intent);
             }
         });
     }

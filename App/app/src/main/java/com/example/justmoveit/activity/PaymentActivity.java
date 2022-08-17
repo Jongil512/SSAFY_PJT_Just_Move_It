@@ -2,8 +2,10 @@ package com.example.justmoveit.activity;
 
 import static com.example.justmoveit.activity.LoadingActivity.userSP;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -128,7 +130,11 @@ public class PaymentActivity extends AppCompatActivity {
                         Log.d("PaymentActivity", "payment done");
                         Toast.makeText(PaymentActivity.this, "예매가 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
-                        finish();
+                        Handler handler = new Handler();
+                        handler.postDelayed(() -> {
+                            setResult(Activity.RESULT_OK);
+                            finish();
+                        }, 100);
                     } else {
                         Log.e("PaymentActivity - approvePayment", "onResponse(): response is not successful");
                     }

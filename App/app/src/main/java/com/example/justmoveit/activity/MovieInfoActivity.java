@@ -2,6 +2,7 @@ package com.example.justmoveit.activity;
 
 import static com.example.justmoveit.activity.LoadingActivity.movieSP;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -61,19 +64,14 @@ public class MovieInfoActivity extends AppCompatActivity {
         ConnectionThread thread = new ConnectionThread(movieCode);
         Log.d("TicketingActivity", "connection thread start");
         thread.start();
-        /*try {
-            thread.join(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
-        /*synchronized (thread){
+        synchronized (thread){
             try {
                 Log.d("TicketingActivity", "main thread waiting");
                 thread.wait();
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
-        }*/
+        }
     }
 
     @Override
@@ -83,6 +81,7 @@ public class MovieInfoActivity extends AppCompatActivity {
 
         Gson gson = new Gson();
 
+        setResult();
         // 서버에서 movie 최신 정보 가져옴
         loadMovieDetails();
 
@@ -93,11 +92,6 @@ public class MovieInfoActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         List<String> timeList= new ArrayList<>();
         TimesAdapter timesAdapter = new TimesAdapter();
-
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
 
         // 영화 목록에서 선택된 영화(=movie)를 찾음
         movie = gson.fromJson(movieSP.getString(movieId, ""), Movie.class);
@@ -122,9 +116,20 @@ public class MovieInfoActivity extends AppCompatActivity {
         timesAdapter.setTimes(timeList, movie);
         recyclerView.setAdapter(timesAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MovieInfoActivity.this, RecyclerView.HORIZONTAL,false));
-//            }
-//        }, 100);
 
+    }
+
+    public static ActivityResultLauncher<Intent> launcher;
+
+    private void setResult(){
+        launcher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+//                        setResult(Activity.RESULT_OK);
+                        this.finish();
+                    }
+                });
     }
 
     @Override
