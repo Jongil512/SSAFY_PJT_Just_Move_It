@@ -5,7 +5,7 @@ from websocket import create_connection
 def sendmessage(data):
     try:
         # 연결
-        ws = create_connection("wss://i7d207.p.ssafy.io/api/socket",verify=False)
+        ws = create_connection("wss://i7d207.p.ssafy.io/ws/socket")
         connected = ws.recv()
         # 연결 되었으면
         if connected == 'all_connected':
