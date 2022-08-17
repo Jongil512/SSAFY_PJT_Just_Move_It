@@ -162,8 +162,8 @@ public class TicketingActivity extends AppCompatActivity {
                     Intent it = new Intent(TicketingActivity.this, LoginActivity.class);
                     startActivity(it);
                 } else if (pn == null || pn.equals("")) {
-                    Intent intent = new Intent(TicketingActivity.this, PhoneNumberActivity.class);
-                    startActivity(intent);
+                    Intent it = new Intent(TicketingActivity.this, PhoneNumberActivity.class);
+                    startActivity(it);
                 } else {
                     Ticket ticket = new Ticket(0L, moviePlayingInfo.getMoviePlayingInfoId(), moviePlayingInfo.getMovieId(), moviePlayingInfo.getMovieTitle(), "12세",
                             moviePlayingInfo.getStartTime(), moviePlayingInfo.getEndTime(), pn, classification, now, seat, moviePlayingInfo.getTheaterNo(), totalCost + "");

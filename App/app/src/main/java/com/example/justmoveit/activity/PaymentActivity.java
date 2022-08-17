@@ -128,9 +128,6 @@ public class PaymentActivity extends AppCompatActivity {
                         Log.d("PaymentActivity", "payment done");
                         Toast.makeText(PaymentActivity.this, "예매가 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
-                        Intent it = new Intent(PaymentActivity.this, TicketingActivity.class);
-                        it.putExtra("ticket", new ReservedTicket(ticket));
-                        startActivity(it);
                         finish();
                     } else {
                         Log.e("PaymentActivity - approvePayment", "onResponse(): response is not successful");
