@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import Router from "./Router";
 import Face from "./Components/AI/Face";
 import Pose from "./Components/AI/Pose";
+import $ from "jquery";
+import { CompressOutlined } from "@mui/icons-material";
+
 
 function App() {
   const [AppAge, setAge] = useState("0");
@@ -38,6 +41,48 @@ function App() {
   //     });
   // }, 1000);
 
+
+
+/////////////////////////////////////////////////////////////
+
+    
+  const websocket = new WebSocket("wss://i7d207.p.ssafy.io/ws/socket");
+
+  websocket.onmessage = onMessage;
+  websocket.onopen = onOpen;
+  websocket.onclose = onClose;
+
+  function send(){
+
+      let msg = document.getElementById("msg");
+
+      console.log(msg.value);
+      websocket.send(msg.value);
+      msg.value = '';
+  }
+  
+  //채팅창에서 나갔을 때
+  function onClose(evt) {
+      websocket.send("퇴장");
+  }
+  
+  //채팅창에 들어왔을 때
+  function onOpen(evt) {
+      websocket.send("입장");
+  }
+
+  function onMessage(msg) {
+      var data = msg.data;
+      var message = null;
+
+      //현재 세션에 로그인 한 사람
+      message = data
+      console.log(message)
+  
+  }
+  
+/////////////////////////////////////////////////////////////
+
   return (
     <div className="App">
       <Router dirction={dirction} />
@@ -48,6 +93,21 @@ function App() {
 
       {/* <Face setAge={setAge} setGender={setGender}></Face>
       <Pose setDirction={setDirction}></Pose> */}
+          <div class="container">
+            <div>
+                <div id="msgArea" class="col"></div>
+                <div class="col-6">
+                    <div class="input-group mb-3">
+                        <input type="text" id="msg" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-send" onClick={send}>전송</button>
+                            <button class="btn btn-outline-secondary" type="button" id="button-send" onClick={onMessage}>받기</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
   );
 }
