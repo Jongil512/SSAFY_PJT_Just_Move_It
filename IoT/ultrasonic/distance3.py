@@ -24,7 +24,7 @@ gpio.setup(trig, gpio.OUT)
 gpio.setup(echo, gpio.IN)
 
 # 서버와 소켓 연결
-ws = create_connection("ws://https://i7d207.p.ssafy.io/api/socket")
+ws = create_connection("ws://localhost:8081/api/socket")
 # 소켓연결 후 서버에서 받은 메세지
 received = ws.recv()
 
