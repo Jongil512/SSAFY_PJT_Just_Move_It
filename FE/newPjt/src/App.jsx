@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import Router from "./Router";
 import Face from "./Components/AI/Face";
 import Pose from "./Components/AI/Pose";
-import $ from "jquery";
 import { CompressOutlined } from "@mui/icons-material";
 
 function App() {
