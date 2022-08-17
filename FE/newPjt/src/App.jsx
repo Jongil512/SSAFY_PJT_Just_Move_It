@@ -66,6 +66,7 @@ function App() {
   }
 
   function onMessage(msg) {
+    if (!isOpen(websocket)) return;
     var data = msg.data;
     var message = null;
 
@@ -73,7 +74,9 @@ function App() {
     message = data;
     console.log(message);
   }
-
+  function isOpen(ws) {
+    return ws.readyState === ws.OPEN;
+  }
   /////////////////////////////////////////////////////////////
 
   return (

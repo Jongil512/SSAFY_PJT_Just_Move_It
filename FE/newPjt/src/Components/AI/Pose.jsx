@@ -8,7 +8,7 @@ function Pose(props) {
   let model, webcam, ctx, maxPredictions;
   let direction; //app jsx로 보내야됨
 
-  setTimeout(motion, 5000);
+  setTimeout(motion, 3000);
   // motion();
 
   async function motion() {

@@ -80,9 +80,9 @@ function Face(props) {
           displaySize
         );
         age = resizedDetections.age;
-        // console.log(age + "나이");
+        console.log(age + "나이");
         gender = resizedDetections.gender;
-        // console.log(gender + "성별");
+        console.log(gender + "성별");
 
         sendData(age, gender);
 
