@@ -65,7 +65,7 @@ function PersonButton(props) {
     <div>
       <h4>{props.text}</h4>
       <h4>{props.chosePerson}</h4>
-      <ButtonGroup>
+      <ButtonGroup color="error">
         <Button onClick={() => setPersonData(0)} variant={zButton}>
           0
         </Button>
