@@ -5,6 +5,7 @@ import static com.example.justmoveit.activity.LoadingActivity.userSP;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,7 +57,9 @@ public class TicketListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         Log.d("ticketList fragment", "onResume()");
-        adaptTicketList();
+
+        Handler handler = new Handler();
+        handler.postDelayed(this::adaptTicketList, 100);
     }
 
     private void adaptTicketList(){
