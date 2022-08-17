@@ -1,4 +1,5 @@
 from socket import *
+import time
 from websocket import create_connection
 
 # raspberry
@@ -19,11 +20,13 @@ def sendmessage(data):
                     print("초음파 종료")
                     break
 
-        ws.close()
+        # ws.close()
 
     except Exception as e:
         print(e)
 
 
 if __name__ == "__main__":
-    sendmessage("파이참!!!")
+    while 1:
+        time.sleep(1)
+        sendmessage("파이참!!!")
