@@ -5,14 +5,14 @@ from websocket import create_connection
 def sendmessage(data):
     try:
         # 연결
-        ws = create_connection("wss://i7d207.p.ssafy.io/api/socket",verify=False)
+        ws = create_connection("wss://i7d207.p.ssafy.io/ws/socket",verify=False)
         connected = ws.recv()
         # 연결 되었으면
         if connected == 'all_connected':
             ws.send('request')  # 값 요청
             ret = ws.recv()
             print(ret)
-            ws.close()
+            # ws.close()
 
     except Exception as e:
         print(e)
