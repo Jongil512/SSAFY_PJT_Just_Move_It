@@ -79,9 +79,9 @@ public class PaymentActivity extends AppCompatActivity {
             Integer quantity = 1;
             Integer total_amount = PRODUCT_PRICE;
             Integer tax_free_amount = 0;
-            String approval_url = "https://naver.com";
+            String approval_url = "https://developers.kakao.com";
             String cancel_url = "https://naver.com";
-            String fail_url = "https://naver.com";
+            String fail_url = "https://google.com";
 
             service.paymentReady(cid, partner_order_id, partner_user_id, item_name, quantity,
                     total_amount, tax_free_amount, approval_url, cancel_url, fail_url).enqueue(new Callback<PayReady>() {
@@ -163,6 +163,7 @@ public class PaymentActivity extends AppCompatActivity {
             view.loadUrl(url);
             return false;
         }
+
     }
 
     private void postTicketToServer(Ticket ticket){
