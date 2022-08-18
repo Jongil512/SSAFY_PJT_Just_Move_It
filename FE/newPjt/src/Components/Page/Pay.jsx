@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@mui/material";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
@@ -197,6 +197,13 @@ function Pay() {
             onClick={ticketPost}
             to="./payend"
             style={{ textDecoration: "none" }}
+            state={{
+              movie: state["movie"],
+              img: state["img"],
+              adult: state.adult.defaultPerson,
+              child: state.child.kisPerson,
+              seats: seatTicket.slice(0, -1),
+            }}
           >
             <Button color="error" variant="contained">
               결제 완료

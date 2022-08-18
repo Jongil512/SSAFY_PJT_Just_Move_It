@@ -1,4 +1,4 @@
-.Pay {
+.Payend {
   min-height: 600px;
   padding: 0 40px;
 }
@@ -7,6 +7,7 @@
   background-color: rgb(250, 250, 250);
   border-radius: 10px;
   padding: 20px;
+  margin: 70px 0;
 }
 
 .reserve_info {
@@ -27,6 +28,11 @@
 .reserve_info_detail {
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.button_section {
+  width: inherit;
+  margin-top: 30px;
 }
 
 table td {
