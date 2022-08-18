@@ -8,10 +8,11 @@ import "./MovieDetail.css";
 
 const style = {
   position: "absolute",
-  top: "50%",
+  top: "70%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
+  height: 380,
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -129,15 +130,13 @@ function MovieDetail() {
       <h1 id="timeSelect">시간 선택</h1>
 
       <div id="container">
-        <div id="box1">
-          <img id="poster" src={state["img"]} alt="사진이 없어용 ㅠ" />
-        </div>
         <div id="box2">
           <h2>{state["title"]}</h2>
-          <p>평점 : {state["rating"]}</p>
-          <p> 총 관객수 : {Number(state["totalCustomer"])} 명</p>
-          <p> 연령 : {state["ageLimit"].slice(0, 3)}</p>
-          <p>{state["summary"]}</p>
+          <div className="align_container">
+            <p>평점 : {state["rating"]}</p>
+            <p>총 관객수 : {Number(state["totalCustomer"])} 명</p>
+            <p>연령 : {state["ageLimit"].slice(0, 3)}</p>
+          </div>
         </div>
       </div>
 
@@ -145,12 +144,12 @@ function MovieDetail() {
       <hr />
       <br />
 
-      <div id="container" className="reservation">
-        <div className="align_container">
-          <div id="timeContainer" className="container">
-            <div id="timeBox">{timeButton}</div>
-          </div>
-          <div id="seat_section">
+      <div id="seat_section">
+        <div className="reservation">
+          <div className="align_container">
+            <div id="timeContainer" className="container">
+              <div id="timeBox">{timeButton}</div>
+            </div>
             <SeatData data={seatInfo} />
           </div>
         </div>
@@ -172,6 +171,9 @@ function MovieDetail() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <div className="breadCrumble">
+            <h2>예매 1/2</h2>
+          </div>
           <h3>인원을 선택하세요</h3>
           <div className="modal_box">
             <PersonButton
@@ -191,12 +193,6 @@ function MovieDetail() {
               // setTicketData={setTicketData}
             />
           </div>
-          <Seat
-            data={seatInfo}
-            person={defaultPerson + kisPerson}
-            setSelectedSeats={setSelectedSeats}
-            selectedSeats={selectedSeats}
-          />
           {/* <Link to='/pay'><Button>결제</Button></Link> */}
           {/* <Link to="./pay" state={ticketData}> */}
 
@@ -205,25 +201,70 @@ function MovieDetail() {
               취소
             </Button>
             <span>&nbsp;&nbsp;&nbsp;</span>
-            <Link
-              to="./pay"
-              style={{ textDecoration: "none" }}
-              state={{
-                movie: state["title"],
-                img: state["img"],
-                adult: { defaultPerson },
-                child: { kisPerson },
-                seats: { selectedSeats },
-                PlayingInfoID: { moviePlayingId },
-              }}
-            >
-              <Button variant="contained">결제</Button>
-            </Link>
+
+            <ChildModal />
           </div>
         </Box>
       </Modal>
     </div>
   );
+
+  function ChildModal() {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => {
+      setOpen(true);
+    };
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    return (
+      <React.Fragment>
+        <Button variant="contained" onClick={handleOpen}>
+          다음
+        </Button>
+        <Modal
+          hideBackdrop
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="child-modal-title"
+          aria-describedby="child-modal-description"
+        >
+          <Box sx={style}>
+            <div className="breadCrumble">
+              <h2>예매 2/2</h2>
+            </div>
+            <Seat
+              data={seatInfo}
+              person={defaultPerson + kisPerson}
+              setSelectedSeats={setSelectedSeats}
+              selectedSeats={selectedSeats}
+            />
+            <div className="button_section">
+              <Button variant="outlined" onClick={handleClose}>
+                이전
+              </Button>
+              <span>&nbsp;&nbsp;&nbsp;</span>
+              <Link
+                to="./pay"
+                style={{ textDecoration: "none" }}
+                state={{
+                  movie: state["title"],
+                  img: state["img"],
+                  adult: { defaultPerson },
+                  child: { kisPerson },
+                  seats: { selectedSeats },
+                  PlayingInfoID: { moviePlayingId },
+                }}
+              >
+                <Button variant="contained">결제</Button>
+              </Link>
+            </div>
+          </Box>
+        </Modal>
+      </React.Fragment>
+    );
+  }
 }
 
 export default MovieDetail;
