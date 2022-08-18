@@ -41,9 +41,11 @@ function App() {
     // console.log(message);
     if (window.location.pathname == "/") {
       if (Number(message) >= 150) {
-        window.location.assign(window.location.href + "default");
+        // window.location.assign(window.location.href + "default");
+        document.getElementById("toDefault").click();
       } else if (Number(message) < 150 && 100 < Number(message)) {
-        window.location.assign(window.location.href + "low");
+        // window.location.assign(window.location.href + "low");
+        document.getElementById("toLow").click();
       }
     }
     return message;
