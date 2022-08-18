@@ -42,11 +42,11 @@ function Face(props) {
       });
   };
 
+  function sendData(sendage, sendgender) {
+    props.setAge(parseInt(sendage / 1));
+    props.setGender(sendgender);
+  }
   const handleVideoOnPlay = () => {
-    function sendData(sendage, sendgender) {
-      props.setAge(parseInt(sendage / 1));
-      props.setGender(sendgender);
-    }
     let intervalId = setInterval(async () => {
       if (flag) {
         clearInterval(intervalId); //인식 하기 전까지 계속 돌다가 인식하면 모델 종료
