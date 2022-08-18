@@ -52,7 +52,7 @@ function Face(props) {
         clearInterval(intervalId); //인식 하기 전까지 계속 돌다가 인식하면 모델 종료
         closeWebcam();
       }
-      if (canvasRef && canvasRef.current && media !== null) {
+      if (canvasRef && canvasRef.current) {
         canvasRef.current.innerHTML = faceapi.createCanvasFromMedia(
           videoRef.current
         );
