@@ -18,7 +18,7 @@ const style = {
   p: 4,
 };
 
-function MovieDetail() {
+function MovieDetail(props) {
   // const axios = require("axios").default;
   // console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
   // axios
@@ -67,8 +67,8 @@ function MovieDetail() {
   const location = useLocation();
   const state = location.state;
 
-  // console.log(state["moviePlayingInfoList"]);
-  let moviePlayingInfo = state["moviePlayingInfoList"];
+  // console.log("aa", state);
+  let moviePlayingInfo = state["moviePlayingInfoList"]; //props.
   const timeButton = [];
 
   for (const info of moviePlayingInfo) {
@@ -153,6 +153,12 @@ function MovieDetail() {
             </div>
             <SeatData data={seatInfo} />
           </div>
+          {/* <div id="container" className="reservation">
+        <div id="timeBox" className="container">
+          {timeButton}
+        </div>
+        <div id="seat_section">
+          <SeatData data={seatInfo} /> */}
         </div>
       </div>
 

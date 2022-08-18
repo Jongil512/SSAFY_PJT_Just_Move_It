@@ -5,7 +5,7 @@ import MovieDetailLow from "./MovieDetailLow.jsx";
 import PayLow from "./PayLow";
 import PayendLow from "./PayendLow";
 
-const LowRouter = () => {
+const LowRouter = (props) => {
   return (
     <Routes>
       <Route path="" element={<MovieSelectLow />}></Route>
