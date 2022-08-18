@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Card, CardMedia } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Carousel } from "3d-react-carousal";
+import "./MovieSelect.css";
 
 const axios = require("axios").default;
 const slide = [];
@@ -22,7 +23,7 @@ axios
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             component="img"
-            height="140"
+            height="450"
             image={movieData["img"]}
             alt="이미지 없어용 ㅠ"
           />
@@ -69,9 +70,16 @@ function MovieSelect() {
     movieDataAllChange(inputData);
   };
 
+  let star = "";
+  for (let n = 0; n < parseInt(Number(movieRate)/2); n++){
+    star += "★";
+  }
+  if (parseInt(Number(movieRate)%2) >= 0.5){
+    star += "☆";
+  }
+
   return (
     <div className="MovieSelect">
-      <h1>now playing</h1>
       <div className="container rows">
         <div className="row">
           <div className="colrum-2"></div>
@@ -90,14 +98,14 @@ function MovieSelect() {
           <h1>{movieTitle}</h1>
         </div>
         <div className="row">
-          <span> {movieAge}</span>
-          <span>{movieRate}</span>
-          <span> {movieTotalCustomer}명</span>
+          <span>{movieAge}</span>
         </div>
-        <br></br>
+        <div className="star">
+        <span>{star}</span>
+        </div>
         <div className="row">
           <Link to={"./" + movieCodeUrl} state={movieDataAll}>
-            <Button>영화 선택</Button>
+            <button class="w-btn w-btn-indigo" type="button">영화 선택</button>
           </Link>
         </div>
       </div>

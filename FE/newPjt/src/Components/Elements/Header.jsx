@@ -6,7 +6,7 @@ function Header(props) {
   return (
     <div className="Header">
       <div>
-        <h1>{props.dir}</h1>
+        <h1>Now Playing</h1>
       </div>
     </div>
   );
