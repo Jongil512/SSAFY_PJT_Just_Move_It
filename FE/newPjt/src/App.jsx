@@ -57,11 +57,13 @@ function App() {
 
   //채팅창에서 나갔을 때
   function onClose(evt) {
+    if (!isOpen(websocket)) return;
     websocket.send("퇴장");
   }
 
   //채팅창에 들어왔을 때
   function onOpen(evt) {
+    if (!isOpen(websocket)) return;
     websocket.send("입장");
   }
 
