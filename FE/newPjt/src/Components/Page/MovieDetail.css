@@ -92,6 +92,11 @@
   background-color: rgb(38, 50, 56);
   justify-content: center;
   align-items: center;
+  margin-left: 30px;
+}
+
+.time_button {
+  margin: 5px;
 }
 
 .button_section {
@@ -110,4 +115,22 @@
 #seat_section {
   width: 700px;
   height: 400px;
+}
+
+#timeContainer {
+  display: flex;
+}
+
+#timeButton {
+  background-color: rgb(38, 50, 56);
+  text-decoration: none;
+  color: white;
+  width: 70px;
+  height: 45px;
+  margin: auto;
+  border-style: solid;
+  border-radius: 6px;
+  border-color: rgb(64, 80, 88);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

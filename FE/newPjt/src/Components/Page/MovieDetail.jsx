@@ -94,16 +94,17 @@ function MovieDetail() {
 
     // console.log(k);
     timeButton.push(
-      <Button
-        variant="outlined"
-        onClick={(e) => {
-          handleSeatData(infoId, k, e);
-        }}
-      >
-        {info["startTime"]}
-      </Button>
+      <span className="time_button">
+        <button id="timeButton"
+          variant="outlined"
+          onClick={(e) => {
+            handleSeatData(infoId, k, e);
+          }}
+        >
+          {info["startTime"]}
+        </button>
+      </span>
     );
-    timeButton.push(<span>&nbsp;</span>);
   }
   function ad() {
     console.log(defaultPerson);
@@ -143,7 +144,9 @@ function MovieDetail() {
       <br />
 
       <div id="container" className="reservation">
-        <div id="timeBox" className="container">{timeButton}</div>
+        <div id="timeContainer" className="container">
+            <div id="timeBox">{timeButton}</div>
+        </div>
         <div id="seat_section">
           <SeatData data={seatInfo} />
         </div>

@@ -1,6 +1,11 @@
 .Pay {
-  padding-left: 40px;
-  padding-right: 40px;
+  min-height: 600px;
+  padding: 0 40px;
+}
+
+.PayLow {
+  min-height: 600px;
+  padding: 0 40px;
 }
 
 .reserve_box {
@@ -46,4 +51,8 @@ table h3 {
 table h4 {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.make_lower {
+  height: 500px;
 }
