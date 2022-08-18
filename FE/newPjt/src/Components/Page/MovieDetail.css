@@ -102,3 +102,8 @@
   text-align: center;
   margin: auto;
 }
+
+#seat_section {
+  width: 700px;
+  height: 400px;
+}
