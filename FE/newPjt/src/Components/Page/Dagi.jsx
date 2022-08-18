@@ -15,10 +15,10 @@ function Dagi(props) {
       <div>
         <img src="img/logo1.png" className="main"></img>
       </div>
-      <Link to="./default" state={props.state}>
+      <Link to="./default" state={props.state} id="toDefault">
         {/* <Button>평범한 ui로 이동하기</Button> */}
       </Link>
-      <Link to="./low" state={props.state}>
+      <Link to="./low" state={props.state} id="toLow">
         {/* <Button>작은 ui로 이동하기</Button> */}
       </Link>
     </div>
