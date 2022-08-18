@@ -131,7 +131,7 @@ function Face(props) {
 
       {captureVideo ? (
         modelsLoaded ? (
-          <div>
+          <div hidden>
             <div
               style={{
                 display: "flex",
@@ -146,10 +146,7 @@ function Face(props) {
                 onPlay={handleVideoOnPlay}
                 style={{ borderRadius: "10px" }}
               />
-              <canvas
-                ref={canvasRef}
-                style={{ position: "absolute", display: "none" }}
-              />
+              <canvas ref={canvasRef} style={{ position: "absolute" }} />
             </div>
           </div>
         ) : (
