@@ -2,16 +2,6 @@ import React, { useState } from "react";
 import { Button, Card, CardMedia } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Carousel } from "3d-react-carousal";
-
-<<<<<<< HEAD
-function MovieSelectLow() {
-  return (
-    <div className="MovieSelectLow">
-      <h1>여기는 셀렉트로우</h1>
-      <Link to="./1">
-        <Button>영화 선택</Button>
-      </Link>
-=======
 const axios = require("axios").default;
 const slide = [];
 const movies = [];
@@ -41,7 +31,7 @@ axios
     }
   });
 
-function MovieSelect() {
+function MovieSelectLow() {
   const callback = function (index) {
     console.log(index);
     movieCode(movies[index].movieCode);
@@ -110,9 +100,8 @@ function MovieSelect() {
           </Link>
         </div>
       </div>
->>>>>>> develop-IoT
     </div>
   );
 }
 
-export default MovieSelect;
+export default MovieSelectLow;

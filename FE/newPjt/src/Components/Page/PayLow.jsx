@@ -39,7 +39,7 @@ const theme = createTheme({
 //     }
 //   });
 
-function Pay() {
+function PayLow() {
   const navigate = useNavigate();
   const location = useLocation();
   const axios = require("axios").default;
@@ -215,4 +215,4 @@ function Pay() {
     </div>
   );
 }
-export default Pay;
+export default PayLow;
