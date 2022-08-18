@@ -34,6 +34,7 @@ axios
 
 function MovieSelect() {
   const callback = function (index) {
+    console.log(index);
     movieCode(movies[index].movieCode);
     movieTitlef(movies[index].title);
     movieRatef(movies[index].rating);
