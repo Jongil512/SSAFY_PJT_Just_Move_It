@@ -1,13 +1,14 @@
 import { Button } from "@mui/material";
 import React from "react";
+import "./Payend.css"
 import { Link } from "react-router-dom";
 
 function Payend() {
   return (
     <div className="Payend">
-      <h1>결제가 완료되었습니다</h1>
+      <h1>결제가 완료되었습니다!</h1>
       <a href="/">
-        <Button>첫 화면으로</Button>
+        <button id="home">처음으로</button>
       </a>
       {/* <Link to="/">
       </Link> */}
