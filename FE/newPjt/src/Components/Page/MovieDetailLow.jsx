@@ -146,9 +146,13 @@ function MovieDetail() {
       <br />
 
       <div id="container" className="reservation">
-        <div id="timeBox">{timeButton}</div>
-        <div id="seat_section">
-          <SeatData data={seatInfo} />
+        <div className="align_container">
+          <div id="timeContainer" className="container">
+            <div id="timeBox">{timeButton}</div>
+          </div>
+          <div id="seat_section">
+            <SeatData data={seatInfo} />
+          </div>
         </div>
       </div>
 

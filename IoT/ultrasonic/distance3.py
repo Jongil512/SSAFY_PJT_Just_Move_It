@@ -10,16 +10,15 @@ def send_distance(data):
         print("Sending: ", data)
         ws.send(data)
         # ws.close()
-        received = ws.recv()
     except Exception as e:
         print(e)
-    return received
+
 
 # 초음파 센서 세팅
 gpio.setmode(gpio.BCM)
 # 초음파 센서의 GPIO 포트 정보 불러오기
-trig = 3
-echo = 2
+trig = 21
+echo = 20
 gpio.setup(trig, gpio.OUT)
 gpio.setup(echo, gpio.IN)
 
@@ -30,14 +29,8 @@ received = ws.recv()
 
 # 받은 메세지가 all_connected(react, python 둘 다 연결됨)이면 초음파 시작
 if received == 'all_connected':
+    while 1:
     # 서버와 연결된 후 초음파는 계속 켜놓음
-    while True:
-        # 수신된 메세지(=received)가 done이면
-        if received == "done":
-            # 다시 메세지를 받고 반복문 다시 시작
-            received = ws.recv()v
-            continue
-        
         # 아니면 초음파 돌려돌려
         try:
             gpio.output(trig, False)
@@ -64,14 +57,7 @@ if received == 'all_connected':
             distance = pulse_duration * 17000
             # 소수점 둘째자리에서 반올림
             distance = round(distance, 2)
-            print(distance)
-            while True:
-                # 서버에 데이터를 보내고 메세지를 수신함
-                received = send_distance(distance)
-                # '서버가 데이터를 받았다'(=done)이면 데이터 보내는 것 종료
-                if received == 'done':
-                    print("Stop send data")
-                    break
+            send_distance(str(distance))
 
         except Exception as e:
             gpio.cleanup()
