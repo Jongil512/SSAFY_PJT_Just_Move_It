@@ -25,8 +25,8 @@
 .reserve_box {
   background-color: rgb(250, 250, 250);
   border-radius: 10px;
-  padding: 20px;
-  margin: 90px 0;
+  padding: 50px 20px;
+  margin: 50px 0;
 }
 
 .reserve_info {
