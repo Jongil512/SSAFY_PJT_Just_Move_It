@@ -6,8 +6,6 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Router from "./Router";
 import Face from "./Components/AI/Face";
-import Pose from "./Components/AI/Pose";
-// import $ from "jquery";
 import { CompressOutlined } from "@mui/icons-material";
 
 function App() {
@@ -62,19 +60,10 @@ function App() {
   /////////////////////////////////////////////////////////////
 
   const websocket = new WebSocket("wss://i7d207.p.ssafy.io/ws/socket");
-  // const websocket = new WebSocket("ws://localhost:8081/ws/socket");
 
   websocket.onmessage = onMessage;
   websocket.onopen = onOpen;
   websocket.onclose = onClose;
-
-  function send() {
-    let msg = document.getElementById("msg");
-
-    console.log(msg.value);
-    websocket.send(msg.value);
-    msg.value = "";
-  }
 
   //채팅창에서 나갔을 때
   function onClose(evt) {
@@ -130,43 +119,9 @@ function App() {
       </h3>
       <h3>방향은 현재 {dirction} 을 가리키고 있다!</h3> */}
 
-      <Face setAge={setAge} setGender={setGender}></Face>
-      <Pose setDirction={setDirction}></Pose>
 
-      <div class="container">
-        <div>
-          <div id="msgArea" class="col"></div>
-          <div class="col-6">
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                id="msg"
-                class="form-control"
-                aria-label="Recipient's username"
-                aria-describedby="button-addon2"
-              />
-              <div class="input-group-append">
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-send"
-                  onClick={send}
-                >
-                  전송
-                </button>
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-send"
-                  onClick={onMessage}
-                >
-                  받기
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Face setAge={setAge} setGender={setGender}></Face>
+    
     </div>
   );
 }
