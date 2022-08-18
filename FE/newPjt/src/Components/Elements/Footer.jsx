@@ -3,7 +3,9 @@ import React from "react";
 function Footer() {
   return (
     <div className="Footer">
-      <h1>푸터다</h1>
+      <div>
+        <span>All copyrights reserved by Just MoveIt !</span>
+      </div>
     </div>
   );
 }

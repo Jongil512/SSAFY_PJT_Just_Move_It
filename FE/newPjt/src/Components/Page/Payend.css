@@ -1,0 +1,11 @@
+#home {
+    text-decoration: none;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 60px;
+    background-color: rgb(68, 67, 111);
+    margin-left: 20px;
+    margin-top: 50px;
+}
