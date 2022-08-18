@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://i7d207.p.ssafy.io:3306/ssafy?serverTimezone=Asia/Seoul
-    username: ssafy
-    password: Ssafyd207
+    url: jdbc:mysql://localhost:3306/ssafy?serverTimezone=Asia/Seoul
+    username: root
+    password: ssafy
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
@@ -24,7 +24,7 @@ spring:
 
 
 server:
-  port: 8081
+  port: 8080
   servlet:
     contextPath: /
 
