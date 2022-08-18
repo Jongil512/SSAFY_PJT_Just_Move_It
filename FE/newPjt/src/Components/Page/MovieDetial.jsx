@@ -51,13 +51,16 @@ function MovieDetail() {
   const [kisPerson, setkidPersonInfo] = useState(0);
   const [ticketSeats, setTicketSeatData] = useState();
   const [selectedSeats, setSelectedSeats] = useState([]);
+  const [moviePlayingId, setMoviePlayingId] = useState();
 
-  const handleSeatData = (sData, e) => {
+  const handleSeatData = (id, sData, e) => {
     console.log({ sData });
     setDefaultPersonInfo(0);
     setkidPersonInfo(0);
     setSelectedSeats([]);
     setSeatInfo(sData);
+    setMoviePlayingId(id);
+    console.log(id);
   };
 
   const location = useLocation();
@@ -70,6 +73,11 @@ function MovieDetail() {
   for (const info of moviePlayingInfo) {
     // console.log(info["tickets"]);
     const ticketsData = [];
+
+    // console.log("무비", info);
+    const infoId = info["moviePlayingInfoId"];
+    // console.log("무비인포", infoId);
+
     for (const ticket of info["tickets"]) {
       // console.log(ticket["seat"]);
       for (const seat of ticket["seat"].split(",")) {
@@ -77,15 +85,17 @@ function MovieDetail() {
       }
     }
     ticketsData.sort();
+
     let k = "";
     for (const iterator of ticketsData) {
       k = k + iterator + ",";
     }
+
     // console.log(k);
     timeButton.push(
       <Button
         onClick={(e) => {
-          handleSeatData(k, e);
+          handleSeatData(infoId, k, e);
         }}
       >
         {info["startTime"]}
@@ -164,6 +174,7 @@ function MovieDetail() {
                 adult: { defaultPerson },
                 child: { kisPerson },
                 seats: { selectedSeats },
+                PlayingInfoID: { moviePlayingId },
               }}
             >
               <Button>결제</Button>
