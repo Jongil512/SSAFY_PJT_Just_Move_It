@@ -3,6 +3,11 @@
   padding: 0 40px;
 }
 
+.PayLow {
+  min-height: 600px;
+  padding: 0 40px;
+}
+
 .reserve_box {
   background-color: rgb(250, 250, 250);
   border-radius: 10px;
@@ -46,4 +51,8 @@ table h3 {
 table h4 {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.make_lower {
+  height: 500px;
 }
