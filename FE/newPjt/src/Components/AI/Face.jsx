@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-
 import * as faceapi from "face-api.js";
+import React from "react";
 
 function Face(props) {
   const [modelsLoaded, setModelsLoaded] = React.useState(false);
@@ -14,7 +13,7 @@ function Face(props) {
   let age, gender; //app jsx로 보내야됨
 
   React.useEffect(() => {
-    const loadModels = () => {
+    const loadModels = async () => {
       const MODEL_URL = process.env.PUBLIC_URL + "/models";
 
       Promise.all([
@@ -131,7 +130,7 @@ function Face(props) {
 
       {captureVideo ? (
         modelsLoaded ? (
-          <div hidden>
+          <div>
             <div
               style={{
                 display: "flex",
@@ -146,7 +145,10 @@ function Face(props) {
                 onPlay={handleVideoOnPlay}
                 style={{ borderRadius: "10px" }}
               />
-              <canvas ref={canvasRef} style={{ position: "absolute" }} />
+              <canvas
+                ref={canvasRef}
+                style={{ position: "absolute", display: "none" }}
+              />
             </div>
           </div>
         ) : (
