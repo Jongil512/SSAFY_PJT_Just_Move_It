@@ -53,10 +53,7 @@ table h4 {
 }
 
 .make_lower {
-<<<<<<< HEAD
   height: 100px;
-=======
-  height: 300px;
 }
 
 #next {
@@ -79,5 +76,4 @@ table h4 {
   border-radius: 10px;
   background-color: rgb(168, 168, 168);
   margin-right: 20px;
->>>>>>> feature/FE/khs4
 }
