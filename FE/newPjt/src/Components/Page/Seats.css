@@ -1,7 +1,17 @@
+.Seats h3 {
+  margin-top: 60px;
+}
+
+.Seats h5 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
 .screen {
   width: 100%;
-  height: 400px;
+  height: fit-content;
   display: flex;
+  margin-bottom: 20px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -9,7 +19,7 @@
 .seats {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  width: fit-content;
   max-width: 500px;
 }
 .seat {
@@ -22,17 +32,26 @@
   background-color: white;
 }
 .seat.occupied {
-  background-color: gray !important;
+  background-color: rgb(184, 184, 184) !important;
 }
 .seat.selected {
-  background-color: red !important;
+  background-color: rgb(235, 64, 64) !important;
 }
-.seat:not(.occupied):hover {
+/* .seat:not(.occupied):hover {
   background-color: lightblue;
   cursor: pointer;
   transform: scale(1.2);
 }
 .seat:not(.occupied):focus {
+  opacity: 0.7;
+  background-color: lightblue;
+} */
+.Seats .seat:not(.occupied):hover {
+  background-color: lightblue;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.Seats .seat:not(.occupied):focus {
   opacity: 0.7;
   background-color: lightblue;
 }
@@ -51,4 +70,11 @@
 
 .total span {
   margin-right: 30px;
+}
+
+.seats-section {
+  width: fit-content;
+  height: fit-content;
+  align-self: center;
+  text-align: center;
 }

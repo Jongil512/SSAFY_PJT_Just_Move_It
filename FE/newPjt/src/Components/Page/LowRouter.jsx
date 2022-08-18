@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MovieSelectLow from "./MovieSelectLow.jsx";
-import MovieDetailLow from "./MovieDetialLow.jsx";
+import MovieDetailLow from "./MovieDetailLow.jsx";
 import PayLow from "./PayLow";
 import PayendLow from "./PayendLow";
 
