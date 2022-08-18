@@ -1,6 +1,6 @@
 .Pay {
-  padding-left: 40px;
-  padding-right: 40px;
+  min-height: 600px;
+  padding: 0 40px;
 }
 
 .reserve_box {
