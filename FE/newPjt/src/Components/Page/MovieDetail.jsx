@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, Box } from "@mui/material";
+import { Button, Modal, Box, colors } from "@mui/material";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import SeatData from "./SeatsData";
 import Seat from "./Seats";
@@ -125,31 +125,32 @@ function MovieDetail() {
 
   return (
     <div className="MovieDetail">
-      <h1 id="timeSelect">시간 선택</h1>
+      <h2 id="timeSelect">시간 선택</h2>
 
       <div id="container">
-        <div id="box1">
-          <img id="poster" src={state["img"]} alt="사진이 없어용 ㅠ" />
-        </div>
-        <div id="box2">
-          <h2>{state["title"]}</h2>
-          <p>평점 : {state["rating"]}</p>
-          <p> 총 관객수 : {Number(state["totalCustomer"])} 명</p>
-          <p> 연령 : {state["ageLimit"].slice(0, 3)}</p>
-          <p>{state["summary"]}</p>
+        <div className="align_container">
+          <div id="box1">
+            <img id="poster" src={state["img"]} alt="사진이 없어용 ㅠ" />
+          </div>
+          <div id="box2">
+            <h3 style={{ color: "white" }}>{state["title"]}</h3>
+            <p>평점 : {state["rating"]}</p>
+            <p>총 관객수 : {Number(state["totalCustomer"])} 명</p>
+            <p>연령 : {state["ageLimit"].slice(0, 3)}</p>
+            {/* <p>{state["summary"]}</p> */}
+          </div>
         </div>
       </div>
 
       <br />
       <hr />
-      <br />
 
-      <div id="container" className="reservation">
-        <div className="align_container">
-          <div id="timeContainer" className="container">
-            <div id="timeBox">{timeButton}</div>
-          </div>
-          <div id="seat_section">
+      <div id="seat_section">
+        <div className="reservation">
+          <div className="align_container">
+            <div id="timeContainer" className="container">
+              <div id="timeBox">{timeButton}</div>
+            </div>
             <SeatData data={seatInfo} />
           </div>
         </div>
