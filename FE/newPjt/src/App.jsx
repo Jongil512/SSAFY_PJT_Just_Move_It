@@ -62,6 +62,7 @@ function App() {
   /////////////////////////////////////////////////////////////
 
   const websocket = new WebSocket("wss://i7d207.p.ssafy.io/ws/socket");
+  // const websocket = new WebSocket("ws://localhost:8081/ws/socket");
 
   websocket.onmessage = onMessage;
   websocket.onopen = onOpen;
@@ -78,20 +79,16 @@ function App() {
   //채팅창에서 나갔을 때
   function onClose(evt) {
     if (!isOpen(websocket)) return;
-    websocket.send("퇴장");
+    
   }
 
   //채팅창에 들어왔을 때
   function onOpen(evt) {
     if (!isOpen(websocket)) return;
-    websocket.send("입장");
   }
 
   function onMessage(msg) {
     if (!isOpen(websocket)) return;
-
-    var data = msg.data;
-    var message = null;
 
     var data = msg.data;
     var message = null;
