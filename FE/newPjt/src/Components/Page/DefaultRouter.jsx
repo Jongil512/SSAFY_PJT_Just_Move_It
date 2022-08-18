@@ -5,7 +5,7 @@ import MovieDetail from "./MovieDetail";
 import Pay from "./Pay.jsx";
 import Payend from "./Payend";
 
-const DefaultRouter = () => {
+const DefaultRouter = (props) => {
   return (
     <Routes>
       <Route path="" element={<MovieSelect />}></Route>
@@ -16,3 +16,4 @@ const DefaultRouter = () => {
   );
 };
 export default DefaultRouter;
+// state={props.state}

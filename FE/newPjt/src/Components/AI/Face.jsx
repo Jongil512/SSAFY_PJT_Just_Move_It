@@ -12,6 +12,39 @@ function Face(props) {
   let flag;
   let age, gender; //app jsx로 보내야됨
 
+  // const websocket = new WebSocket("wss://i7d207.p.ssafy.io/ws/socket");
+  // let message;
+
+  // websocket.onmessage = onMessage;
+  // websocket.onopen = onOpen;
+  // websocket.onclose = onClose;
+
+  // //채팅창에서 나갔을 때
+  // function onClose(evt) {
+  //   if (!isOpen(websocket)) return;
+  // }
+
+  // //채팅창에 들어왔을 때
+  // function onOpen(evt) {
+  //   if (!isOpen(websocket)) return;
+  // }
+
+  // function onMessage(msg) {
+  //   if (!isOpen(websocket)) return;
+
+  //   var data = msg.data;
+  //   message = null;
+
+  //   //현재 세션에 로그인 한 사람
+  //   message = data;
+
+  //   return message;
+  // }
+
+  // function isOpen(ws) {
+  //   return ws.readyState === ws.OPEN;
+  // }
+
   React.useEffect(() => {
     const loadModels = async () => {
       const MODEL_URL = process.env.PUBLIC_URL + "/models";
@@ -78,9 +111,11 @@ function Face(props) {
           displaySize
         );
         age = resizedDetections.age;
-        console.log(age + "나이");
+        // console.log(age + "나이");
         gender = resizedDetections.gender;
-        console.log(gender + "성별");
+        // console.log(gender + "성별");
+        props.setAge(resizedDetections.age);
+        props.setGender(resizedDetections.age);
 
         sendData(age, gender);
 
@@ -109,6 +144,32 @@ function Face(props) {
     videoRef.current.pause();
     videoRef.current.srcObject.getTracks()[0].stop();
     setCaptureVideo(false);
+
+    // console.log(message);
+    // if (window.location.pathname == "/") {
+    //   if (Number(message) >= 150) {
+    //     window.location.assign(
+    //       window.location.href + "default",
+    //       props.moviesData
+    //     );
+    //   } else if (Number(message) < 150 && 100 < Number(message)) {
+    //     window.location.assign(window.location.href + "low", props.moviesData);
+    //   }
+    // }
+    // console.log(window.location);
+
+    // console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
+    // axios
+    //   .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
+    //   .catch(function (err) {
+    //     console.log(err, "default 데이터x");
+    //   })
+    //   .then(function (response) {
+    //     // 성공 핸들링
+    //     console.log(response.data);
+    //     state = response.data;
+    //   });
+    // console.log(state);
   };
 
   return (
