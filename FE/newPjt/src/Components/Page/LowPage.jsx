@@ -8,7 +8,6 @@ function LowPage(props) {
     <div className="LowPage">
       <Header />
       <Footer />
-      <h1>여기는 로우 페이지</h1>
       <LowRouter />
     </div>
   );
