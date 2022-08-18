@@ -94,16 +94,17 @@ function MovieDetail() {
 
     // console.log(k);
     timeButton.push(
-      <Button
-        variant="outlined"
-        onClick={(e) => {
-          handleSeatData(infoId, k, e);
-        }}
-      >
-        {info["startTime"]}
-      </Button>
+      <span className="time_button">
+        <Button
+          variant="outlined"
+          onClick={(e) => {
+            handleSeatData(infoId, k, e);
+          }}
+        >
+          {info["startTime"]}
+        </Button>
+      </span>
     );
-    timeButton.push(<span>&nbsp;</span>);
   }
   function ad() {
     console.log(defaultPerson);
