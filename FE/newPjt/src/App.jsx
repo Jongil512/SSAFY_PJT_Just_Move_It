@@ -96,11 +96,13 @@ function App() {
     //현재 세션에 로그인 한 사람
     message = data;
     console.log(message);
+    if (window.location.pathname == "/") {
     if (Number(message) >= 150) {
       window.location.assign(window.location.href + "default");
     } else if (Number(message) < 150 && 100 < Number(message)) {
       window.location.assign(window.location.href + "low");
     }
+  }
 
     return message;
   }
