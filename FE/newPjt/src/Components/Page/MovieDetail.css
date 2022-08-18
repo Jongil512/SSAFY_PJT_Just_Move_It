@@ -19,11 +19,6 @@
       format("truetype");
 }
 
-.MovieDetail {
-  padding-left: 40px;
-  padding-right: 40px;
-}
-
 .MovieDetail > h1 {
   font-family: "SEBANG_Gothic_Bold";
 }
@@ -47,7 +42,8 @@
   background-color: rgb(64, 80, 88);
   border-radius: 10px;
   color: white;
-  margin-bottom: 25px;
+  margin: 50px 0;
+  padding: 20px;
 }
 /* 
 #box1 {
@@ -86,13 +82,13 @@
   border-width: 10px;
   border-radius: 10px;
   width: 300px;
-  height: 180px;
+  height: fit-content;
   text-decoration: none;
   align-self: center;
   background-color: rgb(38, 50, 56);
   justify-content: center;
   align-items: center;
-  margin-left: 30px;
+  padding: 15px;
 }
 
 .time_button {
@@ -101,6 +97,7 @@
 
 .button_section {
   width: fit-content;
+  justify-self: center;
   align-self: center;
   margin-top: 50px;
   margin-left: auto;
@@ -112,13 +109,8 @@
   margin: auto;
 }
 
-#seat_section {
-  width: 700px;
-  height: 400px;
-}
-
 #timeContainer {
-  display: flex;
+  margin-right: 30px;
 }
 
 #timeButton {
@@ -133,4 +125,15 @@
   border-color: rgb(64, 80, 88);
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.make_lower {
+  height: 500px;
+}
+
+.align_container {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
 }
