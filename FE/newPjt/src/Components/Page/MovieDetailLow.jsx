@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Modal, Box } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import SeatData from "./SeatsData";
+import Seat from "./Seats";
+import PersonButton from "../Elements/PersonButton";
+import "./MovieDetail.css";
 
 const style = {
   position: "absolute",
@@ -14,10 +18,20 @@ const style = {
   p: 4,
 };
 
-function MovieDetailLow() {
-  // const movie_code = window.location.href
-  // console.log(movie_code)
-  // console.log(window.location.href.slice[-1])
+function MovieDetail() {
+  // const axios = require("axios").default;
+  // console.log("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0]);
+  // axios
+  //   .get("https://i7d207.p.ssafy.io/api/movies/" + movie_code[0])
+  //   .catch(function (err) {
+  //     console.log(err, "default 데이터x");
+  //   })
+  //   .then(function (response) {
+  //     // 성공 핸들링
+  //     console.log(response.data);
+  //     state = response.data;
+  //   });
+  // console.log(state);
 
   const navigate = useNavigate();
 
@@ -27,37 +41,184 @@ function MovieDetailLow() {
 
   let juso = window.location.href.split("/");
   const movie_code = juso.slice(-1);
-  console.log(movie_code);
+  let movie_data;
+  // console.log(movie_code[0]);
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [seatInfo, setSeatInfo] = useState("11");
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [defaultPerson, setDefaultPersonInfo] = useState(0);
+  const [kisPerson, setkidPersonInfo] = useState(0);
+  const [ticketSeats, setTicketSeatData] = useState();
+  const [selectedSeats, setSelectedSeats] = useState([]);
+  const [moviePlayingId, setMoviePlayingId] = useState();
+
+  const handleSeatData = (id, sData, e) => {
+    console.log({ sData });
+    setDefaultPersonInfo(0);
+    setkidPersonInfo(0);
+    setSelectedSeats([]);
+    setSeatInfo(sData);
+    setMoviePlayingId(id);
+    console.log(id);
+  };
+
+  const location = useLocation();
+  const state = location.state;
+
+  // console.log(state["moviePlayingInfoList"]);
+  let moviePlayingInfo = state["moviePlayingInfoList"];
+  const timeButton = [];
+
+  for (const info of moviePlayingInfo) {
+    // console.log(info["tickets"]);
+    const ticketsData = [];
+
+    // console.log("무비", info);
+    const infoId = info["moviePlayingInfoId"];
+    // console.log("무비인포", infoId);
+
+    for (const ticket of info["tickets"]) {
+      // console.log(ticket["seat"]);
+      for (const seat of ticket["seat"].split(",")) {
+        ticketsData.push(seat);
+      }
+    }
+    ticketsData.sort();
+
+    let k = "";
+    for (const iterator of ticketsData) {
+      k = k + iterator + ",";
+    }
+
+    // console.log(k);
+    timeButton.push(
+      <span className="time_button">
+        <Button
+          variant="outlined"
+          onClick={(e) => {
+            handleSeatData(infoId, k, e);
+          }}
+        >
+          {info["startTime"]}
+        </Button>
+      </span>
+    );
+  }
+  function ad() {
+    console.log(defaultPerson);
+    // return defaultPerson;
+  }
+  function kid() {
+    console.log(kisPerson);
+    // return kisPerson;
+  }
+
+  let [ticketData, setTicketData] = useState({
+    movie: state["title"],
+    adult: 1,
+    child: 2,
+    seats: { selectedSeats },
+  });
 
   return (
     <div className="MovieDetailLow">
-      <h1>여기는 디테일</h1>
-      <Button onClick={goBack}>뒤로가기</Button>
+      <div className="make_lower"></div>
+      <h1 id="timeSelect">시간 선택</h1>
+
+      <div id="container">
+        <div id="box1">
+          <img id="poster" src={state["img"]} alt="사진이 없어용 ㅠ" />
+        </div>
+        <div id="box2">
+          <h2>{state["title"]}</h2>
+          <p>평점 : {state["rating"]}</p>
+          <p> 총 관객수 : {Number(state["totalCustomer"])} 명</p>
+          <p> 연령 : {state["ageLimit"].slice(0, 3)}</p>
+          <p>{state["summary"]}</p>
+        </div>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <div id="container" className="reservation">
+        <div id="timeBox">{timeButton}</div>
+        <div id="seat_section">
+          <SeatData data={seatInfo} />
+        </div>
+      </div>
 
       <div>
-        <Button onClick={handleOpen}>좌석 선택</Button>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <h1>여기는 모달이야!</h1>
-            {/* <Link to='/pay'><Button>결제</Button></Link> */}
-            <Link to="./pay">
-              <Button>결제</Button>
-            </Link>
-            <Button onClick={handleClose}>취소</Button>
-          </Box>
-        </Modal>
+        <button id="before" onClick={goBack}>
+          뒤로가기
+        </button>
+        <button id="next" onClick={handleOpen}>
+          좌석 선택
+        </button>
       </div>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <h3>인원을 선택하세요</h3>
+          <div className="modal_box">
+            <PersonButton
+              text="성인"
+              chosePerson={defaultPerson}
+              default={defaultPerson}
+              kid={kisPerson}
+              setPerson={setDefaultPersonInfo}
+              // setTicketData={setTicketData}
+            />
+            <PersonButton
+              text="청소년"
+              chosePerson={kisPerson}
+              default={defaultPerson}
+              kid={kisPerson}
+              setPerson={setkidPersonInfo}
+              // setTicketData={setTicketData}
+            />
+          </div>
+          <Seat
+            data={seatInfo}
+            person={defaultPerson + kisPerson}
+            setSelectedSeats={setSelectedSeats}
+            selectedSeats={selectedSeats}
+          />
+          {/* <Link to='/pay'><Button>결제</Button></Link> */}
+          {/* <Link to="./pay" state={ticketData}> */}
+
+          <div className="button_section">
+            <Button variant="outlined" onClick={handleClose}>
+              취소
+            </Button>
+            <span>&nbsp;&nbsp;&nbsp;</span>
+            <Link
+              to="./pay"
+              style={{ textDecoration: "none" }}
+              state={{
+                movie: state["title"],
+                img: state["img"],
+                adult: { defaultPerson },
+                child: { kisPerson },
+                seats: { selectedSeats },
+                PlayingInfoID: { moviePlayingId },
+              }}
+            >
+              <Button variant="contained">결제</Button>
+            </Link>
+          </div>
+        </Box>
+      </Modal>
     </div>
   );
 }
 
-export default MovieDetailLow;
+export default MovieDetail;

@@ -18,6 +18,12 @@
   margin-top: 90px;
 }
 
+.MovieDetailLow .seats-section {
+  width: fit-content;
+  height: fit-content;
+  margin-top: 50px;
+}
+
 .seats {
   display: flex;
   flex-direction: row;
@@ -28,6 +34,15 @@
 .seat {
   width: 60px;
   height: 40px;
+  /* flex: 0 0 8%; */
+  margin: 4px 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
+.MovieDetailLow .seat {
+  width: 50px;
+  height: 30px;
   /* flex: 0 0 8%; */
   margin: 4px 6px;
   border: 1px solid #ddd;
