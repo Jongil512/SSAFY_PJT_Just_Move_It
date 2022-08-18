@@ -1,11 +1,11 @@
 .row {
-    margin-top: 30px;
+    margin-top: 15px;
     color:rgb(208, 208, 203);
 }
 .star {
-    margin-top: 20px;
+    margin-top: 5px;
     color: orange;
-    font-size: 20pt;
+    font-size: 10pt;
 }
 .w-btn {
     position: relative;

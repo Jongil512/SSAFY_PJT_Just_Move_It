@@ -105,7 +105,7 @@ function MovieSelect() {
         </div>
         <div className="row">
           <Link to={"./" + movieCodeUrl} state={movieDataAll}>
-            <button class="w-btn w-btn-indigo" type="button">영화 선택</button>
+            <Button class="w-btn w-btn-indigo" type="button">영화 선택</Button>
           </Link>
         </div>
       </div>
