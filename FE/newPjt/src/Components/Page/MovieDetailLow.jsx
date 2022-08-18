@@ -226,7 +226,6 @@ function MovieDetail() {
         <Modal
           hideBackdrop
           open={open}
-          onClose={handleClose}
           aria-labelledby="child-modal-title"
           aria-describedby="child-modal-description"
         >
