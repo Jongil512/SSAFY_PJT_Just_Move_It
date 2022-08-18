@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Seats.css";
+import "./Seats.css";
 
 function Seats(props) {
   const seatsCatogory = [
