@@ -2,8 +2,6 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-import Pose from "../AI/Pose";
-
 function MovieSelectLow() {
   return (
     <div className="MovieSelectLow">
@@ -11,8 +9,6 @@ function MovieSelectLow() {
       <Link to="./1">
         <Button>영화 선택</Button>
       </Link>
-
-      <Pose></Pose>
     </div>
   );
 }

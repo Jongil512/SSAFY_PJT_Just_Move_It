@@ -4,6 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import SeatData from "./SeatsData";
 import Seat from "./Seats";
 import PersonButton from "../Elements/PersonButton";
+import "./MovieDetail.css";
 
 const style = {
   position: "absolute",
@@ -84,6 +85,7 @@ function MovieDetail() {
     // console.log(k);
     timeButton.push(
       <Button
+        variant="outlined"
         onClick={(e) => {
           handleSeatData(k, e);
         }}
@@ -91,6 +93,7 @@ function MovieDetail() {
         {info["startTime"]}
       </Button>
     );
+    timeButton.push(<span>&nbsp;</span>);
   }
   function ad() {
     console.log(defaultPerson);
@@ -110,29 +113,50 @@ function MovieDetail() {
 
   return (
     <div className="MovieDetail">
-      <h1>여기는 디테일</h1>
-      <Button onClick={goBack}>뒤로가기</Button>
-      <br />
-      <img src={state["img"]} alt="사진이 없어용 ㅠ" />
-      <h2>{state["title"]}</h2>
-      <span>평점 : {state["rating"]},</span>
-      <span> 총 관객수 : {Number(state["totalCustomer"]) / 1000}</span>
-      <span> 연령 : {state["ageLimit"].slice(0, 3)}</span>
-      <h5>{state["summary"]}</h5>
-      {timeButton}
-      <div>
-        <SeatData data={seatInfo} />
+      <h1 id="timeSelect">시간 선택</h1>
+
+      <div id="container">
+        <div id="box1">
+          <img id="poster" src={state["img"]} alt="사진이 없어용 ㅠ" />
+        </div>
+        <div id="box2">
+          <h2>{state["title"]}</h2>
+          <p>평점 : {state["rating"]}</p>
+          <p> 총 관객수 : {Number(state["totalCustomer"])} 명</p>
+          <p> 연령 : {state["ageLimit"].slice(0, 3)}</p>
+          <p>{state["summary"]}</p>
+        </div>
       </div>
+
+      <br />
+      <hr />
+      <br />
+
+      <div id="container" className="reservation">
+        <div id="timeBox">{timeButton}</div>
+        <div id="seat_section">
+          <SeatData data={seatInfo} />
+        </div>
+      </div>
+
       <div>
-        <Button onClick={handleOpen}>좌석 선택</Button>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box sx={style}>
-            <h1>여기는 모달이야!</h1>
+        <button id="before" onClick={goBack}>
+          뒤로가기
+        </button>
+        <button id="next" onClick={handleOpen}>
+          좌석 선택
+        </button>
+      </div>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <h3>인원을 선택하세요</h3>
+          <div className="modal_box">
             <PersonButton
               text="성인"
               chosePerson={defaultPerson}
@@ -149,16 +173,24 @@ function MovieDetail() {
               setPerson={setkidPersonInfo}
               // setTicketData={setTicketData}
             />
-            <Seat
-              data={seatInfo}
-              person={defaultPerson + kisPerson}
-              setSelectedSeats={setSelectedSeats}
-              selectedSeats={selectedSeats}
-            />
-            {/* <Link to='/pay'><Button>결제</Button></Link> */}
-            {/* <Link to="./pay" state={ticketData}> */}
+          </div>
+          <Seat
+            data={seatInfo}
+            person={defaultPerson + kisPerson}
+            setSelectedSeats={setSelectedSeats}
+            selectedSeats={selectedSeats}
+          />
+          {/* <Link to='/pay'><Button>결제</Button></Link> */}
+          {/* <Link to="./pay" state={ticketData}> */}
+
+          <div className="button_section">
+            <Button variant="outlined" onClick={handleClose}>
+              취소
+            </Button>
+            <span>&nbsp;&nbsp;&nbsp;</span>
             <Link
               to="./pay"
+              style={{ textDecoration: "none" }}
               state={{
                 movie: state["title"],
                 adult: { defaultPerson },
@@ -166,12 +198,11 @@ function MovieDetail() {
                 seats: { selectedSeats },
               }}
             >
-              <Button>결제</Button>
+              <Button variant="contained">결제</Button>
             </Link>
-            <Button onClick={handleClose}>취소</Button>
-          </Box>
-        </Modal>
-      </div>
+          </div>
+        </Box>
+      </Modal>
     </div>
   );
 }

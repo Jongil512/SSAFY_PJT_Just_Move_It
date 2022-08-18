@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MovieSelect from "./MovieSelect.jsx";
-import MovieDetail from "./MovieDetial";
+import MovieDetail from "./MovieDetail";
 import Pay from "./Pay.jsx";
 import Payend from "./Payend";
 

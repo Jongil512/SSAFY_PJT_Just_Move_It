@@ -10,7 +10,7 @@ function SeatsData(props) {
     //   occupied: [2, 3]
     // },
     {
-      name: "좌석 선택",
+      name: "스크린",
       seats: [
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
       ],
@@ -72,7 +72,6 @@ function SeatsData(props) {
 
   return (
     <div className="SeatsData">
-      <h3>여기 좌석 정보다 뿌앵</h3>
       <div>{/* <h6>{props["data"]}</h6> */}</div>
       <div className="screen">
         {seatsCatogory.map((catogory) => {
@@ -84,7 +83,7 @@ function SeatsData(props) {
           // console.log(newSeatList);
           return (
             <div className="seats-section">
-              <h4>{catogory.name}</h4>
+              <h5>{catogory.name}</h5>
               {newSeatList.map((seats, i) => (
                 <div key={i} className="seats">
                   {seats.map((seat, j) => {
