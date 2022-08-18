@@ -35,7 +35,7 @@ if received == 'all_connected':
         # 수신된 메세지(=received)가 done이면
         if received == "done":
             # 다시 메세지를 받고 반복문 다시 시작
-            received = ws.recv()
+            received = ws.recv()v
             continue
         
         # 아니면 초음파 돌려돌려
