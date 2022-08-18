@@ -6,8 +6,8 @@
 .screen {
   width: 100%;
   height: fit-content;
-  /* display: flex; */
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   align-content: center;
   justify-content: space-between;
 }

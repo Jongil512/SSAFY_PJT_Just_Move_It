@@ -23,6 +23,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@vladmandic/face-api": "^1.7.1",
     "3d-react-carousal": "^5.0.0",
+    "animejs": "^3.2.1",
     "axios": "^0.27.2",
     "package": "^1.0.1",
     "package.json": "^2.0.1",
