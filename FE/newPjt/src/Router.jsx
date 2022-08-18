@@ -10,9 +10,12 @@ const Router = (props) => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dagi />}></Route>
-        <Route path="/low/*" element={<LowPage />} data={props}></Route>
-        <Route path="/default/*" element={<DefaultPage data={props} />}></Route>
+        <Route path="/" element={<Dagi state={props.state} />}></Route>
+        <Route path="/low/*" element={<LowPage state={props.state} />}></Route>
+        <Route
+          path="/default/*"
+          element={<DefaultPage state={props.state} />}
+        ></Route>
 
         {/* <Route path="/movies" element={<MovieSelect />}></Route>
         <Route path="/movies/:movieCode" element={<MovieDetail />}></Route>
