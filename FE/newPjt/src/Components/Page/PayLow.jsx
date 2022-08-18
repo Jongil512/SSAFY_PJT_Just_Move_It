@@ -2,25 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@mui/material";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-
 import "./Pay.css";
-
-const theme = createTheme({
-  status: {
-    danger: "#e53e3e",
-  },
-  palette: {
-    primary: {
-      main: "#0971f1",
-      darker: "#053e85",
-    },
-    neutral: {
-      main: "#64748B",
-      contrastText: "#fff",
-    },
-  },
-});
 
 // const movies = [];
 
@@ -189,28 +171,26 @@ function PayLow() {
       <hr />
 
       <div className="button_section">
-        <ThemeProvider theme={theme}>
-          <Button onClick={goBack} color="neutral" variant="contained">
-            결제 취소
-          </Button>
-          <span>&nbsp;&nbsp;&nbsp;</span>
-          <Link
-            onClick={ticketPost}
-            to="./payend"
-            style={{ textDecoration: "none" }}
-            state={{
-              movie: state["movie"],
-              img: state["img"],
-              adult: state.adult.defaultPerson,
-              child: state.child.kisPerson,
-              seats: seatTicket.slice(0, -1),
-            }}
-          >
-            <Button color="error" variant="contained">
-              결제 완료
-            </Button>
-          </Link>
-        </ThemeProvider>
+        <button id="before" onClick={goBack} variant="contained">
+          결제 취소
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;</span>
+        <Link
+          onClick={ticketPost}
+          to="./payend"
+          style={{ textDecoration: "none" }}
+          state={{
+            movie: state["movie"],
+            img: state["img"],
+            adult: state.adult.defaultPerson,
+            child: state.child.kisPerson,
+            seats: seatTicket.slice(0, -1),
+          }}
+        >
+          <button id="next" variant="contained">
+            결제 완료
+          </button>
+        </Link>
       </div>
     </div>
   );
