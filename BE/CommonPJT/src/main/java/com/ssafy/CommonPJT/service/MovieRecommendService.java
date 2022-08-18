@@ -72,7 +72,13 @@ public class MovieRecommendService {
                     if (!agePortion.getMale10().equals("0")) {
                         String code = agePortion.getMovieCode();
                         Movie movie = movieRepository.findMovieByMovieCode(code);
-                        recommendation.add(movie);
+                        if (!movie.getAgeLimit().equals("청소년 관람불가")) {
+                            if (movie.getAgeLimit().equals("전체 관람가")) {
+                                recommendation.add(movie);
+                            } else if (Integer.parseInt(movie.getAgeLimit().substring(0, 2)) <= Integer.parseInt(movieRecommendDto.getAge())) {
+                                recommendation.add(movie);
+                            }
+                        }
                     }
                 }
             }
@@ -119,7 +125,13 @@ public class MovieRecommendService {
                     if (!agePortion.getFemale10().equals("0")) {
                         String code = agePortion.getMovieCode();
                         Movie movie = movieRepository.findMovieByMovieCode(code);
-                        recommendation.add(movie);
+                        if (!movie.getAgeLimit().equals("청소년 관람불가")) {
+                            if (movie.getAgeLimit().equals("전체 관람가")) {
+                                recommendation.add(movie);
+                            } else if (Integer.parseInt(movie.getAgeLimit().substring(0, 2)) < Integer.parseInt(movieRecommendDto.getAge())) {
+                                recommendation.add(movie);
+                            }
+                        }
                     }
                 }
             }
