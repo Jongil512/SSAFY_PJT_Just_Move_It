@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import styles from "./SeatsData.css";
+import "./SeatsData.css";
 
 function SeatsData(props) {
   const seatsCatogory = [
@@ -84,22 +84,24 @@ function SeatsData(props) {
           return (
             <div className="seats-section">
               <h5>{catogory.name}</h5>
-              {newSeatList.map((seats, i) => (
-                <div key={i} className="seats">
-                  {seats.map((seat, j) => {
-                    const isSelected = selectedSeats.indexOf(seat) > -1;
-                    const isOccupied = catogory.occupied.indexOf(seat) > -1;
-                    return (
-                      <div
-                        key={`seat-${seat + j}`}
-                        className={`seat ${isSelected ? "selected" : ""} ${
-                          isOccupied ? "occupied" : ""
-                        }`}
-                      />
-                    );
-                  })}
-                </div>
-              ))}
+              <div id="seatBox">
+                {newSeatList.map((seats, i) => (
+                  <div key={i} className="seats">
+                    {seats.map((seat, j) => {
+                      const isSelected = selectedSeats.indexOf(seat) > -1;
+                      const isOccupied = catogory.occupied.indexOf(seat) > -1;
+                      return (
+                        <div
+                          key={`seat-${seat + j}`}
+                          className={`seat ${isSelected ? "selected" : ""} ${
+                            isOccupied ? "occupied" : ""
+                          }`}
+                        />
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
             </div>
           );
         })}
