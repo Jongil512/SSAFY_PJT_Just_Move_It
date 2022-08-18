@@ -2,7 +2,9 @@
   text-align: center;
   background-color: rgb(38, 50, 56);
   width: auto;
+  min-height: 100vh;
   color: white;
+  padding: 0 70px;
 }
 
 .App-logo {

@@ -70,6 +70,7 @@ function MovieSelectLow() {
 
   return (
     <div className="MovieSelectLow">
+      <div className="make_lower"></div>
       <h1>now playing</h1>
       <div className="container rows">
         <div className="row">
