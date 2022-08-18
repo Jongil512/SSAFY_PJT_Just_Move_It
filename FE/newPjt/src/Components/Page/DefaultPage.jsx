@@ -9,7 +9,6 @@ function DefaultPage(props) {
   return (
     <div className="DefaultPage">
       <Header dir={props.data["dirction"]} />
-      <h1>여기는 디폴트 페이지</h1>
       <DefaultRouter />
       <Footer />
     </div>
