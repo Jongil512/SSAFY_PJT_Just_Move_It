@@ -185,6 +185,8 @@ function Pay() {
         </div>
       </div>
 
+      <hr />
+
       <div className="button_section">
         <ThemeProvider theme={theme}>
           <Button onClick={goBack} color="neutral" variant="contained">
