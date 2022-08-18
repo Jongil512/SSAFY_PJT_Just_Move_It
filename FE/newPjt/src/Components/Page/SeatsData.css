@@ -1,13 +1,13 @@
 .SeatsData h5 {
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 30px;
 }
 
 .screen {
   width: 100%;
   height: fit-content;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   align-content: center;
   justify-content: space-between;
 }
@@ -26,8 +26,8 @@
   align-content: center;
 }
 .seat {
-  width: 30px;
-  height: 20px;
+  width: 60px;
+  height: 40px;
   /* flex: 0 0 8%; */
   margin: 4px 6px;
   border: 1px solid #ddd;
