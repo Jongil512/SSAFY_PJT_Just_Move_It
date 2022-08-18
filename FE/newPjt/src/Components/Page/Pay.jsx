@@ -2,9 +2,27 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
+// const movies = [];
+
+// axios
+//   .get("https://i7d207.p.ssafy.io/api/movies")
+//   .catch(function (err) {
+//     // console.log(err, "movies 데이터x");
+//   })
+//   .then(function (response) {
+//     // 성공 핸들링
+//     // console.log(response.data);
+//     const info_data = response.data;
+
+//     for (const movieData of info_data) {
+//       movies.push(movieData);
+//     }
+//   });
+
 function Pay() {
   const navigate = useNavigate();
   const location = useLocation();
+  const axios = require("axios").default;
 
   const state = location.state;
   const seatList = [];
@@ -41,7 +59,7 @@ function Pay() {
   for (const iterator of seatList) {
     seatTicket += iterator + ",";
   }
-  console.log(seatTicket.slice(0, -1));
+  // console.log(seatTicket.slice(0, -1));
   // console.log(a);
   // a.sort();
   // console.log(a);
@@ -55,8 +73,8 @@ function Pay() {
   for (let index = 0; index < state.child.kisPerson; index++) {
     classification += "KIDS,";
   }
-  console.log(classification);
-
+  // console.log(classification);
+  console.log(state.PlayingInfoID.moviePlayingId);
   // * state.adult.defaultPerson;
   // "KIDS," * state.child.kisPerson;
   const goBack = () => {
@@ -75,10 +93,22 @@ function Pay() {
     );
   }
   function ticketPost() {
-    console.log("아 응애");
     // var form = document.createElement('form');
     // form.setAttribute('method', 'post')
     // form.setAttribute('action', 'https://i7d207.p.ssafy.io/api/tickets')
+    const body = {
+      classification: classification.slice(0, -1),
+      moviePlayingInfoId: state.PlayingInfoID.moviePlayingId,
+      phoneNumber: "",
+      seat: seatTicket.slice(0, -1),
+      totalCost: `${
+        12000 * state.adult.defaultPerson + 10000 * state.child.kisPerson
+      }`,
+    };
+    axios
+      .post("https://i7d207.p.ssafy.io/api/tickets/", body)
+      .then((res) => console.log(body));
+    // console.log(body);
   }
   return (
     <div className="Pay">
@@ -98,7 +128,7 @@ function Pay() {
       <hr />
       <h3>
         총계 :
-        {15000 * state.adult.defaultPerson + 10000 * state.child.kisPerson}
+        {12000 * state.adult.defaultPerson + 10000 * state.child.kisPerson}
       </h3>
 
       <Button onClick={goBack}>결제 취소하기</Button>
