@@ -10,7 +10,7 @@ function Seats(props) {
     //   occupied: [2, 3]
     // },
     {
-      name: "좌석 선택",
+      name: "스크린",
       seats: [
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
       ],
@@ -73,7 +73,7 @@ function Seats(props) {
 
   return (
     <div className="Seats">
-      <h3>여기 좌석을 골라라</h3>
+      <h3>좌석을 선택하세요</h3>
       <div className="screen">
         {seatsCatogory.map((catogory) => {
           const noOfRows = Math.ceil(catogory.seats.length / 5);
@@ -84,7 +84,7 @@ function Seats(props) {
           // console.log(newSeatList);
           return (
             <div className="seats-section">
-              <h4>{catogory.name}</h4>
+              <h5>{catogory.name}</h5>
               {newSeatList.map((seats, i) => (
                 <div key={i} className="seats">
                   {seats.map((seat, j) => {
