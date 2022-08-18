@@ -2,6 +2,26 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+import "./Pay.css";
+
+const theme = createTheme({
+  status: {
+    danger: "#e53e3e",
+  },
+  palette: {
+    primary: {
+      main: "#0971f1",
+      darker: "#053e85",
+    },
+    neutral: {
+      main: "#64748B",
+      contrastText: "#fff",
+    },
+  },
+});
+
 // const movies = [];
 
 // axios
@@ -121,20 +141,67 @@ function Pay() {
         <hr />
         <h3>총게 : {15000 * state.adult + 10000 * state.child}</h3>
       </div> */}
-      <h1>{state["movie"]}</h1>
-      <h2>성인: {state.adult.defaultPerson} 명</h2>
-      <h2>청소년: {state.child.kisPerson} 명</h2>
-      <h4>좌석 : {seatTicket.slice(0, -1)}</h4>
-      <hr />
-      <h3>
-        총계 :
-        {12000 * state.adult.defaultPerson + 10000 * state.child.kisPerson}
-      </h3>
 
-      <Button onClick={goBack}>결제 취소하기</Button>
-      <Link onClick={ticketPost} to="./payend">
-        결제 완료
-      </Link>
+      <div className="reserve_box">
+        <div className="reserve_info">
+          <img className="poster" src={state["img"]} alt="사진이 없어용 ㅠ" />
+          <table className="reserve_info_detail">
+            <tr>
+              <td colSpan={2}>
+                <h2>{state["movie"]}</h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>성인</h3>
+              </td>
+              <td>
+                <h3>{state.adult.defaultPerson}명</h3>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>청소년</h3>
+              </td>
+              <td>
+                <h3>{state.child.kisPerson} 명</h3>
+              </td>
+            </tr>
+            <tr>
+              <td colSpan={2}>
+                <hr />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h4>총 결제 금액</h4>
+              </td>
+              <td>
+                {12000 * state.adult.defaultPerson +
+                  10000 * state.child.kisPerson}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div className="button_section">
+        <ThemeProvider theme={theme}>
+          <Button onClick={goBack} color="neutral" variant="contained">
+            결제 취소
+          </Button>
+          <span>&nbsp;&nbsp;&nbsp;</span>
+          <Link
+            onClick={ticketPost}
+            to="./payend"
+            style={{ textDecoration: "none" }}
+          >
+            <Button color="error" variant="contained">
+              결제 완료
+            </Button>
+          </Link>
+        </ThemeProvider>
+      </div>
     </div>
   );
 }

@@ -203,6 +203,7 @@ function MovieDetail() {
               style={{ textDecoration: "none" }}
               state={{
                 movie: state["title"],
+                img: state["img"],
                 adult: { defaultPerson },
                 child: { kisPerson },
                 seats: { selectedSeats },
