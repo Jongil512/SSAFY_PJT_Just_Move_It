@@ -94,6 +94,10 @@
   align-items: center;
 }
 
+.time_button {
+  margin: 5px;
+}
+
 .button_section {
   width: fit-content;
   align-self: center;
