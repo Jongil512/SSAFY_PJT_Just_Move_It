@@ -27,11 +27,12 @@ public class Handler extends TextWebSocketHandler {
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
         log.info(session + " 클라이언트 접속");
         sessions.add(session);
-        if(sessions.size()>=2){
-            for(WebSocketSession sess: sessions){
-                sess.sendMessage(new TextMessage("all_connected"));
-            }
-        }
+        session.sendMessage(new TextMessage("all_connected"));
+//        if(sessions.size()>=2){
+//            for(WebSocketSession sess: sessions){
+//                sess.sendMessage(new TextMessage("all_connected"));
+//            }
+//        }
     }
 
     @Override
