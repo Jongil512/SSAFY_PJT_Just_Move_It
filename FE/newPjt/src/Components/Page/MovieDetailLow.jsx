@@ -95,14 +95,15 @@ function MovieDetail() {
     // console.log(k);
     timeButton.push(
       <span className="time_button">
-        <Button
+        <button
+          id="timeButton"
           variant="outlined"
           onClick={(e) => {
             handleSeatData(infoId, k, e);
           }}
         >
           {info["startTime"]}
-        </Button>
+        </button>
       </span>
     );
   }

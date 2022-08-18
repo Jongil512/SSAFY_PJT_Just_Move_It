@@ -95,7 +95,8 @@ function MovieDetail() {
     // console.log(k);
     timeButton.push(
       <span className="time_button">
-        <button id="timeButton"
+        <button
+          id="timeButton"
           variant="outlined"
           onClick={(e) => {
             handleSeatData(infoId, k, e);
@@ -144,11 +145,13 @@ function MovieDetail() {
       <br />
 
       <div id="container" className="reservation">
-        <div id="timeContainer" className="container">
+        <div className="align_container">
+          <div id="timeContainer" className="container">
             <div id="timeBox">{timeButton}</div>
-        </div>
-        <div id="seat_section">
-          <SeatData data={seatInfo} />
+          </div>
+          <div id="seat_section">
+            <SeatData data={seatInfo} />
+          </div>
         </div>
       </div>
 
