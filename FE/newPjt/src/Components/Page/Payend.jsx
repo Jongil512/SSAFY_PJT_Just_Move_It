@@ -52,9 +52,11 @@ function Payend() {
       </div>
 
       <div className="button_section">
-        <Button href="/" variant="contained">
-          첫 화면으로
-        </Button>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <button id="home" href="/" variant="contained">
+            첫 화면으로
+          </button>
+        </Link>
       </div>
     </div>
   );
