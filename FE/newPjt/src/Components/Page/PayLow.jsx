@@ -5,7 +5,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./Pay.css";
-import "./PayLow.css";
 
 const theme = createTheme({
   status: {
@@ -134,7 +133,7 @@ function PayLow() {
   return (
     <div className="PayLow">
       <div className="make_lower"></div>
-      <h1>여기는 디폴트 결제창 입니다</h1>
+      <h1>결제하기</h1>
       {/* <Link to='/movies'></Link> */}
       {/* <h1>{props.movie}</h1> */}
       {/* <div>

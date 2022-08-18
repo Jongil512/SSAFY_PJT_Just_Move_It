@@ -132,7 +132,7 @@ function Pay() {
   }
   return (
     <div className="Pay">
-      <h1>여기는 디폴트 결제창 입니다</h1>
+      <h1>결제하기</h1>
       {/* <Link to='/movies'></Link> */}
       {/* <h1>{props.movie}</h1> */}
       {/* <div>
