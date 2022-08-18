@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const faceapi = require("@vladmandic/face-api");
+import * as faceapi from "face-api.js";
 
 function Face(props) {
   const [modelsLoaded, setModelsLoaded] = React.useState(false);
@@ -28,7 +28,7 @@ function Face(props) {
     };
     loadModels();
   }, []);
-  
+
   const startVideo = () => {
     setCaptureVideo(true);
     navigator.mediaDevices
@@ -104,7 +104,6 @@ function Face(props) {
           );
       }
     }, 100);
-
   };
 
   const closeWebcam = () => {
@@ -147,7 +146,10 @@ function Face(props) {
                 onPlay={handleVideoOnPlay}
                 style={{ borderRadius: "10px" }}
               />
-              <canvas  ref={canvasRef} style={{ position: "absolute", display: "none" }} />
+              <canvas
+                ref={canvasRef}
+                style={{ position: "absolute", display: "none" }}
+              />
             </div>
           </div>
         ) : (
