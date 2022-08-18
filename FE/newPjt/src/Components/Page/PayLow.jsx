@@ -5,6 +5,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./Pay.css";
+import "./PayLow.css";
 
 const theme = createTheme({
   status: {
