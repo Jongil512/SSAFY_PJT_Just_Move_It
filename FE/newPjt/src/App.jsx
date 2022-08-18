@@ -100,6 +100,10 @@ function App() {
     return ws.readyState === ws.OPEN;
   }
 
+  function displayCamera () {
+    
+  }
+
   /////////////////////////////////////////////////////////////
 
   // var timer = setInterval(function () {
@@ -120,8 +124,10 @@ function App() {
       <h3>방향은 현재 {dirction} 을 가리키고 있다!</h3> */}
 
 
+      <button style={{ display: "none" }}>
+        영상 시작
+      </button>
       <Face setAge={setAge} setGender={setGender}></Face>
-    
     </div>
   );
 }

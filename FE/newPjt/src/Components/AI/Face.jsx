@@ -25,11 +25,10 @@ function Face(props) {
         faceapi.nets.ssdMobilenetv1.loadFromUri(MODEL_URL),
         faceapi.nets.ageGenderNet.loadFromUri(MODEL_URL),
       ]).then(setModelsLoaded(true));
-      setTimeout(startVideo, 5000);
     };
     loadModels();
   }, []);
-
+  
   const startVideo = () => {
     setCaptureVideo(true);
     navigator.mediaDevices
@@ -105,6 +104,7 @@ function Face(props) {
           );
       }
     }, 100);
+
   };
 
   const closeWebcam = () => {
@@ -115,9 +115,24 @@ function Face(props) {
 
   return (
     <div>
+      <button
+        onClick={startVideo}
+        style={{
+          cursor: "pointer",
+          backgroundColor: "green",
+          color: "white",
+          padding: "15px",
+          fontSize: "25px",
+          border: "none",
+          borderRadius: "10px",
+        }}
+      >
+        Open Webcam
+      </button>
+
       {captureVideo ? (
         modelsLoaded ? (
-          <div style={{ display: "none"}}>
+          <div>
             <div
               style={{
                 display: "flex",
