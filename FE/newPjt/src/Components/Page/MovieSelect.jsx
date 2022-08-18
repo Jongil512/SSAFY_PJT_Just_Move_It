@@ -7,14 +7,11 @@ import "./MovieSelect.css";
 const movies = [];
 const axios = require("axios").default;
 const slide = [];
+
 axios
   .get("https://i7d207.p.ssafy.io/api/movies")
-  .catch(function (err) {
-    // console.log(err, "movies 데이터x");
-  })
+  .catch(function (err) {})
   .then(function (response) {
-    // 성공 핸들링
-    // console.log(response.data);
     const info_data = response.data;
 
     for (const movieData of info_data) {
@@ -27,15 +24,6 @@ axios
             alt="이미지 없어용 ㅠ"
           />
         </Card>
-        // <Card sx={{ maxWidth: 345 }}>
-        //   <CardMedia
-        //     component="img"
-        //     height="140"
-        //     image={movieData["img"]}
-        //     alt="이미지 없어용 ㅠ"
-        //   />
-        // </Card>
-        // <img width="600" src={movieData["img"]} alt="안되요" />
       );
       movies.push(movieData);
       // console.log(movieData);
@@ -43,36 +31,6 @@ axios
   });
 
 function MovieSelect(props) {
-  // const location = useLocation();
-  // const state = location.state;
-  // console.log(location);
-  // console.log(state);
-  // const axios = require("axios").default;
-
-  // const movies = [];
-
-  // console.log(5, props.state);
-
-  // for (const movieData of movies) {
-  //   slide.push(
-  //     // <Card sx={{ maxWidth: 345 }}>
-  //     //   <CardMedia
-  //     //     component="img"
-  //     //     height="140"
-  //     //     image={movieData["img"]}
-  //     //     alt="이미지 없어용 ㅠ"
-  //     //   />
-  //     // </Card>
-  //     <img src={movieData["img"]} alt="안되요" />
-  //   );
-  //   movies.push(movieData);
-  // }
-  // console.log(movies);
-
-  ///////////////////////////
-  // console.log(props.state);
-  ///////////////////////////
-
   const callback = function (index) {
     // console.log(index);
     movieCode(movies[index].movieCode);
@@ -90,8 +48,6 @@ function MovieSelect(props) {
   let [movieTotalCustomer, movieTotalCustomerChange] = useState("0");
   let [movieAge, movieAgeChange] = useState("0");
   let [movieDataAll, movieDataAllChange] = useState("0");
-
-  // const movies = props.moviesData;
 
   const movieCode = (inputData) => {
     movieCodeChange(inputData);
@@ -120,7 +76,7 @@ function MovieSelect(props) {
     star += "☆";
   }
 
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <div className="MovieSelect">
