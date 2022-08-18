@@ -33,27 +33,30 @@ function App() {
   //   });
   // console.log(state);
 
-  // var timer = setInterval(function () {
-  //   // console.log("Hello!!");
-  //   axios
-  //     .get("https://i7d207.p.ssafy.io/api/sensor")
-  //     .catch(function (err) {
-  //       console.log(err, "센서값 못받아옴");
-  //     })
-  //     .then(function (response) {
-  //       // console.log(response.data.lengthValue);
-  //       if (window.location.pathname == "/") {
-  //         // console.log("아 응애");
-  //         // navigation.navigate("default");
-  //         // navigate("/default");
-  //         if (response.data.lengthValue >= 150) {
-  //           window.location.assign(window.location.href + "default");
-  //         } else if (response.data.lengthValue < 150 and 100 < response.data.lengthValue) {
-  //           window.location.assign(window.location.href + "low");
-  //         }
-  //       }
-  //     });
-  // }, 1000);
+  var timer = setInterval(function () {
+    // console.log("Hello!!");
+    axios
+      .get("https://i7d207.p.ssafy.io/api/sensor")
+      .catch(function (err) {
+        console.log(err, "센서값 못받아옴");
+      })
+      .then(function (response) {
+        // console.log(response.data.lengthValue);
+        if (window.location.pathname == "/") {
+          // console.log("아 응애");
+          // navigation.navigate("default");
+          // navigate("/default");
+          if (response.data.lengthValue >= 150) {
+            window.location.assign(window.location.href + "default");
+          } else if (
+            response.data.lengthValue < 150 &&
+            100 < response.data.lengthValue
+          ) {
+            window.location.assign(window.location.href + "low");
+          }
+        }
+      });
+  }, 1000);
 
   /////////////////////////////////////////////////////////////
 
